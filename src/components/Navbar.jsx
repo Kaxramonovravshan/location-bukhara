@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Img from "../assets/locationImg.png"
+import Img from "../assets/locationImg.png";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -15,21 +15,30 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center gap-3 p-3">
-                <img className="w-24" src={Img} alt="" />
+              <img className="w-24" src={Img} alt="" />
               <span className="text-white">Location-Uzbekistan</span>
             </div>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link to={"/"} className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium">
-                Home 
-              </Link>   
-              <Link to={"/locations"} className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium">
+              <Link
+                to={"/"}
+                className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
+              >
+                Home
+              </Link>
+              <Link
+                to={"/locations"}
+                className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
+              >
                 Locations
-              </Link> 
-              <Link to={"/service"} className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium">
-                Service 
-              </Link>       
+              </Link>
+              <Link
+                to={"/service"}
+                className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
+              >
+                Service
+              </Link>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
@@ -71,25 +80,24 @@ const Navbar = () => {
       </div>
       <div className={`${isOpen ? "block" : "hidden"} md:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-yellow-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          <Link
+            to={"/"}
+            className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
           >
             Home
-          </a>
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-yellow-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          </Link>
+          <Link
+            to={"/locations"}
+            className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
           >
-            About
-          </a>
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-yellow-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            Locations
+          </Link>
+          <Link
+            to={"/service"}
+            className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
           >
-            Services
-          </a>
-          
+            Service
+          </Link>
         </div>
       </div>
     </nav>
