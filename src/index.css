@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.product--image {
+  width: 100%;
+  height: 16em;
+  object-fit: cover;
+}
+
+.card {
+  max-width: 320px;
+  margin: auto 1rem;
+  text-align: center;
+  font-family: arial;
+}
+
+@media (max-width:500px) {
+  .box_{
+    flex-direction: column;
+  }
+
+  .box_ img{
+    width: 100%;
+  }
+
+  .box_ div{
+    width: 100%;
+  }
+}
