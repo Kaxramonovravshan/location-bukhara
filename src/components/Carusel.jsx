@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Card from "./Card";
-import { productData, responsive } from "../data.js";
+import { productData, responsive } from "../utils/data.js";
 import masjid1 from "../assets/masjid1.jpg"
 
 const Carusel = () => {

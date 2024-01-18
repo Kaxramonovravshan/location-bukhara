@@ -1,5 +1,6 @@
 import React from "react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import { Link } from "react-router-dom";
 
 const AccordionPage = () => {
   return (
@@ -11,12 +12,16 @@ const AccordionPage = () => {
           title="Bukhara region"
         >
           <ul className="">
-            <li className="border p-2 rounded-xl shadow-md mb-2 hover:bg-zinc-500 hover:text-cyan-50 cursor-pointer">
-              Masjid Kalon
-            </li>
-            <li className="border p-2 rounded-xl shadow-md mb-2 hover:bg-zinc-500 hover:text-cyan-50 cursor-pointer">
-              Minorai Kalon
-            </li>
+            <Link to={"/locations/masjid-kalon"}>
+              <li className="border w-full p-2 rounded-xl shadow-md mb-2 hover:bg-zinc-500 hover:text-cyan-50 cursor-pointer">
+                Masjid Kalon
+              </li>
+            </Link>
+            <Link to={"/locations/minorai-kalon"}>
+              <li className="border p-2 rounded-xl shadow-md mb-2 hover:bg-zinc-500 hover:text-cyan-50 cursor-pointer">
+                Minorai Kalon
+              </li>
+            </Link>
             <li className="border p-2 rounded-xl shadow-md mb-2 hover:bg-zinc-500 hover:text-cyan-50 cursor-pointer">
               Ark
             </li>

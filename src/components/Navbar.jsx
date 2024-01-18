@@ -81,18 +81,27 @@ const Navbar = () => {
       <div className={`${isOpen ? "block" : "hidden"} md:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <Link
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
             to={"/"}
             className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
           >
             Home
           </Link>
           <Link
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
             to={"/locations"}
             className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
           >
             Locations
           </Link>
           <Link
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
             to={"/service"}
             className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
           >
