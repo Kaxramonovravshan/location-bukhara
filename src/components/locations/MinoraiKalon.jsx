@@ -4,18 +4,18 @@ import minora from "../../assets/minora.jpg";
 const MinoraiKalon = () => {
   return (
     <div className="flex flex-col">
-      <div className="flex gap-2">
+      <div className="flex gap-2 img-box">
         <div className="border w-96 min-h-56 p-3 mb-3">
           <img src={minora} alt="" />
         </div>
         <div className=" border w-96 min-h-56 p-3 mb-3">
           <a
             target={"_blank"}
-            href="https://uz.wikipedia.org/wiki/Masjidi_Kalon"
+            href="https://en.wikipedia.org/wiki/Kalyan_Minaret"
             className="underline"
           >
             <h3>
-              Listed in: <span className="font-bold">Masjid Kalon</span>
+              Listed in: <span className="font-bold">Minorai Kalon</span>
             </h3>
           </a>
           <p>

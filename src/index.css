@@ -38,4 +38,9 @@
   .box_ div{
     width: 100%;
   }
+
+  .img-box{
+    flex-direction: column;
+  }
+
 }
