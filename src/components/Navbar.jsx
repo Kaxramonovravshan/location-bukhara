@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 // import Img from "../assets/locationImg.png";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../utils/translations";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, changeLanguage } = useLanguage();
+  const t = translations[language];
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleLanguage = () => {
+    changeLanguage(language === "en" ? "ru" : "en");
   };
 
   return (
@@ -16,7 +24,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center gap-3 p-3">
               {/* <img className="w-24" src={Img} alt="" /> */}
-              <span className="text-white">Film Production Bukhara </span>
+              <span className="text-white">{t.navbar.brand}</span>
             </div>
           </div>
           <div className="hidden md:block">
@@ -25,26 +33,37 @@ const Navbar = () => {
                 to={"/"}
                 className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
               >
-                Home
+                {t.navbar.home}
               </Link>
               <Link
                 to={"/locations"}
                 className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
               >
-                Locations
+                {t.navbar.locations}
               </Link>
               <Link
                 to={"/service"}
                 className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
               >
-                Service
+                {t.navbar.service}
               </Link>
               <Link
                 to={"/service"}
                 className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
               >
-                About Us
+                {t.navbar.aboutUs}
               </Link>
+              <button
+                onClick={toggleLanguage}
+                className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium border border-gray-100"
+                title={
+                  language === "en"
+                    ? "Переключить на русский"
+                    : "Switch to English"
+                }
+              >
+                {language === "en" ? "RU" : "EN"}
+              </button>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
@@ -93,7 +112,7 @@ const Navbar = () => {
             to={"/"}
             className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
           >
-            Home
+            {t.navbar.home}
           </Link>
           <Link
             onClick={() => {
@@ -102,7 +121,7 @@ const Navbar = () => {
             to={"/locations"}
             className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
           >
-            Locations
+            {t.navbar.locations}
           </Link>
           <Link
             onClick={() => {
@@ -111,7 +130,7 @@ const Navbar = () => {
             to={"/service"}
             className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
           >
-            Service
+            {t.navbar.service}
           </Link>
           <Link
             onClick={() => {
@@ -120,8 +139,17 @@ const Navbar = () => {
             to={"/about"}
             className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium"
           >
-            About Us
+            {t.navbar.aboutUs}
           </Link>
+          <button
+            onClick={() => {
+              toggleLanguage();
+              setIsOpen(!isOpen);
+            }}
+            className="text-gray-100 hover:bg-yellow-950 hover:text-white px-3 py-2 rounded-md text-md font-medium border border-gray-100 w-full text-left"
+          >
+            {language === "en" ? "RU" : "EN"}
+          </button>
         </div>
       </div>
     </nav>

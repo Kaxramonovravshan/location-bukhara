@@ -21,7 +21,11 @@ const Locations = () => {
       <div className="location-con md:flex-row flex-col gap-10 items-center flex justify-between ">
         <AccordionPage />
         <div className="md:w-1/2">
-          {state ? <Outlet /> : <img className="w-full" src={kartaUzb} alt="" />}
+          {state ? (
+            <Outlet />
+          ) : (
+            <img className="w-full" src={kartaUzb} alt="" />
+          )}
         </div>
       </div>
     </div>
