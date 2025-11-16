@@ -1,11 +1,13 @@
 import React from "react";
 import ProjectCarusel from "../components/ProjectCarusel";
+import WhyFilmSection from "../components/WhyFilmSection";
+import BlackSection from "../components/BlackSection";
 import mainVideo from "../assets/mainVideo.mp4";
 const Home = () => {
   return (
     <div>
       {/* Video Hero Section */}
-      <div className="w-full h-[600px] lg:h-[700px] relative top-[-70px] overflow-hidden">
+      <div className="w-full h-[600px] lg:h-[700px] relative md:top-[-75px] overflow-hidden">
         {/* Video Section */}
         <video
           className="w-full h-full object-cover"
@@ -31,7 +33,7 @@ const Home = () => {
       </div>
 
       {/* Text Section */}
-      <div className="w-full">
+      <div className="w-full mb-6">
         <div className="inset-0 flex items-center p-5">
           <div className="">
             <h1 className="text-3xl md:leading-[80px] md:text-5xl lg:text-7xl font-normal  text-gray-900 ">
@@ -39,12 +41,30 @@ const Home = () => {
               cultures and centuries-old authenticity - all of this makes
               Bukhara a unique location for Filmmakers.
             </h1>
-            <p className="text-gray-900 text-2xl font-normal mt-3">See it. Believe it. Film it.</p>
+            <p className="text-gray-900 text-3xl font-normal mt-3">
+              See it. Believe it. Film it.
+            </p>
           </div>
         </div>
       </div>
 
       <ProjectCarusel />
+
+      <WhyFilmSection />
+
+      <div className="text-center py-6">
+        <h1 className="md:text-5xl text-3xl lg:text-7xl text-black">
+          40% Rebate
+        </h1>
+      </div>
+
+      <BlackSection />
+
+      <div className="text-center py-6">
+        <h1 className="md:text-5xl text-3xl lg:text-6xl text-black">
+          Your vision, ready for action
+        </h1>
+      </div>
     </div>
   );
 };

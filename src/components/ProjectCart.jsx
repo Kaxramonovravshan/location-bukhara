@@ -3,10 +3,9 @@ import { Image } from "@nextui-org/react";
 
 const ProjectCard = (props) => {
   return (
-    <div className="card">
+    <div className="card h-[360px]">
       <Image
-        isZoomed
-        className="product--image w-100"
+        className="product--image w-100 h-[300px] rounded-none rounded-t-lg"
         alt="NextUI Fruit Image with Zoom"
         src={props.url}
       />

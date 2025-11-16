@@ -105,10 +105,28 @@ const Navbar = () => {
             onClick={() => {
               setIsOpen(!isOpen);
             }}
-            to={"/"}
+            to={"/locations"}
             className="text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-md font-medium transition-colors block"
           >
-            {t.navbar.home}
+            {t.navbar.locations}
+          </Link>
+          <Link
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
+            to={"/service"}
+            className="text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-md font-medium transition-colors block"
+          >
+            {t.navbar.service}
+          </Link>
+          <Link
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
+            to={"/service"}
+            className="text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-md font-medium transition-colors block"
+          >
+            {t.navbar.contactUs}
           </Link>
           <button
             onClick={() => {

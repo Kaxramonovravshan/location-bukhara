@@ -17,9 +17,7 @@ const ProjectCarusel = () => {
   ));
   return (
     <>
-      <h1 className="text-3xl text-center my-5">Project:</h1>
-
-      <div className="App">
+      <div className="px-5 md:py-20 w-full">
         <Carousel
           autoPlay={true}
           autoPlaySpeed={2000}
