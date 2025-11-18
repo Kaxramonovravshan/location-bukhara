@@ -14,7 +14,7 @@ export const ProjectResponsive = {
   },
   mobile: {
     breakpoint: { max: 400, min: 0 },
-    items: 2
+    items: 1
   }
 };
 

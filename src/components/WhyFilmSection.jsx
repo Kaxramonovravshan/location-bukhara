@@ -9,7 +9,7 @@ const WhyFilmSection = () => {
   const reasons = t.whyFilm.reasons;
 
   return (
-    <div className="bg-[#C8A574FF] mt-16 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#C8A574FF] mt-16 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Title */}
@@ -26,17 +26,17 @@ const WhyFilmSection = () => {
           <div className="space-y-0">
             {reasons.map((reason, index) => (
               <div key={index}>
-                <div className="flex items-start gap-4 py-6">
+                <div className="flex items-start gap-4 py-3">
                   {/* Icon */}
                   <div className="flex-shrink-0 mt-1">
-                    <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center">
                       {getIcon(reason.icon)}
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-lg md:text-xl font-bold text-black mb-2">
+                    <h3 className="text-lg font-bold text-black mb-2">
                       {reason.title}
                     </h3>
                     <p className="text-sm md:text-base text-gray-800/90">
@@ -59,7 +59,7 @@ const WhyFilmSection = () => {
 
 // Icon renderer function
 const getIcon = (iconName) => {
-  const iconStyle = "w-6 h-6 text-white";
+  const iconStyle = "w-4 h-4 text-white";
 
   switch (iconName) {
     case "cash":

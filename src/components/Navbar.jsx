@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import Img from "../assets/locationImg.png";
+import Img from "../assets/logo.PNG";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
@@ -23,10 +23,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center gap-3 p-3">
-              {/* <img className="w-24" src={Img} alt="" /> */}
-              <span className="text-gray-900 font-semibold">
-                {t.navbar.brand}
-              </span>
+              <img className="w-20" src={Img} alt="" />
             </div>
           </div>
           <div className="hidden md:block">
@@ -44,7 +41,7 @@ const Navbar = () => {
                 {t.navbar.service}
               </Link>
               <Link
-                to={"/service"}
+                to={"/contact"}
                 className="text-gray-700 text-lg hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-md font-medium transition-colors"
               >
                 {t.navbar.contactUs}
@@ -123,7 +120,7 @@ const Navbar = () => {
             onClick={() => {
               setIsOpen(!isOpen);
             }}
-            to={"/service"}
+            to={"/contact"}
             className="text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-md font-medium transition-colors block"
           >
             {t.navbar.contactUs}

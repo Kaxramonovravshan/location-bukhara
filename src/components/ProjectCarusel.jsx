@@ -17,7 +17,7 @@ const ProjectCarusel = () => {
   ));
   return (
     <>
-      <div className="px-5 md:py-20 w-full">
+      <div className="px-5 md:py-16 w-full">
         <Carousel
           autoPlay={true}
           autoPlaySpeed={2000}

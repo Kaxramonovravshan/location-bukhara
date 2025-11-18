@@ -14,6 +14,19 @@ export const translations = {
       decoration: "Decoration",
       showMoreInfo: "show more info"
     },
+    // Contact
+    contact: {
+      title: "Get In Touch",
+      sectionHeading: "Contact details",
+      fullName: "Full name",
+      email: "Email",
+      phone: "Phone number",
+      message: "Message",
+      submitButton: "Get in touch",
+      sending: "Sending...",
+      successMessage: "Thank you! We will get back to you shortly.",
+      errorMessage: "Something went wrong. Please try again later."
+    },
     // Why Film Section
     whyFilm: {
       title: "Why film",
@@ -139,6 +152,19 @@ export const translations = {
     service: {
       decoration: "Декорация",
       showMoreInfo: "показать больше информации"
+    },
+    // Contact
+    contact: {
+      title: "Связаться с нами",
+      sectionHeading: "Контактные данные",
+      fullName: "Полное имя",
+      email: "Электронная почта",
+      phone: "Номер телефона",
+      message: "Сообщение",
+      submitButton: "Связаться с нами",
+      sending: "Отправка...",
+      successMessage: "Спасибо! Мы скоро с вами свяжемся.",
+      errorMessage: "Произошла ошибка. Пожалуйста, попробуйте еще раз позже."
     },
     // Why Film Section
     whyFilm: {
