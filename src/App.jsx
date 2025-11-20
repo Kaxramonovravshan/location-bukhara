@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import { LanguageProvider } from "./context/LanguageContext";
+import Location from "./pages/Location";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
@@ -16,7 +17,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/service" element={<Contact />} />
+          <Route path="/locations" element={<Location />} />
         </Routes>
         <Footer />
       </div>

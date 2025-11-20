@@ -132,6 +132,73 @@ export const translations = {
           { label: "X", url: "#" }
         ]
       }
+    },
+    location: {
+      hero: {
+        badge: "Location Scouting · Bukhara Region",
+        titleLine1: "Find the shot.",
+        titleLine2: "Unlock Bukhara.",
+        description:
+          "From desert epics to intimate festival scenes, our database of ready-to-shoot locations helps you move from script to screen faster."
+      },
+      intro: {
+        badge: "WHY BUKHARA",
+        title:
+          "A compact city with centuries of architecture, sunlit courtyards and film-friendly logistics.",
+        highlights: [
+          {
+            title: "600+ catalogued locations",
+            description:
+              "Historic streets, modern rooftops, deserts and lush oasis scenes."
+          },
+          {
+            title: "48h permit turnaround",
+            description:
+              "Dedicated liaison office handles paperwork, security and logistics."
+          },
+          {
+            title: "Drone friendly skies",
+            description:
+              "Local partners secure airspace approvals for lightweight to heavy-lift rigs."
+          }
+        ]
+      },
+      catalog: {
+        badge: "FEATURED CATALOG",
+        title: "Ready-to-shoot locations",
+        cta: "Request full catalog",
+        cardCta: "View details",
+        buttons: {
+          virtualTour: "Virtual tour",
+          preview: "Preview"
+        }
+      },
+      services: {
+        badge: "SCOUTING SERVICES",
+        title: "We scout, secure and prep every location for your shoot days.",
+        description:
+          "Send us your script notes, references or shot list. We deliver shortlists, logistics plans and on-site supervision so you can focus on the creative.",
+        button: "Book a scout call",
+        footnote:
+          "Need something specific? We build custom look books for commercials, features and TV.",
+        list: [
+          {
+            title: "Look books & mood boards",
+            description:
+              "Receive curated references matched to your brief within 24 hours."
+          },
+          {
+            title: "Tech scout support",
+            description:
+              "On-the-ground fixers coordinate transport, access and daylight planning."
+          },
+          {
+            title: "Local crew pairing",
+            description:
+              "Connect with bilingual location managers, drone teams and safety officers."
+          }
+        ]
+      }
     }
   },
   ru: {
@@ -273,6 +340,74 @@ export const translations = {
           { label: "Facebook", url: "#" },
           { label: "YouTube", url: "#" },
           { label: "X", url: "#" }
+        ]
+      }
+    },
+    location: {
+      hero: {
+        badge: "Поиск локаций · Бухарский регион",
+        titleLine1: "Найдите кадр.",
+        titleLine2: "Откройте Бухару.",
+        description:
+          "От пустынных эпосов до камерных праздников — наш каталог готовых к съемке локаций помогает быстрее перейти от сценария к экрану."
+      },
+      intro: {
+        badge: "ПОЧЕМУ БУХАРА",
+        title:
+          "Компактный город с вековой архитектурой, солнечными дворами и дружественной кинологистикой.",
+        highlights: [
+          {
+            title: "600+ задокументированных локаций",
+            description:
+              "Исторические улицы, современные крыши, пустыни и оазисы."
+          },
+          {
+            title: "Разрешения за 48 часов",
+            description:
+              "Выделенный офис оформляет документы, охрану и логиcтику."
+          },
+          {
+            title: "Небо, открытое для дронов",
+            description:
+              "Местные партнеры согласуют воздушные зоны для легких и тяжелых платформ."
+          }
+        ]
+      },
+      catalog: {
+        badge: "КАТАЛОГ ЛОКАЦИЙ",
+        title: "Готовые к съемкам пространства",
+        cta: "Запросить полный каталог",
+        cardCta: "Подробнее",
+        buttons: {
+          virtualTour: "Виртуальный тур",
+          preview: "Просмотр"
+        }
+      },
+      services: {
+        badge: "УСЛУГИ ПО СКАУТИНГУ",
+        title:
+          "Мы находим, согласовываем и готовим каждую площадку к съемочному дню.",
+        description:
+          "Присылайте сценарные заметки, референсы или шот-листы. Мы соберем шорт-лист, логистику и сопровождение на площадке, чтобы вы сфокусировались на творчестве.",
+        button: "Записаться на звонок",
+        footnote:
+          "Нужна особая атмосфера? Собираем кастомные лукбуки для рекламы, кино и сериалов.",
+        list: [
+          {
+            title: "Лукбуки и мудборды",
+            description:
+              "Подбираем визуальные референсы под ваш бриф за 24 часа."
+          },
+          {
+            title: "Техскаут-сопровождение",
+            description:
+              "Фиксеры на месте организуют транспорт, доступ и учет дневного света."
+          },
+          {
+            title: "Подбор локальных команд",
+            description:
+              "Соединяем с двуязычными менеджерами локаций, командами дронов и специалистами по безопасности."
+          }
         ]
       }
     }

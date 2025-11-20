@@ -15,18 +15,16 @@ const Footer = () => {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-4">
             {/* Logo - Left */}
             <div className="flex flex-col">
-              
               <span className="text-white text-xl md:text-2xl font-semibold">
                 {t.footer.logo.english}
               </span>
             </div>
-            
 
             {/* Contact Button - Right */}
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex w-full justify-center lg:justify-end">
               <Link
                 to="/service"
-                className="inline-block px-6 py-3 border border-white rounded-lg text-white hover:bg-white hover:text-black transition-colors text-base md:text-lg"
+                className="inline-flex w-full sm:w-auto justify-center px-6 py-3 border border-white rounded-lg text-white hover:bg-white hover:text-black transition-colors text-sm sm:text-base"
               >
                 {t.footer.contactButton}
               </Link>
@@ -34,7 +32,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    <div className="w-full h-[1px] bg-white"></div>
+      <div className="w-full h-[1px] bg-white"></div>
       {/* Bottom Section - Footer Links */}
       <div className="border-b border-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

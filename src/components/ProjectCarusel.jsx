@@ -2,17 +2,18 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { ProjectResponsive, ProjectProductData } from "../utils/data.js";
-import masjid1 from "../assets/masjid1.jpg";
 import ProjectCard from "./ProjectCart.jsx";
+import { useLanguage } from "../context/LanguageContext";
 
 const ProjectCarusel = () => {
+  const { language } = useLanguage();
   const product = ProjectProductData.map((item) => (
     <ProjectCard
       key={item.id}
-      name={item.name}
-      url={masjid1}
+      name={item.name?.[language] || item.name}
+      url={item.imageurl}
       price={item.price}
-      description={item.description}
+      description={item.description?.[language] || item.description}
     />
   ));
   return (
