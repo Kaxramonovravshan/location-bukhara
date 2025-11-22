@@ -12,7 +12,60 @@ export const translations = {
     // Service
     service: {
       decoration: "Decoration",
-      showMoreInfo: "show more info"
+      showMoreInfo: "show more info",
+      services: [
+        {
+          title: "Decoration",
+          description:
+            "Professional set decoration and prop services for your production needs.",
+          image:
+            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80",
+          gallery: [
+            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80"
+          ]
+        },
+        {
+          title: "Equipment Supply",
+          description:
+            "Complete equipment and tools supply for film production.",
+          image:
+            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=800&q=80",
+          gallery: [
+            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80"
+          ]
+        },
+        {
+          title: "Location Management",
+          description: "Expert location scouting and management services.",
+          image:
+            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+          gallery: [
+            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80"
+          ]
+        },
+        {
+          title: "Production Support",
+          description:
+            "Comprehensive production support and coordination services.",
+          image:
+            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
+          gallery: [
+            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"
+          ]
+        }
+      ]
     },
     // Contact
     contact: {
@@ -224,7 +277,60 @@ export const translations = {
     // Service
     service: {
       decoration: "Декорация",
-      showMoreInfo: "показать больше информации"
+      showMoreInfo: "показать больше информации",
+      services: [
+        {
+          title: "Декорация",
+          description:
+            "Профессиональные декорации и реквизит для вашего производства.",
+          image:
+            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80",
+          gallery: [
+            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80"
+          ]
+        },
+        {
+          title: "Поставка оборудования",
+          description:
+            "Полная поставка оборудования и инструментов для кинопроизводства.",
+          image:
+            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=800&q=80",
+          gallery: [
+            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80"
+          ]
+        },
+        {
+          title: "Управление локациями",
+          description: "Экспертные услуги по поиску и управлению локациями.",
+          image:
+            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+          gallery: [
+            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80"
+          ]
+        },
+        {
+          title: "Производственная поддержка",
+          description:
+            "Комплексные услуги по производственной поддержке и координации.",
+          image:
+            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
+          gallery: [
+            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
+            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"
+          ]
+        }
+      ]
     },
     // Contact
     contact: {

@@ -18,9 +18,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0 flex items-center gap-3 p-3">
-              <img className="w-20" src={Img} alt="" />
-            </div>
+            <Link to="/" className="flex-shrink-0 flex items-center gap-3 p-3">
+              <img className="w-20" src={Img} alt="Film Bukhara" />
+            </Link>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">

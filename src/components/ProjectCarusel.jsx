@@ -18,14 +18,16 @@ const ProjectCarusel = () => {
   ));
   return (
     <>
-      <div className="px-5 md:py-16 w-full">
-        <Carousel
-          autoPlay={true}
-          autoPlaySpeed={2000}
-          responsive={ProjectResponsive}
-        >
-          {product}
-        </Carousel>
+      <div className="w-full md:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Carousel
+            autoPlay={true}
+            autoPlaySpeed={2000}
+            responsive={ProjectResponsive}
+          >
+            {product}
+          </Carousel>
+        </div>
       </div>
     </>
   );

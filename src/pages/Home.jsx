@@ -72,22 +72,35 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Project Section */}
+      <div className="w-full py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-gray-900">
+            Project
+          </h2>
+        </div>
+      </div>
+
       <ProjectCarusel />
 
       <WhyFilmSection />
 
-      <div className="text-center py-6">
-        <h1 className="md:text-5xl text-3xl lg:text-7xl text-black">
-          40% Rebate
-        </h1>
+      <div className="w-full py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="md:text-5xl text-3xl lg:text-7xl text-black">
+            40% Rebate
+          </h1>
+        </div>
       </div>
 
       <BlackSection />
 
-      <div className="text-center py-6">
-        <h1 className="md:text-5xl text-3xl lg:text-6xl text-black">
-          Your vision, ready for action
-        </h1>
+      <div className="w-full py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="md:text-5xl text-3xl lg:text-6xl text-black">
+            Your vision, ready for action
+          </h1>
+        </div>
       </div>
     </div>
   );
