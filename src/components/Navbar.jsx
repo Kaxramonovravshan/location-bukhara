@@ -13,10 +13,6 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const toggleLanguage = () => {
-    changeLanguage(language === "en" ? "ru" : "en");
-  };
-
   return (
     <nav className="bg-gray-100/50 backdrop-blur-md py-3 sticky top-0 z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,15 +43,24 @@ const Navbar = () => {
                 {t.navbar.contactUs}
               </Link>
               <button
-                onClick={toggleLanguage}
-                className="text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-md font-medium border border-gray-300 transition-colors"
-                title={
+                onClick={() => changeLanguage("en")}
+                className={`px-3 py-2 rounded-md text-md font-medium border transition-colors ${
                   language === "en"
-                    ? "Переключить на русский"
-                    : "Switch to English"
-                }
+                    ? "bg-gray-900 text-white border-gray-900"
+                    : "text-gray-700 border-gray-300 hover:bg-gray-100 hover:text-gray-900"
+                }`}
               >
-                {language === "en" ? "RU" : "EN"}
+                EN
+              </button>
+              <button
+                onClick={() => changeLanguage("ru")}
+                className={`px-3 py-2 rounded-md text-md font-medium border transition-colors ${
+                  language === "ru"
+                    ? "bg-gray-900 text-white border-gray-900"
+                    : "text-gray-700 border-gray-300 hover:bg-gray-100 hover:text-gray-900"
+                }`}
+              >
+                RU
               </button>
             </div>
           </div>
@@ -127,12 +132,29 @@ const Navbar = () => {
           </Link>
           <button
             onClick={() => {
-              toggleLanguage();
+              changeLanguage("en");
               setIsOpen(!isOpen);
             }}
-            className="text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-md font-medium border border-gray-300 w-full text-left transition-colors"
+            className={`px-3 py-2 rounded-md text-md font-medium border w-full text-left transition-colors ${
+              language === "en"
+                ? "bg-gray-900 text-white border-gray-900"
+                : "text-gray-700 border-gray-300 hover:bg-gray-100 hover:text-gray-900"
+            }`}
           >
-            {language === "en" ? "RU" : "EN"}
+            EN
+          </button>
+          <button
+            onClick={() => {
+              changeLanguage("ru");
+              setIsOpen(!isOpen);
+            }}
+            className={`px-3 py-2 rounded-md text-md font-medium border w-full text-left transition-colors ${
+              language === "ru"
+                ? "bg-gray-900 text-white border-gray-900"
+                : "text-gray-700 border-gray-300 hover:bg-gray-100 hover:text-gray-900"
+            }`}
+          >
+            RU
           </button>
         </div>
       </div>

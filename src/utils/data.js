@@ -22,6 +22,12 @@ export const ProjectProductData = [
     id: 1,
     imageurl:
       "https://images.unsplash.com/photo-1544986581-efac024faf62?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1528901166007-3784c7dd3653?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80"
+    ],
     name: {
       en: "Poi-Kalyan Ensemble",
       ru: "Ансамбль Пои-Калян"
@@ -40,6 +46,12 @@ export const ProjectProductData = [
     id: 2,
     imageurl:
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80"
+    ],
     name: {
       en: "The Ark Fortress",
       ru: "Крепость Арк"
@@ -58,6 +70,12 @@ export const ProjectProductData = [
     id: 3,
     imageurl:
       "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1600&q=80"
+    ],
     name: {
       en: "Lyabi-Hauz District",
       ru: "Район Ляби-Хауз"
@@ -76,6 +94,12 @@ export const ProjectProductData = [
     id: 4,
     imageurl:
       "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80"
+    ],
     name: {
       en: "Kyzylkum Desert",
       ru: "Пустыня Кызылкум"
@@ -94,6 +118,12 @@ export const ProjectProductData = [
     id: 5,
     imageurl:
       "https://images.unsplash.com/photo-1482192597420-4817fdd7e8b0?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1600&q=80"
+    ],
     name: {
       en: "Bukhara Rooftops",
       ru: "Крыши Бухары"
@@ -112,6 +142,12 @@ export const ProjectProductData = [
     id: 6,
     imageurl:
       "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1451471016731-e963a8588be8?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1451471016731-e963a8588be8?auto=format&fit=crop&w=1600&q=80"
+    ],
     name: {
       en: "Silk Road Caravanserai",
       ru: "Караван-сарай Великого шёлкового пути"

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
+import LogoImg from "../assets/logo.PNG";
 
 const Footer = () => {
   const { language } = useLanguage();
@@ -15,9 +16,7 @@ const Footer = () => {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-4">
             {/* Logo - Left */}
             <div className="flex flex-col">
-              <span className="text-white text-xl md:text-2xl font-semibold">
-                {t.footer.logo.english}
-              </span>
+              <img className="w-24 md:w-28" src={LogoImg} alt="Film Bukhara" />
             </div>
 
             {/* Contact Button - Right */}

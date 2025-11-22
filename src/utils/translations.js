@@ -168,6 +168,12 @@ export const translations = {
         title: "Ready-to-shoot locations",
         cta: "Request full catalog",
         cardCta: "View details",
+        viewGallery: "View gallery",
+        photoCount: {
+          singular: "photo",
+          plural: "photos"
+        },
+        closeGallery: "Close",
         buttons: {
           virtualTour: "Virtual tour",
           preview: "Preview"
@@ -378,6 +384,12 @@ export const translations = {
         title: "Готовые к съемкам пространства",
         cta: "Запросить полный каталог",
         cardCta: "Подробнее",
+        viewGallery: "Смотреть галерею",
+        photoCount: {
+          singular: "фото",
+          plural: "фото"
+        },
+        closeGallery: "Закрыть",
         buttons: {
           virtualTour: "Виртуальный тур",
           preview: "Просмотр"

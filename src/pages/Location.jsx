@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import mainVideo from "../assets/mainVideo.mp4";
 import { ProjectProductData } from "../utils/data";
 import { useLanguage } from "../context/LanguageContext";
@@ -7,6 +7,92 @@ import { translations } from "../utils/translations";
 const Location = () => {
   const { language } = useLanguage();
   const t = translations[language].location;
+  const [selectedLocationId, setSelectedLocationId] = useState(
+    ProjectProductData[0]?.id
+  );
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+
+  const selectedLocation = useMemo(
+    () => ProjectProductData.find((item) => item.id === selectedLocationId),
+    [selectedLocationId]
+  );
+
+  const galleryImages =
+    selectedLocation?.gallery?.length > 0
+      ? selectedLocation.gallery
+      : selectedLocation?.imageurl
+      ? [selectedLocation.imageurl]
+      : [];
+
+  const photoCountLabel =
+    galleryImages.length === 1
+      ? t.catalog.photoCount.singular
+      : t.catalog.photoCount.plural;
+
+  const handleSelectLocation = (id, shouldOpenModal = false) => {
+    setSelectedLocationId(id);
+    if (shouldOpenModal) {
+      setIsGalleryOpen(true);
+    }
+  };
+
+  const handleCloseGallery = () => {
+    setIsGalleryOpen(false);
+    setSelectedImageIndex(null);
+  };
+
+  const handleImageClick = (index) => {
+    setSelectedImageIndex(index);
+  };
+
+  const handleCloseFullImage = () => {
+    setSelectedImageIndex(null);
+  };
+
+  const handleNextImage = () => {
+    if (
+      selectedImageIndex !== null &&
+      selectedImageIndex < galleryImages.length - 1
+    ) {
+      setSelectedImageIndex(selectedImageIndex + 1);
+    }
+  };
+
+  const handlePrevImage = () => {
+    if (selectedImageIndex !== null && selectedImageIndex > 0) {
+      setSelectedImageIndex(selectedImageIndex - 1);
+    }
+  };
+
+  useEffect(() => {
+    if (!isGalleryOpen && selectedImageIndex === null) {
+      document.body.style.overflow = "";
+      return undefined;
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        if (selectedImageIndex !== null) {
+          handleCloseFullImage();
+        } else {
+          handleCloseGallery();
+        }
+      } else if (event.key === "ArrowRight" && selectedImageIndex !== null) {
+        handleNextImage();
+      } else if (event.key === "ArrowLeft" && selectedImageIndex !== null) {
+        handlePrevImage();
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isGalleryOpen, selectedImageIndex]);
 
   return (
     <div>
@@ -83,79 +169,195 @@ const Location = () => {
             </button>
           </div>
 
-          <div className="divide-y divide-gray-200">
-            {ProjectProductData.map((location) => (
-              <article
-                key={location.id}
-                className="py-8 flex flex-col gap-6 md:flex-row md:items-center md:gap-10"
-              >
-                <div className="w-full md:w-64 h-48 overflow-hidden rounded-3xl shadow-sm">
-                  <img
-                    src={location.imageurl}
-                    alt={location.name?.[language] || location.name}
-                    className="h-full w-full object-cover transition duration-500 hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="flex-1 flex flex-col gap-3 text-gray-900">
-                  <div className="text-xs uppercase tracking-[0.4em] text-gray-500">
-                    {location.locationTag?.[language] || "Bukhara Region"}
+          <div className="divide-y divide-gray-200 border-t border-gray-200">
+            {ProjectProductData.map((location) => {
+              const gallery =
+                location.gallery && location.gallery.length > 0
+                  ? location.gallery
+                  : [location.imageurl];
+              const previewImages = gallery.slice(0, 4);
+
+              return (
+                <article
+                  key={location.id}
+                  className="flex flex-col gap-6 py-4 md:flex-row md:items-center md:gap-10"
+                >
+                  <div className="w-full md:w-[55%] lg:w-[50%]">
+                    <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+                      {previewImages.map((src, index) => (
+                        <button
+                          type="button"
+                          key={`${location.id}-thumb-${index}`}
+                          onClick={() =>
+                            handleSelectLocation(location.id, true)
+                          }
+                          className="group h-28 overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition hover:border-gray-400 md:h-32"
+                        >
+                          <img
+                            src={src}
+                            alt={`${
+                              location.name?.[language] || location.name
+                            } ${index + 1}`}
+                            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                  <h4 className="text-2xl">
-                    {location.name?.[language] || location.name}
-                  </h4>
-                  <p className="text-gray-600">
-                    {location.description?.[language] || location.description}
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="border border-gray-900 text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-900 hover:text-white transition">
-                    {t.catalog.buttons.virtualTour}
-                  </button>
-                  <button className="border border-gray-300 text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:border-gray-900 transition">
-                    {t.catalog.buttons.preview}
-                  </button>
-                </div>
-              </article>
-            ))}
+
+                  <div className="flex-1 flex flex-col items-end gap-4 text-gray-900">
+                    <h4 className="text-xl">
+                      {location.name?.[language] || location.name}
+                    </h4>
+                    <button
+                      type="button"
+                      onClick={() => handleSelectLocation(location.id, true)}
+                      className="rounded-full border border-gray-900 px-6 py-3 text-sm font-semibold text-gray-900 transition hover:bg-gray-900 hover:text-white whitespace-nowrap"
+                    >
+                      {t.catalog.viewGallery}
+                    </button>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="max-w-6xl mx-auto px-5 md:px-10 py-12">
-        <div className="bg-black text-white rounded-[40px] p-8 md:p-12">
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="space-y-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-white/60">
-                {t.services.badge}
-              </p>
-              <h3 className="text-3xl md:text-5xl leading-tight">
-                {t.services.title}
-              </h3>
-              <p className="text-white/80 text-lg">{t.services.description}</p>
-            </div>
-            <div className="space-y-6">
-              {t.services.list.map((service) => (
+      {isGalleryOpen && selectedLocation && (
+        <div className="fixed inset-0 z-50">
+          <div
+            className="absolute inset-0 bg-black/70"
+            onClick={handleCloseGallery}
+          ></div>
+          <div className="relative z-10 w-full h-full bg-white/90 overflow-y-auto p-4 md:p-6 lg:p-8">
+            <button
+              type="button"
+              onClick={handleCloseGallery}
+              className="absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-white/90 hover:bg-white border border-gray-200 transition shadow-sm"
+              aria-label="Close"
+            >
+              <svg
+                className="w-6 h-6 text-gray-700"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 2xl:grid-cols-12 gap-2 md:gap-3">
+              {galleryImages.map((src, index) => (
                 <div
-                  key={service.title}
-                  className="border border-white/10 rounded-3xl p-6 bg-white/5 backdrop-blur"
+                  key={`${selectedLocation.id}-${index}`}
+                  onClick={() => handleImageClick(index)}
+                  className="aspect-square overflow-hidden rounded-xl bg-gray-100 group cursor-pointer"
                 >
-                  <h4 className="text-2xl">{service.title}</h4>
-                  <p className="text-white/70 mt-2">{service.description}</p>
+                  <img
+                    src={src}
+                    alt={`${
+                      selectedLocation.name?.[language] || selectedLocation.name
+                    } ${index + 1}`}
+                    className="h-full w-full object-cover transition duration-300 group-hover:scale-110"
+                    loading="lazy"
+                  />
                 </div>
               ))}
             </div>
           </div>
+        </div>
+      )}
 
-          <div className="mt-10 flex flex-col md:flex-row md:items-center gap-4">
-            <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-200 transition">
-              {t.services.button}
+      {selectedImageIndex !== null && galleryImages[selectedImageIndex] && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center">
+          <div
+            className="absolute inset-0 bg-black/90"
+            onClick={handleCloseFullImage}
+          ></div>
+          <button
+            type="button"
+            onClick={handleCloseFullImage}
+            className="absolute top-4 right-4 z-30 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition backdrop-blur-sm"
+            aria-label="Close"
+          >
+            <svg
+              className="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          {selectedImageIndex > 0 && (
+            <button
+              type="button"
+              onClick={handlePrevImage}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition backdrop-blur-sm"
+              aria-label="Previous"
+            >
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
             </button>
-            <p className="text-white/70 text-sm">{t.services.footnote}</p>
+          )}
+          {selectedImageIndex < galleryImages.length - 1 && (
+            <button
+              type="button"
+              onClick={handleNextImage}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition backdrop-blur-sm"
+              aria-label="Next"
+            >
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          )}
+          <div className="relative z-20 max-w-[95vw] max-h-[95vh] flex items-center justify-center">
+            <img
+              src={galleryImages[selectedImageIndex]}
+              alt={`${
+                selectedLocation.name?.[language] || selectedLocation.name
+              } ${selectedImageIndex + 1}`}
+              className="max-w-full max-h-[95vh] object-contain rounded-lg"
+            />
+          </div>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 text-white text-sm bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm">
+            {selectedImageIndex + 1} / {galleryImages.length}
           </div>
         </div>
-      </section>
+      )}
     </div>
   );
 };
