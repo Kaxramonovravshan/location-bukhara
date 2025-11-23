@@ -48,9 +48,9 @@ const Home = () => {
                 to="/locations"
                 className="inline-flex items-center gap-2 mt-6 text-gray-900 hover:text-gray-700 transition-colors group"
               >
-                <div className="w-8 h-8 rounded-full border-2 border-gray-900 flex items-center justify-center group-hover:bg-gray-900 transition-colors">
+                <div className="w-8 h-8 rounded-full border-2 border-[#C8A574FF] flex items-center justify-center group-hover:bg-[#C8A574FF] transition-colors">
                   <svg
-                    className="w-4 h-4 text-gray-900 group-hover:text-white transition-colors"
+                    className="w-4 h-4 text-[#C8A574FF] group-hover:text-[#C8A574FF] transition-colors"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -63,7 +63,7 @@ const Home = () => {
                     />
                   </svg>
                 </div>
-                <span className="text-sm md:text-base font-medium uppercase tracking-wide">
+                <span className="text-sm md:text-base font-medium text-[#C8A574FF] uppercase tracking-wide">
                   Discover Bukhara
                 </span>
               </Link>
@@ -72,14 +72,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Project Section */}
-      <div className="w-full py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-gray-900">
-            Project
-          </h2>
-        </div>
-      </div>
+
 
       <ProjectCarusel />
 

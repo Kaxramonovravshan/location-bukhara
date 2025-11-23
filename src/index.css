@@ -38,8 +38,19 @@
 
 .card {
   margin: auto 1rem;
-  text-align: center;
+  text-align: left;
   font-family: arial;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.react-multi-carousel__item {
+  height: auto;
 }
 
 .react-multiple-carousel__arrow {

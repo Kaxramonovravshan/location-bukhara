@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import mainVideo from "../assets/mainVideo.mp4";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
+import ProjectCarusel from "../components/ProjectCarusel";
 
 const Service = () => {
   const { language } = useLanguage();
@@ -103,6 +104,9 @@ const Service = () => {
           </div>
         </div>
       </div>
+
+      {/* Project Carousel Section */}
+      <ProjectCarusel />
 
       {/* Services Cards Section */}
       <section className="max-w-7xl mx-auto px-5 md:px-10 py-12">
