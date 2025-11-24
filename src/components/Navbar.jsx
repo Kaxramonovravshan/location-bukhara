@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Img from "../assets/logo.PNG";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 
@@ -8,6 +8,26 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { language, changeLanguage } = useLanguage();
   const t = translations[language];
+  const location = useLocation();
+  const activeLangClasses = "bg-[#C8A574] text-white border-[#C8A574]";
+  const inactiveLangClasses =
+    "text-gray-700 border-gray-300 hover:bg-gray-100 hover:text-gray-900";
+  const baseNavLinkClasses =
+    "px-4 py-2 rounded-md font-medium transition-colors text-xl";
+  const mobileNavLinkClasses =
+    "block px-3 py-2 rounded-md font-medium transition-colors text-lg";
+  const getNavLinkClasses = (path, isMobile = false) => {
+    const baseClasses = isMobile ? mobileNavLinkClasses : baseNavLinkClasses;
+    const isActive =
+      path === "/"
+        ? location.pathname === path
+        : location.pathname.startsWith(path);
+    return `${baseClasses} ${
+      isActive
+        ? "bg-[#C8A574] text-white"
+        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+    }`;
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -26,28 +46,20 @@ const Navbar = () => {
             <div className="ml-10 flex items-baseline space-x-4">
               <Link
                 to={"/locations"}
-                className="text-gray-700 text-lg  hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-md font-medium transition-colors"
+                className={getNavLinkClasses("/locations")}
               >
                 {t.navbar.locations}
               </Link>
-              <Link
-                to={"/service"}
-                className="text-gray-700 text-lg hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-md font-medium transition-colors"
-              >
+              <Link to={"/service"} className={getNavLinkClasses("/service")}>
                 {t.navbar.service}
               </Link>
-              <Link
-                to={"/contact"}
-                className="text-gray-700 text-lg hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-md font-medium transition-colors"
-              >
+              <Link to={"/contact"} className={getNavLinkClasses("/contact")}>
                 {t.navbar.contactUs}
               </Link>
               <button
                 onClick={() => changeLanguage("en")}
                 className={`px-3 py-2 rounded-md text-md font-medium border transition-colors ${
-                  language === "en"
-                    ? "bg-gray-900 text-white border-gray-900"
-                    : "text-gray-700 border-gray-300 hover:bg-gray-100 hover:text-gray-900"
+                  language === "en" ? activeLangClasses : inactiveLangClasses
                 }`}
               >
                 EN
@@ -55,9 +67,7 @@ const Navbar = () => {
               <button
                 onClick={() => changeLanguage("ru")}
                 className={`px-3 py-2 rounded-md text-md font-medium border transition-colors ${
-                  language === "ru"
-                    ? "bg-gray-900 text-white border-gray-900"
-                    : "text-gray-700 border-gray-300 hover:bg-gray-100 hover:text-gray-900"
+                  language === "ru" ? activeLangClasses : inactiveLangClasses
                 }`}
               >
                 RU
@@ -108,7 +118,7 @@ const Navbar = () => {
               setIsOpen(!isOpen);
             }}
             to={"/locations"}
-            className="text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-md font-medium transition-colors block"
+            className={getNavLinkClasses("/locations", true)}
           >
             {t.navbar.locations}
           </Link>
@@ -117,7 +127,7 @@ const Navbar = () => {
               setIsOpen(!isOpen);
             }}
             to={"/service"}
-            className="text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-md font-medium transition-colors block"
+            className={getNavLinkClasses("/service", true)}
           >
             {t.navbar.service}
           </Link>
@@ -126,7 +136,7 @@ const Navbar = () => {
               setIsOpen(!isOpen);
             }}
             to={"/contact"}
-            className="text-gray-700 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-md font-medium transition-colors block"
+            className={getNavLinkClasses("/contact", true)}
           >
             {t.navbar.contactUs}
           </Link>
@@ -136,9 +146,7 @@ const Navbar = () => {
               setIsOpen(!isOpen);
             }}
             className={`px-3 py-2 rounded-md text-md font-medium border w-full text-left transition-colors ${
-              language === "en"
-                ? "bg-gray-900 text-white border-gray-900"
-                : "text-gray-700 border-gray-300 hover:bg-gray-100 hover:text-gray-900"
+              language === "en" ? activeLangClasses : inactiveLangClasses
             }`}
           >
             EN
@@ -149,9 +157,7 @@ const Navbar = () => {
               setIsOpen(!isOpen);
             }}
             className={`px-3 py-2 rounded-md text-md font-medium border w-full text-left transition-colors ${
-              language === "ru"
-                ? "bg-gray-900 text-white border-gray-900"
-                : "text-gray-700 border-gray-300 hover:bg-gray-100 hover:text-gray-900"
+              language === "ru" ? activeLangClasses : inactiveLangClasses
             }`}
           >
             RU
