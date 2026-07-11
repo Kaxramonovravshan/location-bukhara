@@ -1,32 +1,72 @@
-import React from "react";
-import { Image } from "@nextui-org/react";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../utils/translations";
 
-const ProjectCard = (props) => {
+const ProjectCard = ({
+  name,
+  category,
+  url,
+  director,
+  countries,
+  year,
+  onClick,
+  compact = false
+}) => {
+  const { language } = useLanguage();
+  const t = translations[language].portfolio;
+
   return (
-    <div className="card h-full flex flex-col">
-      <div className="flex-shrink-0 w-full aspect-[4/3] overflow-hidden rounded-t-lg bg-gray-100">
-        <Image
-          className="product--image w-full h-full rounded-none rounded-t-lg object-cover"
-          alt="NextUI Fruit Image with Zoom"
-          src={props.url}
+    <button
+      type="button"
+      onClick={onClick}
+      className="card h-full flex flex-col text-left w-full cursor-pointer group touch-manipulation"
+    >
+      <div className="relative flex-shrink-0 w-full aspect-[3/4] sm:aspect-[3/4] overflow-hidden bg-site-card">
+        <img
+          className="product--image w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 group-active:scale-100"
+          alt={name}
+          src={url}
+          loading="lazy"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-site/40 via-transparent to-transparent pointer-events-none" />
       </div>
-      <div className="flex-1 flex flex-col justify-between p-4 bg-white rounded-b-lg">
-        <div>
-          <h2 className="text-lg font-semibold text-gray-900 mb-2">
-            {props.name}
-          </h2>
-          {props.price && (
-            <p className="price text-gray-600 mb-2">{props.price}</p>
+
+      <div
+        className={`flex-1 flex flex-col gap-2 bg-site-card ${
+          compact ? "p-3 sm:p-4" : "p-4 sm:p-5"
+        }`}
+      >
+        <h2 className="text-xs sm:text-sm font-bold uppercase tracking-wide text-content-primary leading-snug line-clamp-2">
+          {name}
+        </h2>
+
+        {category && (
+          <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-accent">
+            {category}
+          </p>
+        )}
+
+        <div className="space-y-0.5 sm:space-y-1 text-[10px] sm:text-xs text-content-secondary leading-relaxed">
+          {director && (
+            <p className="truncate sm:whitespace-normal">
+              <span className="text-content-secondary">{t.director}: </span>
+              <span className="text-content-primary">{director}</span>
+            </p>
           )}
-          {props.description && (
-            <p className="text-sm text-gray-500 line-clamp-3">
-              {props.description}
+          {countries && (
+            <p className="line-clamp-2 sm:line-clamp-none">
+              <span className="text-content-secondary">{t.countries}: </span>
+              <span className="text-content-primary">{countries}</span>
+            </p>
+          )}
+          {year && (
+            <p>
+              <span className="text-content-secondary">{t.year}: </span>
+              <span className="text-content-primary">{year}</span>
             </p>
           )}
         </div>
       </div>
-    </div>
+    </button>
   );
 };
 

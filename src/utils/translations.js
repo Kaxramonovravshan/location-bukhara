@@ -2,68 +2,87 @@ export const translations = {
   en: {
     // Navbar
     navbar: {
-      brand: "Location Bukhara",
+      brand: "BUXOROFILM",
+      brandSub: "STUDIO",
       home: "Home",
-      locations: "Locations",
+      locations: "Location",
+      portfolio: "Portfolio",
       service: "Service",
       aboutUs: "About Us",
       contactUs: "Contact Us"
+    },
+    home: {
+      heroTitle: "Your Next",
+      heroTitle2: "Film Starts Here",
+      playReel: "Play Reel",
+      description:
+        "Year-round light architecture from different areas, diverse cultures and centuries-old authenticity — all of this makes Bukhara a unique location for filmmakers. See it, believe it. Then film it.",
+      discoverLink: "Discover Bukhara",
+      featuredLabel: "Featured Projects",
+      featuredTitle: "Projects We've Proudly Supported",
+      viewAllProjects: "View All Projects",
+      whyLabel: "Why Film in Buxorofilm",
+      whyTitle: "Everything You Need. Right Here.",
+      producerLabel: "Our Producer",
+      producerName: "Ali Choriyev",
+      producerRole: "Founder & Executive Producer",
+      producerBio:
+        "With decades of experience bridging international productions and Uzbekistan's rich cinematic heritage, Ali Choriyev leads BuxoroFilm in bringing world-class filmmaking to Bukhara.",
+      viewPortfolio: "View Full Portfolio",
+      historyLabel: "Our History",
+      historyTitle: "A Legacy of Cinema in Bukhara",
+      historyText:
+        "From the golden age of Soviet cinema to today's international co-productions, Bukhara has been a crossroads of storytelling. BuxoroFilm continues this tradition — connecting filmmakers with the city's timeless architecture and film-friendly infrastructure.",
+      learnMore: "Learn More",
+      timeline: [
+        { year: "1920", text: "Studio was founded in the heart of Bukhara's old city." },
+        { year: "1990s", text: "Operations ceased during the transition period." },
+        { year: "2020", text: "BuxoroFilm was reestablished as a modern production hub." },
+        { year: "Today", text: "Continuing the journey — connecting filmmakers with Bukhara." }
+      ],
+      whyFeatures: [
+        { title: "Iconic Locations", description: "600+ catalogued sites from desert dunes to ancient madrasahs." },
+        { title: "Film-Friendly City", description: "Permits, logistics and local support tailored for productions." },
+        { title: "Experienced Crew", description: "Bilingual fixers, location managers and skilled local teams." },
+        { title: "Full Production Support", description: "End-to-end support from scouting to wrap across every department." },
+        { title: "Comfort & Hospitality", description: "Curated hotels and crew housing across the old city." },
+        { title: "Year-Round Sunshine", description: "300+ days of sunshine and cinematic desert climate year-round." }
+      ]
+    },
+    portfolio: {
+      pageTitle: "Our Portfolio",
+      pageSubtitle: "Projects We've Proudly Supported",
+      director: "Director",
+      countries: "Countries",
+      year: "Year",
+      services: "Services",
+      close: "Close"
     },
     // Service
     service: {
       decoration: "Decoration",
       showMoreInfo: "show more info",
+      viewButton: "View",
       services: [
         {
           title: "Decoration",
           description:
-            "Professional set decoration and prop services for your production needs.",
-          image:
-            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80",
-          gallery: [
-            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80"
-          ]
+            "Set dressing, props and period-accurate interiors using local artisans — from madrasah courtyards to Silk Road market scenes."
         },
         {
           title: "Equipment Supply",
           description:
-            "Complete equipment and tools supply for film production.",
-          image:
-            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=800&q=80",
-          gallery: [
-            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80"
-          ]
+            "Cameras, lighting, grip and support gear delivered to location across Bukhara and the wider region."
         },
         {
           title: "Location Management",
-          description: "Expert location scouting and management services.",
-          image:
-            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
-          gallery: [
-            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80"
-          ]
+          description:
+            "Scouting, permits, access coordination and on-set supervision at historic sites across the old city."
         },
         {
           title: "Production Support",
           description:
-            "Comprehensive production support and coordination services.",
-          image:
-            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
-          gallery: [
-            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"
-          ]
+            "Fixers, transport, catering, accommodation and crew logistics for international productions filming in Uzbekistan."
         }
       ]
     },
@@ -151,38 +170,43 @@ export const translations = {
     },
     // Footer
     footer: {
+      about:
+        "BuxoroFilm connects international productions with Bukhara's iconic locations, expert crews and full production support.",
+      contactTitle: "Contact Us",
+      address: "Bukhara, Uzbekistan",
+      phone: "+998 90 123 45 67",
+      email: "info@buxorofilm.uz",
+      copyright: "© 2024 BuxoroFilm Studio. All rights reserved.",
       logo: {
         english: "FILM BUKHARA"
       },
       contactButton: "Contact us",
       discover: {
-        title: "Discover",
+        title: "Quick Links",
         links: [
-          { label: "Why Bukhara", path: "/" },
+          { label: "Home", path: "/" },
           { label: "Locations", path: "/locations" },
-          { label: "Bukhara Studios", path: "/service" },
-          { label: "Production Support", path: "/service" },
-          { label: "Financial Incentives", path: "/service" }
+          { label: "Portfolio", path: "/portfolio" },
+          { label: "Services", path: "/service" },
+          { label: "Contact", path: "/contact" }
         ]
       },
       quickLinks: {
-        title: "Quick links",
+        title: "Services",
         links: [
-          { label: "Visas and Permits", path: "/service" },
-          { label: "Accommodation", path: "/service" },
-          { label: "Media Centre", path: "/service" },
-          { label: "Filmed in Bukhara", path: "/service" },
-          { label: "Meet the team", path: "/service" }
+          { label: "Location Scouting", path: "/locations" },
+          { label: "Production Support", path: "/service" },
+          { label: "Equipment", path: "/service" },
+          { label: "Permits & Visas", path: "/service" }
         ]
       },
       social: {
-        title: "Social",
+        title: "Follow Us",
         links: [
-          { label: "LinkedIn", url: "#" },
           { label: "Instagram", url: "#" },
           { label: "Facebook", url: "#" },
           { label: "YouTube", url: "#" },
-          { label: "X", url: "#" }
+          { label: "LinkedIn", url: "#" }
         ]
       }
     },
@@ -263,11 +287,59 @@ export const translations = {
   ru: {
     // Navbar
     navbar: {
-      brand: "Локация Бухара",
+      brand: "BUXOROFILM",
+      brandSub: "FILM STUDIO",
       home: "Главная",
       locations: "Локации",
+      portfolio: "Портфолио",
       service: "Услуги",
-      contactUs: "Связаться с нами"
+      contactUs: "Связаться"
+    },
+    home: {
+      heroTitle: "Ваш следующий фильм начинается здесь",
+      playReel: "Смотреть ролик",
+      description:
+        "Круглогодичная световая архитектура разных эпох, разнообразные культуры и многовековая аутентичность — всё это делает Бухару уникальной локацией для кинематографистов. Увидьте, поверьте. А затем снимайте.",
+      discoverLink: "Открыть Бухару",
+      featuredLabel: "Избранные проекты",
+      featuredTitle: "Проекты, которыми мы гордимся",
+      viewAllProjects: "Все проекты",
+      whyLabel: "Почему Buxorofilm",
+      whyTitle: "Всё необходимое — здесь.",
+      producerLabel: "Наш продюсер",
+      producerName: "Али Чориев",
+      producerRole: "Основатель и исполнительный продюсер",
+      producerBio:
+        "Объединяя десятилетия опыта международных производств с богатым кинематографическим наследием Узбекистана, Али Чориев ведёт BuxoroFilm в мир кинопроизводства мирового уровня в Бухаре.",
+      viewPortfolio: "Полное портфолио",
+      historyLabel: "Наша история",
+      historyTitle: "Наследие кино в Бухаре",
+      historyText:
+        "От золотого века советского кино до современных международных копroductions — Бухара всегда была перекрёстком историй. BuxoroFilm продолжает эту традицию, соединяя кинематографистов с вечной архитектурой города.",
+      learnMore: "Подробнее",
+      timeline: [
+        { year: "1920", text: "Студия основана в сердце старого города Бухары." },
+        { year: "1990-е", text: "Деятельность приостановлена в переходный период." },
+        { year: "2020", text: "BuxoroFilm возобновлена как современный продакшн-хаб." },
+        { year: "Сегодня", text: "Продолжаем путь — соединяем кинематографистов с Бухарой." }
+      ],
+      whyFeatures: [
+        { title: "Иконичные локации", description: "600+ объектов — от пустынных дюн до древних медресе." },
+        { title: "Город для кино", description: "Разрешения, логистика и местная поддержка для съёмок." },
+        { title: "Опытная команда", description: "Двуязычные фиксеры, лок-менеджеры и местные специалисты." },
+        { title: "Полная поддержка", description: "Поддержка от скаутинга до wrap по всем направлениям." },
+        { title: "Комфорт и гостеприимство", description: "Отели и жильё для команды в старом городе." },
+        { title: "Круглогодичное солнце", description: "300+ солнечных дней и кинематографический климат." }
+      ]
+    },
+    portfolio: {
+      pageTitle: "Наше портфолио",
+      pageSubtitle: "Проекты, которыми мы гордимся",
+      director: "Режиссёр",
+      countries: "Страны",
+      year: "Год",
+      services: "Услуги",
+      close: "Закрыть"
     },
     // Contact Us
     contactUs: {
@@ -278,57 +350,27 @@ export const translations = {
     service: {
       decoration: "Декорация",
       showMoreInfo: "показать больше информации",
+      viewButton: "Смотреть",
       services: [
         {
           title: "Декорация",
           description:
-            "Профессиональные декорации и реквизит для вашего производства.",
-          image:
-            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80",
-          gallery: [
-            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80"
-          ]
+            "Оформление декораций, реквизит и исторически точные интерьеры с местными мастерами — от дворов медресе до сцен на Шёлковом пути."
         },
         {
           title: "Поставка оборудования",
           description:
-            "Полная поставка оборудования и инструментов для кинопроизводства.",
-          image:
-            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=800&q=80",
-          gallery: [
-            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80"
-          ]
+            "Камеры, свет, grip и вспомогательное оборудование с доставкой на локации по Бухаре и региону."
         },
         {
           title: "Управление локациями",
-          description: "Экспертные услуги по поиску и управлению локациями.",
-          image:
-            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
-          gallery: [
-            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80"
-          ]
+          description:
+            "Скаутинг, разрешения, согласование доступа и сопровождение съёмок на исторических объектах старого города."
         },
         {
           title: "Производственная поддержка",
           description:
-            "Комплексные услуги по производственной поддержке и координации.",
-          image:
-            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
-          gallery: [
-            "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1516035069371-29a1b244b32a?auto=format&fit=crop&w=1600&q=80",
-            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"
-          ]
+            "Фиксеры, транспорт, кейтеринг, размещение и логистика для международных съёмочных групп в Узбекистане."
         }
       ]
     },
@@ -418,40 +460,44 @@ export const translations = {
     },
     // Footer
     footer: {
+      about:
+        "BuxoroFilm соединяет международные производства с иконичными локациями Бухары, экспертными командами и полной производственной поддержкой.",
+      contactTitle: "Контакты",
+      address: "Бухара, Узбекистан",
+      phone: "+998 90 123 45 67",
+      email: "info@buxorofilm.uz",
+      copyright: "© 2024 BuxoroFilm Studio. Все права защищены.",
       logo: {
         arabic: "فيلم بُخارى",
         english: "FILM BUKHARA"
       },
-      headline: "Ваше видение, готово к действию.",
       contactButton: "Связаться с нами",
       discover: {
-        title: "Открыть",
+        title: "Быстрые ссылки",
         links: [
-          { label: "Почему Бухара", path: "/" },
+          { label: "Главная", path: "/" },
           { label: "Локации", path: "/locations" },
-          { label: "Студии Бухары", path: "/service" },
-          { label: "Производственная поддержка", path: "/service" },
-          { label: "Финансовые стимулы", path: "/service" }
+          { label: "Портфолио", path: "/portfolio" },
+          { label: "Услуги", path: "/service" },
+          { label: "Контакты", path: "/contact" }
         ]
       },
       quickLinks: {
-        title: "Быстрые ссылки",
+        title: "Услуги",
         links: [
-          { label: "Виза и разрешения", path: "/service" },
-          { label: "Размещение", path: "/service" },
-          { label: "Медиа центр", path: "/service" },
-          { label: "Снято в Бухаре", path: "/service" },
-          { label: "Встретьте команду", path: "/service" }
+          { label: "Скаутинг локаций", path: "/locations" },
+          { label: "Производственная поддержка", path: "/service" },
+          { label: "Оборудование", path: "/service" },
+          { label: "Разрешения и визы", path: "/service" }
         ]
       },
       social: {
-        title: "Социальные сети",
+        title: "Мы в соцсетях",
         links: [
-          { label: "LinkedIn", url: "#" },
           { label: "Instagram", url: "#" },
           { label: "Facebook", url: "#" },
           { label: "YouTube", url: "#" },
-          { label: "X", url: "#" }
+          { label: "LinkedIn", url: "#" }
         ]
       }
     },

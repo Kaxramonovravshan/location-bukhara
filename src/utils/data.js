@@ -1,33 +1,10 @@
-export const ProjectResponsive = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 1024 },
-    items: 4
-  },
-  desktop: {
-    breakpoint: { max: 1100, min: 800 },
-    items: 3
-  },
-  tablet: {
-    breakpoint: { max: 900, min: 464 },
-    items: 3
-  },
-  mobile: {
-    breakpoint: { max: 400, min: 0 },
-    items: 1
-  }
-};
+import { locationMedia } from "./media.js";
 
 export const ProjectProductData = [
   {
     id: 1,
-    imageurl:
-      "https://images.unsplash.com/photo-1544986581-efac024faf62?auto=format&fit=crop&w=1000&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1528901166007-3784c7dd3653?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80"
-    ],
+    imageurl: locationMedia.poiKalyan.cover,
+    gallery: locationMedia.poiKalyan.gallery,
     name: {
       en: "Poi-Kalyan Ensemble",
       ru: "Ансамбль Пои-Калян"
@@ -38,20 +15,14 @@ export const ProjectProductData = [
     },
     price: "",
     description: {
-      en: "An iconic skyline of turquoise domes, madrassas and the towering Kalyan minaret, perfect for sweeping establishing shots.",
-      ru: "Знаменитый силуэт бирюзовых куполов и минарета Калян — идеальный фон для масштабных планов."
+      en: "The Kalyan Minaret, mosque and Mir-i-Arab Madrasah form Bukhara's most recognisable skyline — a UNESCO-listed ensemble ideal for establishing shots and period drama.",
+      ru: "Минарет Калян, мечеть и медресе Мир-i-Араб — узнаваемый силуэт Бухары из списка ЮНЕСКО, идеальный для общих планов и исторических драм."
     }
   },
   {
     id: 2,
-    imageurl:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80"
-    ],
+    imageurl: locationMedia.ark.cover,
+    gallery: locationMedia.ark.gallery,
     name: {
       en: "The Ark Fortress",
       ru: "Крепость Арк"
@@ -62,20 +33,14 @@ export const ProjectProductData = [
     },
     price: "",
     description: {
-      en: "Sand-coloured fortress walls, throne rooms and courtyards that double for ancient kingdoms or desert empires.",
-      ru: "Песочные стены, тронные залы и дворики, которые легко превращаются в древние царства и пустынные империи."
+      en: "The ancient residence of Bukhara's emirs — massive earthen walls, throne halls and inner courtyards ready for epic and historical productions.",
+      ru: "Древняя резиденция бухарских эмиров — массивные глиняные стены, тронные залы и внутренние дворы для эпических и исторических съёмок."
     }
   },
   {
     id: 3,
-    imageurl:
-      "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1600&q=80"
-    ],
+    imageurl: locationMedia.lyabiHauz.cover,
+    gallery: locationMedia.lyabiHauz.gallery,
     name: {
       en: "Lyabi-Hauz District",
       ru: "Район Ляби-Хауз"
@@ -86,20 +51,14 @@ export const ProjectProductData = [
     },
     price: "",
     description: {
-      en: "Tree-lined pools, artisan workshops and lively evenings that capture living culture in motion.",
-      ru: "Тени платанов, ремесленные мастерские и оживленные вечера, передающие живую культуру."
+      en: "A 17th-century pond surrounded by madrasahs and chaikhanas — living culture, shaded terraces and authentic street life on camera.",
+      ru: "Пруд XVII века в окружении медресе и чайхан — живая культура, тенистые террасы и аутентичная уличная жизнь в кадре."
     }
   },
   {
     id: 4,
-    imageurl:
-      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1000&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80"
-    ],
+    imageurl: locationMedia.kyzylkum.cover,
+    gallery: locationMedia.kyzylkum.gallery,
     name: {
       en: "Kyzylkum Desert",
       ru: "Пустыня Кызылкум"
@@ -110,20 +69,14 @@ export const ProjectProductData = [
     },
     price: "",
     description: {
-      en: "Rolling dunes, camel caravans and endless horizons for commercials, epics and music videos.",
-      ru: "Бесконечные дюны, караваны и горизонты для рекламы, эпиков и музыкальных клипов."
+      en: "Red-sand dunes and open horizons within reach of the city — perfect for desert epics, commercials and music videos.",
+      ru: "Красные барханы и открытые горизонты в доступе от города — идеально для пустынных эпосов, рекламы и клипов."
     }
   },
   {
     id: 5,
-    imageurl:
-      "https://images.unsplash.com/photo-1482192597420-4817fdd7e8b0?auto=format&fit=crop&w=1000&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1600&q=80"
-    ],
+    imageurl: locationMedia.rooftops.cover,
+    gallery: locationMedia.rooftops.gallery,
     name: {
       en: "Bukhara Rooftops",
       ru: "Крыши Бухары"
@@ -134,32 +87,26 @@ export const ProjectProductData = [
     },
     price: "",
     description: {
-      en: "Golden-hour rooftops with uninterrupted 360-degree views, ideal for drone work and stylized storytelling.",
-      ru: "Крыши в золотой час с круговыми видами, идеальны для дронов и стилизованного сторителлинга."
+      en: "Golden-hour panoramas over domes and minarets — 360° city views ideal for drone work and stylised storytelling.",
+      ru: "Панорамы на купола и минареты в золотой час — круговые виды города для дронов и стилизованного сторителлинга."
     }
   },
   {
     id: 6,
-    imageurl:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1451471016731-e963a8588be8?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1451471016731-e963a8588be8?auto=format&fit=crop&w=1600&q=80"
-    ],
+    imageurl: locationMedia.caravanserai.cover,
+    gallery: locationMedia.caravanserai.gallery,
     name: {
-      en: "Silk Road Caravanserai",
-      ru: "Караван-сарай Великого шёлкового пути"
+      en: "Trading Domes & Bazaars",
+      ru: "Торговые купола и базары"
     },
     locationTag: {
-      en: "Historic Trade Route",
-      ru: "Исторический торговый путь"
+      en: "Silk Road Heritage",
+      ru: "Наследие Великого шёлкового пути"
     },
     price: "",
     description: {
-      en: "Vaulted galleries, restored chambers and atmospheric courtyards ready for period drama or fashion shoots.",
-      ru: "Сводчатые галереи, восстановленные покои и атмосферные дворы для исторических драм и модных съемок."
+      en: "Toki-Sarrafon, Toki-Telpak Furushon and covered bazaar alleys — vaulted interiors and merchant life along the Silk Road.",
+      ru: "Токи-Сarraffon, Токи-Тelpak Furushon и крытые базарные переулки — сводчатые интерьеры и торговая жизнь Шёлкового пути."
     }
   }
 ];

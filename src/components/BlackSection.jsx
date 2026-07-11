@@ -1,4 +1,3 @@
-import React from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 import personImage from "../assets/person.jpg";
@@ -13,10 +12,10 @@ const BlackSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Title */}
           <div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-2 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-2 leading-tight">
               {t.blackSection.title}
             </h2>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white leading-tight">
+            <h3 className="text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
               {t.blackSection.subtitle}
             </h3>
           </div>

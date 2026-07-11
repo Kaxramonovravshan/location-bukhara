@@ -1,169 +1,142 @@
-import React, { useState } from "react";
-import Img from "../assets/logo.PNG";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { ChevronDown, Menu, X } from "lucide-react";
+import Img from "../assets/logo.png";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const { language, changeLanguage } = useLanguage();
   const t = translations[language];
   const location = useLocation();
-  const activeLangClasses = "bg-[#C8A574] text-white border-[#C8A574]";
-  const inactiveLangClasses =
-    "text-gray-700 border-gray-300 hover:bg-gray-100 hover:text-gray-900";
-  const baseNavLinkClasses =
-    "px-4 py-2 rounded-md font-medium transition-colors text-xl";
-  const mobileNavLinkClasses =
-    "block px-3 py-2 rounded-md font-medium transition-colors text-lg";
-  const getNavLinkClasses = (path, isMobile = false) => {
-    const baseClasses = isMobile ? mobileNavLinkClasses : baseNavLinkClasses;
-    const isActive =
-      path === "/"
-        ? location.pathname === path
-        : location.pathname.startsWith(path);
-    return `${baseClasses} ${
-      isActive
-        ? "bg-[#C8A574] text-white"
-        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-    }`;
-  };
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const navItems = [
+    { path: "/", label: t.navbar.home },
+    { path: "/locations", label: t.navbar.locations },
+    { path: "/portfolio", label: t.navbar.portfolio },
+    { path: "/service", label: t.navbar.service },
+    { path: "/contact", label: t.navbar.contactUs }
+  ];
+
+  const isActive = (path) =>
+    path === "/"
+      ? location.pathname === path
+      : location.pathname.startsWith(path);
+
+  const getLinkClasses = (path) =>
+    isActive(path) ? "nav-link nav-link-active" : "nav-link";
 
   return (
-    <nav className="bg-gray-100/50 backdrop-blur-md py-3 sticky top-0 z-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center gap-3 p-3">
-              <img className="w-20" src={Img} alt="Film Bukhara" />
-            </Link>
-          </div>
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+    <nav className="sticky top-0 z-30 bg-site/95 backdrop-blur-md border-b border-site-border">
+      <div className="site-container">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink-0 min-w-0">
+            <img className="h-10 sm:h-12 lg:h-14 w-auto" src={Img} alt="BuxoroFilm" />
+            <div className="hidden sm:block leading-tight">
+              <p className="text-accent font-semibold text-xs sm:text-sm tracking-wider">
+                {t.navbar.brand}
+              </p>
+              <p className="text-content-secondary text-[10px] uppercase tracking-[0.2em]">
+                {t.navbar.brandSub}
+              </p>
+            </div>
+          </Link>
+
+          <div className="hidden xl:flex items-center gap-8">
+            {navItems.map((item) => (
               <Link
-                to={"/locations"}
-                className={getNavLinkClasses("/locations")}
+                key={item.path}
+                to={item.path}
+                className={getLinkClasses(item.path)}
               >
-                {t.navbar.locations}
+                {item.label}
               </Link>
-              <Link to={"/service"} className={getNavLinkClasses("/service")}>
-                {t.navbar.service}
-              </Link>
-              <Link to={"/contact"} className={getNavLinkClasses("/contact")}>
-                {t.navbar.contactUs}
-              </Link>
+            ))}
+          </div>
+
+          <div className="hidden xl:flex items-center gap-4">
+            <div className="relative">
               <button
-                onClick={() => changeLanguage("en")}
-                className={`px-3 py-2 rounded-md text-md font-medium border transition-colors ${
-                  language === "en" ? activeLangClasses : inactiveLangClasses
-                }`}
+                type="button"
+                onClick={() => setLangOpen(!langOpen)}
+                className="nav-link inline-flex items-center gap-1 min-h-[44px]"
               >
-                EN
+                {language.toUpperCase()}
+                <ChevronDown className="w-4 h-4" />
               </button>
-              <button
-                onClick={() => changeLanguage("ru")}
-                className={`px-3 py-2 rounded-md text-md font-medium border transition-colors ${
-                  language === "ru" ? activeLangClasses : inactiveLangClasses
-                }`}
-              >
-                RU
-              </button>
+              {langOpen && (
+                <div className="absolute right-0 mt-2 py-2 w-24 card-surface shadow-xl">
+                  {["en", "ru"].map((lang) => (
+                    <button
+                      key={lang}
+                      type="button"
+                      onClick={() => {
+                        changeLanguage(lang);
+                        setLangOpen(false);
+                      }}
+                      className={`block w-full text-left px-4 py-2 text-sm font-semibold uppercase transition-colors duration-300 ${
+                        language === lang
+                          ? "text-accent"
+                          : "text-content-secondary hover:text-accent"
+                      }`}
+                    >
+                      {lang}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
-          <div className="-mr-2 flex md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition-colors"
-            >
-              <svg
-                className={`${isOpen ? "hidden" : "block"} h-6 w-6`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            className="xl:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-content-primary"
+            aria-label="Menu"
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {isOpen && (
+        <div className="xl:hidden border-t border-site-border bg-site max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="site-container py-4 space-y-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsOpen(false)}
+                className={`block py-3.5 min-h-[44px] ${getLinkClasses(item.path)}`}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-              <svg
-                className={`${isOpen ? "block" : "hidden"} h-6 w-6`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
+                {item.label}
+              </Link>
+            ))}
+            <div className="flex gap-3 pt-4 border-t border-site-border mt-4">
+              {["en", "ru"].map((lang) => (
+                <button
+                  key={lang}
+                  type="button"
+                  onClick={() => {
+                    changeLanguage(lang);
+                    setIsOpen(false);
+                  }}
+                  className={`flex-1 min-h-[44px] px-4 py-2 text-sm font-semibold uppercase border rounded-xl transition-all duration-300 ${
+                    language === lang
+                      ? "border-accent text-accent"
+                      : "border-site-border text-content-secondary"
+                  }`}
+                >
+                  {lang}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <div className={`${isOpen ? "block" : "hidden"} md:hidden`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <Link
-            onClick={() => {
-              setIsOpen(!isOpen);
-            }}
-            to={"/locations"}
-            className={getNavLinkClasses("/locations", true)}
-          >
-            {t.navbar.locations}
-          </Link>
-          <Link
-            onClick={() => {
-              setIsOpen(!isOpen);
-            }}
-            to={"/service"}
-            className={getNavLinkClasses("/service", true)}
-          >
-            {t.navbar.service}
-          </Link>
-          <Link
-            onClick={() => {
-              setIsOpen(!isOpen);
-            }}
-            to={"/contact"}
-            className={getNavLinkClasses("/contact", true)}
-          >
-            {t.navbar.contactUs}
-          </Link>
-          <button
-            onClick={() => {
-              changeLanguage("en");
-              setIsOpen(!isOpen);
-            }}
-            className={`px-3 py-2 rounded-md text-md font-medium border w-full text-left transition-colors ${
-              language === "en" ? activeLangClasses : inactiveLangClasses
-            }`}
-          >
-            EN
-          </button>
-          <button
-            onClick={() => {
-              changeLanguage("ru");
-              setIsOpen(!isOpen);
-            }}
-            className={`px-3 py-2 rounded-md text-md font-medium border w-full text-left transition-colors ${
-              language === "ru" ? activeLangClasses : inactiveLangClasses
-            }`}
-          >
-            RU
-          </button>
-        </div>
-      </div>
+      )}
     </nav>
   );
 };

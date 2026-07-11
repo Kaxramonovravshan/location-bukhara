@@ -10,6 +10,10 @@ export default defineConfig({
     "**/*.JPG",
     "**/*.jpg",
     "**/*.JPEG",
-    "**/*.jpeg"
+    "**/*.jpeg",
+    "**/*.MP4",
+    "**/*.mp4",
+    "**/*.webm",
+    "**/*.WEBM"
   ]
 });

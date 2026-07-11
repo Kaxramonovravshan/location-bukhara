@@ -1,4 +1,3 @@
-import React from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 
@@ -14,10 +13,10 @@ const WhyFilmSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Title */}
           <div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-black mb-2 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-black mb-2 leading-tight">
               {t.whyFilm.title}
             </h2>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-normal text-black leading-tight">
+            <h3 className="text-4xl md:text-5xl lg:text-6xl text-black leading-tight">
               {t.whyFilm.subtitle}
             </h3>
           </div>
@@ -36,7 +35,7 @@ const WhyFilmSection = () => {
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-black mb-2">
+                    <h3 className="text-lg text-black mb-2">
                       {reason.title}
                     </h3>
                     <p className="text-sm md:text-base text-gray-800/90">

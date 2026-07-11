@@ -1,5 +1,7 @@
-import React, { useEffect, useMemo, useState } from "react";
-import mainVideo from "../assets/mainVideo.mp4";
+import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import PageHero from "../components/PageHero";
+import GhostButton from "../components/GhostButton";
 import { ProjectProductData } from "../utils/data";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
@@ -22,13 +24,8 @@ const Location = () => {
     selectedLocation?.gallery?.length > 0
       ? selectedLocation.gallery
       : selectedLocation?.imageurl
-      ? [selectedLocation.imageurl]
-      : [];
-
-  const photoCountLabel =
-    galleryImages.length === 1
-      ? t.catalog.photoCount.singular
-      : t.catalog.photoCount.plural;
+        ? [selectedLocation.imageurl]
+        : [];
 
   const handleSelectLocation = (id, shouldOpenModal = false) => {
     setSelectedLocationId(id);
@@ -74,14 +71,18 @@ const Location = () => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         if (selectedImageIndex !== null) {
-          handleCloseFullImage();
+          setSelectedImageIndex(null);
         } else {
-          handleCloseGallery();
+          setIsGalleryOpen(false);
         }
       } else if (event.key === "ArrowRight" && selectedImageIndex !== null) {
-        handleNextImage();
+        setSelectedImageIndex((prev) =>
+          prev !== null && prev < galleryImages.length - 1 ? prev + 1 : prev
+        );
       } else if (event.key === "ArrowLeft" && selectedImageIndex !== null) {
-        handlePrevImage();
+        setSelectedImageIndex((prev) =>
+          prev !== null && prev > 0 ? prev - 1 : prev
+        );
       }
     };
 
@@ -92,84 +93,50 @@ const Location = () => {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isGalleryOpen, selectedImageIndex]);
+  }, [isGalleryOpen, selectedImageIndex, galleryImages.length]);
 
   return (
-    <div>
-      {/* Hero */}
-      <div className="w-full h-[600px] lg:h-[700px] relative md:top-[-75px] overflow-hidden">
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src={mainVideo} type="video/mp4" />
-        </video>
+    <div className="bg-site">
+      <PageHero
+        badge={t.hero.badge}
+        title={t.hero.titleLine1}
+        titleLine2={t.hero.titleLine2}
+        description={t.hero.description}
+      />
 
-        <div className="absolute inset-0 flex items-center bg-black/30">
-          <div className="max-w-7xl mx-auto px-5 text-white">
-            <p className="uppercase tracking-[0.3em] text-sm md:text-base">
-              {t.hero.badge}
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-normal leading-tight mt-4">
-              {t.hero.titleLine1}
-            </h1>
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-normal leading-tight">
-              {t.hero.titleLine2}
-            </h2>
-            <p className="mt-6 text-lg md:text-2xl max-w-3xl">
-              {t.hero.description}
-            </p>
+      <section className="site-container section-padding">
+        <div className="space-y-8 sm:space-y-10">
+          <div className="space-y-4 max-w-3xl">
+            <p className="section-label">{t.intro.badge}</p>
+            <h2 className="section-heading">{t.intro.title}</h2>
           </div>
-        </div>
-      </div>
 
-      {/* Intro */}
-      <section className="max-w-6xl mx-auto px-5 md:px-10 py-12 space-y-10">
-        <div className="space-y-4">
-          <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
-            {t.intro.badge}
-          </p>
-          <h3 className="text-3xl md:text-5xl text-gray-900">
-            {t.intro.title}
-          </h3>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {t.intro.highlights.map((item) => (
-            <div
-              key={item.title}
-              className="border border-gray-200 rounded-2xl p-6 bg-white shadow-sm"
-            >
-              <h4 className="text-xl font-semibold text-gray-900">
-                {item.title}
-              </h4>
-              <p className="text-gray-600 mt-3">{item.description}</p>
-            </div>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+            {t.intro.highlights.map((item) => (
+              <div key={item.title} className="card-surface p-5 sm:p-6 space-y-3">
+                <h3 className="text-lg font-semibold text-content-primary">
+                  {item.title}
+                </h3>
+                <p className="body-text text-sm sm:text-base">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Location gallery */}
-      <section className="bg-gray-50 py-12">
-        <div className="max-w-6xl mx-auto px-5 md:px-10">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
-            <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
-                {t.catalog.badge}
-              </p>
-              <h3 className="text-3xl md:text-4xl text-gray-900 mt-3">
-                {t.catalog.title}
-              </h3>
+      <section className="border-t border-site-border bg-site-card/30 section-padding">
+        <div className="site-container">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 sm:mb-12">
+            <div className="space-y-3">
+              <p className="section-label">{t.catalog.badge}</p>
+              <h2 className="section-heading">{t.catalog.title}</h2>
             </div>
-            <button className="self-start md:self-auto border border-gray-900 text-gray-900 px-5 py-3 rounded-full text-sm font-medium hover:bg-gray-900 hover:text-white transition">
+            <GhostButton to="/contact" className="w-full sm:w-auto justify-center shrink-0">
               {t.catalog.cta}
-            </button>
+            </GhostButton>
           </div>
 
-          <div className="divide-y divide-gray-200 border-t border-gray-200">
+          <div className="divide-y divide-site-border border-t border-site-border">
             {ProjectProductData.map((location) => {
               const gallery =
                 location.gallery && location.gallery.length > 0
@@ -180,24 +147,20 @@ const Location = () => {
               return (
                 <article
                   key={location.id}
-                  className="flex flex-col gap-6 py-4 md:flex-row md:items-center md:gap-10"
+                  className="flex flex-col gap-5 sm:gap-6 py-6 sm:py-8 md:flex-row md:items-center md:gap-10"
                 >
                   <div className="w-full md:w-[55%] lg:w-[50%]">
-                    <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-5">
                       {previewImages.map((src, index) => (
                         <button
                           type="button"
                           key={`${location.id}-thumb-${index}`}
-                          onClick={() =>
-                            handleSelectLocation(location.id, true)
-                          }
-                          className="group h-28 overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition hover:border-gray-400 md:h-32"
+                          onClick={() => handleSelectLocation(location.id, true)}
+                          className="group h-24 sm:h-28 overflow-hidden rounded-card border border-site-border bg-site-card transition hover:border-accent md:h-32 touch-manipulation"
                         >
                           <img
                             src={src}
-                            alt={`${
-                              location.name?.[language] || location.name
-                            } ${index + 1}`}
+                            alt={`${location.name?.[language] || location.name} ${index + 1}`}
                             className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                             loading="lazy"
                           />
@@ -206,14 +169,14 @@ const Location = () => {
                     </div>
                   </div>
 
-                  <div className="flex-1 flex flex-col items-end gap-4 text-gray-900">
-                    <h4 className="text-xl">
+                  <div className="flex-1 flex flex-col items-start md:items-end gap-4">
+                    <h3 className="text-lg sm:text-xl font-semibold text-content-primary">
                       {location.name?.[language] || location.name}
-                    </h4>
+                    </h3>
                     <button
                       type="button"
                       onClick={() => handleSelectLocation(location.id, true)}
-                      className="rounded-full border border-gray-900 px-6 py-3 text-sm font-semibold text-gray-900 transition hover:bg-gray-900 hover:text-white whitespace-nowrap"
+                      className="w-full sm:w-auto min-h-[44px] rounded-xl border border-accent px-6 py-3 text-sm font-semibold uppercase tracking-wider text-accent transition hover:bg-accent hover:text-site touch-manipulation"
                     >
                       {t.catalog.viewGallery}
                     </button>
@@ -228,46 +191,35 @@ const Location = () => {
       {isGalleryOpen && selectedLocation && (
         <div className="fixed inset-0 z-50">
           <div
-            className="absolute inset-0 bg-black/70"
+            className="absolute inset-0 bg-black/80"
             onClick={handleCloseGallery}
-          ></div>
-          <div className="relative z-10 w-full h-full bg-white/90 overflow-y-auto p-4 md:p-6 lg:p-8">
+          />
+          <div className="relative z-10 w-full h-full bg-site/95 overflow-y-auto p-4 sm:p-6 md:p-8 pt-16">
             <button
               type="button"
               onClick={handleCloseGallery}
-              className="absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-white/90 hover:bg-white border border-gray-200 transition shadow-sm"
-              aria-label="Close"
+              className="fixed top-4 right-4 z-20 w-11 h-11 flex items-center justify-center rounded-full bg-site-card border border-site-border hover:border-accent transition"
+              aria-label={t.catalog.closeGallery}
             >
-              <svg
-                className="w-6 h-6 text-gray-700"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+              <svg className="w-5 h-5 text-content-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 2xl:grid-cols-12 gap-2 md:gap-3">
+            <div className="site-container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3">
               {galleryImages.map((src, index) => (
-                <div
+                <button
+                  type="button"
                   key={`${selectedLocation.id}-${index}`}
                   onClick={() => handleImageClick(index)}
-                  className="aspect-square overflow-hidden rounded-xl bg-gray-100 group cursor-pointer"
+                  className="aspect-square overflow-hidden rounded-card bg-site-card border border-site-border group touch-manipulation"
                 >
                   <img
                     src={src}
-                    alt={`${
-                      selectedLocation.name?.[language] || selectedLocation.name
-                    } ${index + 1}`}
+                    alt={`${selectedLocation.name?.[language] || selectedLocation.name} ${index + 1}`}
                     className="h-full w-full object-cover transition duration-300 group-hover:scale-110"
                     loading="lazy"
                   />
-                </div>
+                </button>
               ))}
             </div>
           </div>
@@ -275,50 +227,27 @@ const Location = () => {
       )}
 
       {selectedImageIndex !== null && galleryImages[selectedImageIndex] && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center">
-          <div
-            className="absolute inset-0 bg-black/90"
-            onClick={handleCloseFullImage}
-          ></div>
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-2">
+          <div className="absolute inset-0 bg-black/90" onClick={handleCloseFullImage} />
           <button
             type="button"
             onClick={handleCloseFullImage}
-            className="absolute top-4 right-4 z-30 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition backdrop-blur-sm"
-            aria-label="Close"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 w-11 h-11 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition backdrop-blur-sm"
+            aria-label={t.catalog.closeGallery}
           >
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
           {selectedImageIndex > 0 && (
             <button
               type="button"
               onClick={handlePrevImage}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition backdrop-blur-sm"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition backdrop-blur-sm touch-manipulation"
               aria-label="Previous"
             >
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M15 19l-7-7 7-7"
-                />
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
           )}
@@ -326,31 +255,19 @@ const Location = () => {
             <button
               type="button"
               onClick={handleNextImage}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition backdrop-blur-sm"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition backdrop-blur-sm touch-manipulation"
               aria-label="Next"
             >
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 5l7 7-7 7"
-                />
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
               </svg>
             </button>
           )}
-          <div className="relative z-20 max-w-[95vw] max-h-[95vh] flex items-center justify-center">
+          <div className="relative z-20 max-w-[95vw] max-h-[90vh] flex items-center justify-center">
             <img
               src={galleryImages[selectedImageIndex]}
-              alt={`${
-                selectedLocation.name?.[language] || selectedLocation.name
-              } ${selectedImageIndex + 1}`}
-              className="max-w-full max-h-[95vh] object-contain rounded-lg"
+              alt={`${selectedLocation.name?.[language] || selectedLocation.name} ${selectedImageIndex + 1}`}
+              className="max-w-full max-h-[90vh] object-contain rounded-lg"
             />
           </div>
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 text-white text-sm bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm">

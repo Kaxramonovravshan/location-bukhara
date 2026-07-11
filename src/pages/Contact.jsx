@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
+
+const inputClasses =
+  "w-full px-4 py-3.5 min-h-[48px] bg-site border border-site-border rounded-xl text-content-primary placeholder:text-content-secondary/60 focus:outline-none focus:border-accent transition-colors text-base";
 
 const Contact = () => {
   const { language } = useLanguage();
@@ -16,7 +19,6 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState({ type: "", message: "" });
 
-  // EmailJS configuration is read from Vite env variables
   const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -69,122 +71,107 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Title */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-gray-900 mb-4">
-          {t.contact.title}
-        </h1>
-
-        {/* Section Heading */}
-        <h2 className="text-xl md:text-2xl font-normal text-gray-700 mb-8">
-          {t.contact.sectionHeading}
-        </h2>
-
-        {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Full Name */}
-          <div>
-            <label
-              htmlFor="fullName"
-              className="block text-sm font-normal text-gray-600 mb-2"
-            >
-              {t.contact.fullName}
-            </label>
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              value={formData.fullName}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-400 text-gray-900"
-              required
-            />
+    <div className="bg-site min-h-screen">
+      <section className="site-container section-padding">
+        <div className="max-w-2xl mx-auto space-y-8 sm:space-y-10">
+          <div className="space-y-3">
+            <p className="section-label">{t.navbar.contactUs}</p>
+            <h1 className="section-heading">{t.contact.title}</h1>
+            <p className="body-text">{t.contact.sectionHeading}</p>
           </div>
 
-          {/* Email */}
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-normal text-gray-600 mb-2"
-            >
-              {t.contact.email}
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-400 text-gray-900"
-              required
-            />
-          </div>
+          <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+            <div>
+              <label htmlFor="fullName" className="block text-sm text-content-secondary mb-2">
+                {t.contact.fullName}
+              </label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+                className={inputClasses}
+                autoComplete="name"
+                required
+              />
+            </div>
 
-          {/* Phone Number */}
-          <div>
-            <label
-              htmlFor="phone"
-              className="block text-sm font-normal text-gray-600 mb-2"
-            >
-              {t.contact.phone}
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-400 text-gray-900"
-              required
-            />
-          </div>
+            <div>
+              <label htmlFor="email" className="block text-sm text-content-secondary mb-2">
+                {t.contact.email}
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className={inputClasses}
+                autoComplete="email"
+                inputMode="email"
+                required
+              />
+            </div>
 
-          {/* Message */}
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-sm font-normal text-gray-600 mb-2"
-            >
-              {t.contact.message}
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={6}
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-400 text-gray-900 resize-none"
-              required
-            />
-          </div>
+            <div>
+              <label htmlFor="phone" className="block text-sm text-content-secondary mb-2">
+                {t.contact.phone}
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className={inputClasses}
+                autoComplete="tel"
+                inputMode="tel"
+                required
+              />
+            </div>
 
-          {/* Submit Button */}
-          <div className="space-y-4">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className={`px-6 py-3 bg-white border border-gray-300 rounded-md text-gray-900 font-normal transition-colors ${
-                isSubmitting
-                  ? "opacity-60 cursor-not-allowed"
-                  : "hover:bg-gray-50"
-              }`}
-            >
-              {isSubmitting ? t.contact.sending : t.contact.submitButton}
-            </button>
-            {status.message && (
-              <p
-                className={`text-sm ${
-                  status.type === "success" ? "text-green-600" : "text-red-600"
+            <div>
+              <label htmlFor="message" className="block text-sm text-content-secondary mb-2">
+                {t.contact.message}
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={5}
+                className={`${inputClasses} resize-none min-h-[140px]`}
+                required
+              />
+            </div>
+
+            <div className="space-y-4 pt-2">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`w-full sm:w-auto min-h-[48px] px-8 py-3 rounded-xl border border-accent text-accent font-semibold uppercase tracking-wider text-sm transition-all duration-300 ${
+                  isSubmitting
+                    ? "opacity-60 cursor-not-allowed"
+                    : "hover:bg-accent hover:text-site"
                 }`}
-                aria-live="polite"
               >
-                {status.message}
-              </p>
-            )}
-          </div>
-        </form>
-      </div>
+                {isSubmitting ? t.contact.sending : t.contact.submitButton}
+              </button>
+              {status.message && (
+                <p
+                  className={`text-sm ${
+                    status.type === "success" ? "text-green-400" : "text-red-400"
+                  }`}
+                  aria-live="polite"
+                >
+                  {status.message}
+                </p>
+              )}
+            </div>
+          </form>
+        </div>
+      </section>
     </div>
   );
 };

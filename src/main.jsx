@@ -1,4 +1,4 @@
-import React from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -6,13 +6,11 @@ import { BrowserRouter } from "react-router-dom";
 import { NextUIProvider } from "@nextui-org/react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <NextUIProvider>
+  <StrictMode>
+    <NextUIProvider className="font-sans">
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </NextUIProvider>
-  </React.StrictMode>
+  </StrictMode>
 );
-
-console.log(import.meta.env.VITE_EMAILJS_SERVICE_ID);
