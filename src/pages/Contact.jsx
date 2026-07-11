@@ -1,5 +1,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import Seo from "../components/Seo";
+import { getPageSeo } from "../seo/pageSeo";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 
@@ -8,6 +10,7 @@ const inputClasses =
 
 const Contact = () => {
   const { language } = useLanguage();
+  const seo = getPageSeo("/contact", language);
   const t = translations[language];
 
   const [formData, setFormData] = useState({
@@ -71,7 +74,10 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-site min-h-screen">
+    <>
+      <Seo {...seo} language={language} />
+
+      <div className="bg-site min-h-screen">
       <section className="site-container section-padding">
         <div className="max-w-2xl mx-auto space-y-8 sm:space-y-10">
           <div className="space-y-3">
@@ -173,6 +179,7 @@ const Contact = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

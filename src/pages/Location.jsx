@@ -2,12 +2,15 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import GhostButton from "../components/GhostButton";
+import Seo from "../components/Seo";
+import { getPageSeo } from "../seo/pageSeo";
 import { ProjectProductData } from "../utils/data";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 
 const Location = () => {
   const { language } = useLanguage();
+  const seo = getPageSeo("/locations", language);
   const t = translations[language].location;
   const [selectedLocationId, setSelectedLocationId] = useState(
     ProjectProductData[0]?.id
@@ -96,7 +99,10 @@ const Location = () => {
   }, [isGalleryOpen, selectedImageIndex, galleryImages.length]);
 
   return (
-    <div className="bg-site">
+    <>
+      <Seo {...seo} language={language} />
+
+      <div className="bg-site">
       <PageHero
         badge={t.hero.badge}
         title={t.hero.titleLine1}
@@ -276,6 +282,7 @@ const Location = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

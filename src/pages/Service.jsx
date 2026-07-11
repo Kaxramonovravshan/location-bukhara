@@ -1,11 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import PageHero from "../components/PageHero";
+import Seo from "../components/Seo";
+import { getPageSeo } from "../seo/pageSeo";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 import { serviceMedia } from "../utils/media.js";
 
 const Service = () => {
   const { language } = useLanguage();
+  const seo = getPageSeo("/service", language);
   const t = translations[language];
   const locationT = translations[language].location;
   const services = useMemo(
@@ -90,7 +93,10 @@ const Service = () => {
   }, [selectedServiceIndex, selectedImageIndex, galleryImages.length]);
 
   return (
-    <div className="bg-site">
+    <>
+      <Seo {...seo} language={language} />
+
+      <div className="bg-site">
       <PageHero badge={locationT.services.badge} title={locationT.services.title} />
 
       <section className="site-container section-padding">
@@ -215,6 +221,7 @@ const Service = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

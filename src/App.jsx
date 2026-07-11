@@ -1,5 +1,8 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import JsonLd from "./components/JsonLd";
+import Analytics from "./components/Analytics";
+import RouteAnalytics from "./components/RouteAnalytics";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
@@ -12,6 +15,9 @@ import Service from "./pages/Service";
 const App = () => {
   return (
     <LanguageProvider>
+      <JsonLd />
+      <Analytics />
+      <RouteAnalytics />
       <div className="relative bg-site min-h-screen">
         <Navbar />
         <Routes>

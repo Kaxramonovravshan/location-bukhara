@@ -3,16 +3,26 @@ import ProjectCarusel from "../components/ProjectCarusel";
 import WhyFilmSection from "../components/home/WhyFilmSection";
 import ProducerSection from "../components/home/ProducerSection";
 import HistorySection from "../components/home/HistorySection";
+import Seo from "../components/Seo";
+import { getPageSeo } from "../seo/pageSeo";
+import { useLanguage } from "../context/LanguageContext";
 
 const Home = () => {
+  const { language } = useLanguage();
+  const seo = getPageSeo("/", language);
+
   return (
-    <div className="bg-site">
-      <HomeHero />
-      <ProjectCarusel variant="home" />
-      <WhyFilmSection />
-      <ProducerSection />
-      <HistorySection />
-    </div>
+    <>
+      <Seo {...seo} language={language} />
+
+      <div className="bg-site">
+        <HomeHero />
+        <ProjectCarusel variant="home" />
+        <WhyFilmSection />
+        <ProducerSection />
+        <HistorySection />
+      </div>
+    </>
   );
 };
 
