@@ -15,7 +15,6 @@ const Navbar = () => {
   const navItems = [
     { path: "/", label: t.navbar.home },
     { path: "/locations", label: t.navbar.locations },
-    { path: "/portfolio", label: t.navbar.portfolio },
     { path: "/service", label: t.navbar.service },
     { path: "/contact", label: t.navbar.contactUs }
   ];
@@ -33,12 +32,12 @@ const Navbar = () => {
       <div className="site-container">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink-0 min-w-0">
-            <img className="h-10 sm:h-12 lg:h-14 w-auto" src={Img} alt="BuxoroFilm" />
-            <div className="hidden sm:block leading-tight">
-              <p className="text-accent font-semibold text-xs sm:text-sm tracking-wider">
+            <img className="h-10 sm:h-12 lg:h-14 w-auto shrink-0" src={Img} alt="BuxoroFilm" />
+            <div className="leading-tight min-w-0">
+              <p className="text-accent font-semibold text-[10px] sm:text-sm tracking-wider truncate">
                 {t.navbar.brand}
               </p>
-              <p className="text-content-secondary text-[10px] uppercase tracking-[0.2em]">
+              <p className="text-content-secondary text-[8px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] truncate">
                 {t.navbar.brandSub}
               </p>
             </div>

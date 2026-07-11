@@ -27,18 +27,14 @@ export const translations = {
       producerName: "Ali Choriyev",
       producerRole: "Founder & Executive Producer",
       producerBio:
-        "With decades of experience bridging international productions and Uzbekistan's rich cinematic heritage, Ali Choriyev leads BuxoroFilm in bringing world-class filmmaking to Bukhara.",
+        "With more than 35 years of experience in international film production, Ali Choriyev has contributed to over 40 feature films, television series and documentaries. As Executive Producer and Production Coordinator, he has collaborated with productions from Uzbekistan, Russia, India, France, Germany, Austria, Kazakhstan, Iran and many other countries, helping bring international stories to life through local expertise and production excellence.",
       viewPortfolio: "View Full Portfolio",
-      historyLabel: "Our History",
-      historyTitle: "A Legacy of Cinema in Bukhara",
-      historyText:
-        "From the golden age of Soviet cinema to today's international co-productions, Bukhara has been a crossroads of storytelling. BuxoroFilm continues this tradition — connecting filmmakers with the city's timeless architecture and film-friendly infrastructure.",
-      learnMore: "Learn More",
-      timeline: [
-        { year: "1920", text: "Studio was founded in the heart of Bukhara's old city." },
-        { year: "1990s", text: "Operations ceased during the transition period." },
-        { year: "2020", text: "BuxoroFilm was reestablished as a modern production hub." },
-        { year: "Today", text: "Continuing the journey — connecting filmmakers with Bukhara." }
+      historyLabel: "History",
+      historyTitle: "A Legacy Reborn",
+      historyText: [
+        "Cinema has been part of Bukhara's cultural identity for more than a century. In the 1920s, one of the region's first film studios, Buxkino, began producing films that introduced Bukhara to the world.",
+        "Although the studio eventually ceased operations, its legacy never disappeared. Today, Bukhara Film Studio continues that tradition — preserving the city's cinematic heritage while supporting a new generation of international film productions.",
+        "We believe Bukhara is more than a filming location. It is a place where history becomes cinema."
       ],
       whyFeatures: [
         { title: "Iconic Locations", description: "600+ catalogued sites from desert dunes to ancient madrasahs." },
@@ -54,6 +50,9 @@ export const translations = {
       pageSubtitle: "Projects We've Proudly Supported",
       director: "Director",
       countries: "Countries",
+      country: "Country",
+      location: "Location",
+      broadcasters: "Broadcasters",
       year: "Year",
       services: "Services",
       close: "Close"
@@ -186,7 +185,6 @@ export const translations = {
         links: [
           { label: "Home", path: "/" },
           { label: "Locations", path: "/locations" },
-          { label: "Portfolio", path: "/portfolio" },
           { label: "Services", path: "/service" },
           { label: "Contact", path: "/contact" }
         ]
@@ -310,18 +308,14 @@ export const translations = {
       producerName: "Али Чориев",
       producerRole: "Основатель и исполнительный продюсер",
       producerBio:
-        "Объединяя десятилетия опыта международных производств с богатым кинематографическим наследием Узбекистана, Али Чориев ведёт BuxoroFilm в мир кинопроизводства мирового уровня в Бухаре.",
+        "Более 35 лет Али Чориев работает в сфере международного кинопроизводства. За это время он принял участие в создании более 40 художественных фильмов, телевизионных сериалов и документальных проектов. В качестве исполнительного продюсера и координатора производства он сотрудничал с кинокомпаниями Узбекистана, России, Индии, Франции, Германии, Австрии, Казахстана, Ирана и многих других стран, обеспечивая высокий уровень организации съемочного процесса и международного производственного сервиса.",
       viewPortfolio: "Полное портфолио",
-      historyLabel: "Наша история",
-      historyTitle: "Наследие кино в Бухаре",
-      historyText:
-        "От золотого века советского кино до современных международных копroductions — Бухара всегда была перекрёстком историй. BuxoroFilm продолжает эту традицию, соединяя кинематографистов с вечной архитектурой города.",
-      learnMore: "Подробнее",
-      timeline: [
-        { year: "1920", text: "Студия основана в сердце старого города Бухары." },
-        { year: "1990-е", text: "Деятельность приостановлена в переходный период." },
-        { year: "2020", text: "BuxoroFilm возобновлена как современный продакшн-хаб." },
-        { year: "Сегодня", text: "Продолжаем путь — соединяем кинематографистов с Бухарой." }
+      historyLabel: "История",
+      historyTitle: "Возрождая кинематографическое наследие",
+      historyText: [
+        "Кинематографическая история Бухары началась более ста лет назад. В 1920-х годах здесь была основана одна из первых киностудий региона — «Бухкино», которая познакомила зрителей с культурой и историей Бухары через кино.",
+        "Со временем студия прекратила свою деятельность, однако её наследие сохранилось. Сегодня Bukhara Film Studio продолжает этот путь, возрождая традиции кинопроизводства и открывая Бухару для международных кино- и телевизионных проектов.",
+        "Для нас Бухара — это не просто локация. Это место, где история становится кино."
       ],
       whyFeatures: [
         { title: "Иконичные локации", description: "600+ объектов — от пустынных дюн до древних медресе." },
@@ -337,6 +331,9 @@ export const translations = {
       pageSubtitle: "Проекты, которыми мы гордимся",
       director: "Режиссёр",
       countries: "Страны",
+      country: "Страна",
+      location: "Локация",
+      broadcasters: "Телеканалы",
       year: "Год",
       services: "Услуги",
       close: "Закрыть"
@@ -477,7 +474,6 @@ export const translations = {
         links: [
           { label: "Главная", path: "/" },
           { label: "Локации", path: "/locations" },
-          { label: "Портфолио", path: "/portfolio" },
           { label: "Услуги", path: "/service" },
           { label: "Контакты", path: "/contact" }
         ]

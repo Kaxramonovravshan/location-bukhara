@@ -32,6 +32,26 @@ export const portfolioProjects = [
   {
     id: 1,
     featured: true,
+    cover: locationMedia.lyabiHauz.cover,
+    gallery: [
+      locationMedia.lyabiHauz.cover,
+      locationMedia.lyabiHauz.gallery[0],
+      locationMedia.lyabiHauz.gallery[1],
+      locationMedia.caravanserai.gallery[0]
+    ],
+    title: { en: "Motherland Awaits", ru: "Родина ждёт" },
+    category: { en: "TV Series", ru: "Телесериал" },
+    director: "Oleg Pogodin",
+    countries: { en: "Russia, Uzbekistan", ru: "Россия, Узбекистан" },
+    year: 2003,
+    services: {
+      en: "Location permits, scripted location scouting, set construction, props supply, accommodation and transportation, cast and extras coordination, production crew support (assistants, set decorators, props assistants), and full on-ground production coordination by our local team.",
+      ru: "Разрешения на съёмки, подбор локаций по сценарию, строительство декораций, обеспечение реквизитом, размещение и транспорт, подбор актёров и массовки, обеспечение съёмочной группы (ассистенты, декораторы, реквизиторы), а также полная координация производства на месте нашей локальной командой."
+    }
+  },
+  {
+    id: 2,
+    featured: true,
     cover: locationMedia.poiKalyan.cover,
     gallery: [
       locationMedia.poiKalyan.cover,
@@ -39,14 +59,21 @@ export const portfolioProjects = [
       locationMedia.poiKalyan.gallery[1],
       locationMedia.poiKalyan.gallery[2]
     ],
-    title: { en: "Eterna", ru: "Eterna" },
-    category: { en: "TV Series", ru: "TV сериал" },
-    director: "Oleg Pogodin",
-    countries: { en: "Russia, Uzbekistan", ru: "Россия, Узбекистан" },
-    year: 2023
+    title: { en: "Eterna", ru: "Этерна" },
+    category: {
+      en: "TV Series — Fantasy / Adventure",
+      ru: "Телесериал — фэнтези / приключения"
+    },
+    director: "Sergey Trofimov",
+    countries: { en: "Russia, Uzbekistan", ru: "Россия" },
+    year: 2022,
+    services: {
+      en: "Location permits in Bukhara, scripted location scouting, extras coordination, transportation, set construction and art department support (environmental set extensions and on-location art enhancements).",
+      ru: "Разрешения на съёмки в Бухаре, подбор локаций по сценарию, координация массовки, транспорт, строительство декораций и художественная доработка локаций (расширение и достройка сетов на месте)."
+    }
   },
   {
-    id: 2,
+    id: 3,
     featured: true,
     cover: locationMedia.ark.cover,
     gallery: [
@@ -56,26 +83,17 @@ export const portfolioProjects = [
       locationMedia.rooftops.gallery[0]
     ],
     title: { en: "Akeli", ru: "Akeli" },
-    category: { en: "Feature Film", ru: "Художественный фильм" },
-    director: "Oleg Pogodin",
-    countries: { en: "Russia", ru: "Россия" },
-    year: 2022
-  },
-  {
-    id: 3,
-    featured: true,
-    cover: locationMedia.lyabiHauz.cover,
-    gallery: [
-      locationMedia.lyabiHauz.cover,
-      locationMedia.lyabiHauz.gallery[0],
-      locationMedia.lyabiHauz.gallery[1],
-      locationMedia.caravanserai.gallery[0]
-    ],
-    title: { en: "Motherland Awaits", ru: "Родина ждёт" },
-    category: { en: "TV Series", ru: "TV сериал" },
-    director: "Oleg Pogodin",
-    countries: { en: "Russia, Uzbekistan", ru: "Россия, Узбекистан" },
-    year: 2003
+    category: {
+      en: "Feature Film — Action / Drama / Thriller",
+      ru: "Полнометражный фильм — боевик / драма / триллер"
+    },
+    director: "Pranay Meshram",
+    countries: { en: "India", ru: "Индия" },
+    year: 2023,
+    services: {
+      en: "Location permits, location management, extras coordination, transportation, props supply and set construction.",
+      ru: "Разрешения на съёмки, локационный менеджмент, массовка, транспорт, обеспечение реквизитом и строительство декораций."
+    }
   },
   {
     id: 4,
@@ -87,11 +105,16 @@ export const portfolioProjects = [
       locationMedia.ark.gallery[0],
       locationMedia.ark.gallery[1]
     ],
-    title: { en: "FIFA World Cup 2022 Commercial", ru: "Реклама ЧМ-2022" },
-    category: { en: "Commercial", ru: "Реклама" },
-    director: "Oleg Pogodin",
-    countries: { en: "Russia", ru: "Россия" },
-    year: 2021
+    title: { en: "Uncle", ru: "Дядя" },
+    category: { en: "Feature Film", ru: "Полнометражный фильм" },
+    director: "Rashid Malikov",
+    countries: { en: "Uzbekistan", ru: "Узбекистан" },
+    location: { en: "Bukhara, Uzbekistan", ru: "Бухара, Узбекистан" },
+    year: 2014,
+    services: {
+      en: "Scripted location scouting, cast and extras coordination in Bukhara, transportation, set construction and on-location art department enhancements (set extensions).",
+      ru: "Подбор локаций по сценарию, координация актёров и массовки в Бухаре, транспорт, строительство декораций и художественная доработка локаций (расширение и достройка сетов на месте)."
+    }
   },
   {
     id: 5,
@@ -103,11 +126,15 @@ export const portfolioProjects = [
       locationMedia.rooftops.gallery[1],
       locationMedia.rooftops.gallery[2]
     ],
-    title: { en: "The Return of Koran Usman", ru: "Возвращение Коран Usman" },
-    category: { en: "Feature Film", ru: "Художественный фильм" },
-    director: "Oleg Pogodin",
+    title: { en: "Alisher Navoi", ru: "Алишер Навои" },
+    category: { en: "Documentary Film", ru: "Документальный фильм" },
+    director: "Shohrukh Rasulov",
     countries: { en: "Uzbekistan", ru: "Узбекистан" },
-    year: 2019
+    year: 2021,
+    services: {
+      en: "Location coordination, set decoration, props supply and extras coordination.",
+      ru: "Координация по локациям, декорации, обеспечение реквизитом, координация массовки."
+    }
   },
   {
     id: 6,
@@ -119,14 +146,14 @@ export const portfolioProjects = [
       locationMedia.caravanserai.gallery[1],
       locationMedia.caravanserai.gallery[2]
     ],
-    title: {
-      en: "Bukhara: A Bridge Between Past and Future",
-      ru: "Бухара: мост между прошлым и будущим"
-    },
-    category: { en: "Documentary", ru: "Документальный фильм" },
-    director: "Oleg Pogodin",
+    title: { en: "Ibrat", ru: "Ибрат" },
+    category: { en: "Feature Film", ru: "Художественный фильм" },
+    director: "Jahongir Qasimov",
     countries: { en: "Uzbekistan", ru: "Узбекистан" },
-    year: 2018
+    services: {
+      en: "Full local production coordination and organizational support in Bukhara.",
+      ru: "Полная координация и организация съёмочного процесса в Бухаре."
+    }
   },
   {
     id: 7,
@@ -137,11 +164,14 @@ export const portfolioProjects = [
       locationMedia.poiKalyan.cover,
       locationMedia.poiKalyan.gallery[2]
     ],
-    title: { en: "Minaret", ru: "Минарет" },
-    category: { en: "Short Film", ru: "Короткометражный фильм" },
-    director: "Jannat Khashimova",
-    countries: { en: "Uzbekistan, France", ru: "Узбекистан, Франция" },
-    year: 2017
+    title: { en: "Hayrat", ru: "Хайрат" },
+    category: { en: "Feature Film", ru: "Художественный фильм" },
+    director: "Zulfiqar Musakov",
+    countries: { en: "Uzbekistan", ru: "Узбекистан" },
+    services: {
+      en: "Full local production coordination and organizational support in Bukhara.",
+      ru: "Полная координация и организация съёмочного процесса в Бухаре."
+    }
   },
   {
     id: 8,
@@ -152,14 +182,14 @@ export const portfolioProjects = [
       locationMedia.ark.cover,
       locationMedia.rooftops.gallery[0]
     ],
-    title: { en: "Citadel", ru: "Цитадель" },
+    title: { en: "Mukumi", ru: "Мукумий" },
     category: { en: "Feature Film", ru: "Художественный фильм" },
-    director: "Andrey Konchalovsky",
-    countries: {
-      en: "Russia, Uzbekistan, Italy",
-      ru: "Россия, Узбекистан, Италия"
-    },
-    year: 2018
+    director: "F. Jalolov",
+    countries: { en: "Uzbekistan", ru: "Узбекистан" },
+    services: {
+      en: "Local production coordination and on-ground organizational support in Bukhara.",
+      ru: "Локальная координация и организационное сопровождение съёмок в Бухаре."
+    }
   },
   {
     id: 9,
@@ -170,11 +200,14 @@ export const portfolioProjects = [
       locationMedia.lyabiHauz.cover,
       locationMedia.caravanserai.gallery[0]
     ],
-    title: { en: "Lyabi-Hauz Stories", ru: "Истории Ляби-Хауз" },
-    category: { en: "Documentary", ru: "Документальный фильм" },
-    director: "Rustam Khamdamov",
-    countries: { en: "Uzbekistan, Japan", ru: "Узбекистан, Япония" },
-    year: 2005
+    title: { en: "Jami and Navoi", ru: "Джами и Навои" },
+    category: { en: "Feature Film", ru: "Художественный фильм" },
+    director: "D. Masaidov",
+    countries: { en: "Uzbekistan, Tajikistan", ru: "Узбекистан, Таджикистан" },
+    services: {
+      en: "Full local production coordination and organizational support in Bukhara.",
+      ru: "Полная координация и организация съёмочного процесса в Бухаре."
+    }
   },
   {
     id: 10,
@@ -185,11 +218,14 @@ export const portfolioProjects = [
       locationMedia.caravanserai.cover,
       locationMedia.caravanserai.gallery[0]
     ],
-    title: { en: "Merchant's Tale", ru: "Сказка купца" },
-    category: { en: "TV Series", ru: "TV сериал" },
-    director: "Farkhad Makhmudov",
-    countries: { en: "Uzbekistan, Turkey", ru: "Узбекистан, Турция" },
-    year: 2020
+    title: { en: "Sun on the Tongue", ru: "Солнце на вкус" },
+    category: { en: "Feature Film", ru: "Художественный фильм" },
+    director: "E. Salavatov",
+    countries: { en: "Russia", ru: "Россия" },
+    services: {
+      en: "Local production coordination and organizational support in Bukhara.",
+      ru: "Локальная координация и организационное сопровождение съёмок в Бухаре."
+    }
   },
   {
     id: 11,
@@ -200,11 +236,14 @@ export const portfolioProjects = [
       locationMedia.rooftops.cover,
       locationMedia.rooftops.gallery[2]
     ],
-    title: { en: "Skyline", ru: "Горизонт" },
-    category: { en: "Music Video", ru: "Музыкальный клип" },
-    director: "Nilufar Azimova",
-    countries: { en: "Uzbekistan, UK", ru: "Узбекистан, Великобритания" },
-    year: 2023
+    title: { en: "Survival Game", ru: "Игра на выживание" },
+    category: { en: "Feature Film", ru: "Художественный фильм" },
+    director: "K. Oganesyan",
+    countries: { en: "Russia", ru: "Россия" },
+    services: {
+      en: "Local production coordination and organizational support in Bukhara.",
+      ru: "Локальная координация и организационное сопровождение съёмок в Бухаре."
+    }
   },
   {
     id: 12,
@@ -215,11 +254,135 @@ export const portfolioProjects = [
       locationMedia.poiKalyan.cover,
       locationMedia.ark.cover
     ],
-    title: { en: "Ancient Light", ru: "Древний свет" },
+    title: {
+      en: "Avicenna: Between East and West",
+      ru: "Авиценна. Между Востоком и Западом"
+    },
+    category: { en: "Documentary Film", ru: "Документальный фильм" },
+    director: "A. Sudilovsky",
+    countries: { en: "Uzbekistan", ru: "Узбекистан" },
+    services: {
+      en: "Local production coordination and organizational support in Bukhara.",
+      ru: "Локальная координация и организационное сопровождение съёмок в Бухаре."
+    }
+  },
+  {
+    id: 13,
+    cover: locationMedia.lyabiHauz.gallery[1],
+    gallery: [
+      locationMedia.lyabiHauz.gallery[1],
+      locationMedia.lyabiHauz.cover,
+      locationMedia.lyabiHauz.gallery[0],
+      locationMedia.caravanserai.gallery[1]
+    ],
+    title: { en: "Love Story", ru: "История любви" },
     category: { en: "Feature Film", ru: "Художественный фильм" },
-    director: "Ulugbek Khamraev",
-    countries: { en: "Uzbekistan, USA", ru: "Узбекистан, США" },
-    year: 2021
+    director: "D. Iosifov",
+    countries: { en: "Russia", ru: "Россия" },
+    services: {
+      en: "Local production and location coordination in Bukhara.",
+      ru: "Локальная продакшн- и локационная координация в Бухаре."
+    }
+  },
+  {
+    id: 14,
+    cover: locationMedia.kyzylkum.gallery[0],
+    gallery: [
+      locationMedia.kyzylkum.gallery[0],
+      locationMedia.kyzylkum.gallery[1],
+      locationMedia.kyzylkum.cover,
+      locationMedia.ark.gallery[1]
+    ],
+    title: {
+      en: "The Adventures of Marco Polo in Uzbekistan",
+      ru: "Приключения Марко Поло в Узбекистане"
+    },
+    category: { en: "Documentary Film", ru: "Документальный фильм" },
+    director: "A. Vyazigin",
+    countries: { en: "Uzbekistan", ru: "Узбекистан" },
+    services: {
+      en: "Local production coordination and organizational support in Bukhara.",
+      ru: "Локальная координация и организационное сопровождение съёмок в Бухаре."
+    }
+  },
+  {
+    id: 15,
+    cover: locationMedia.kyzylkum.cover,
+    gallery: [
+      locationMedia.kyzylkum.cover,
+      locationMedia.rooftops.gallery[2],
+      locationMedia.poiKalyan.cover,
+      locationMedia.ark.cover
+    ],
+    title: {
+      en: "FIFA World Cup 2022 Commercial",
+      ru: "Рекламный ролик в честь ЧМ 2022"
+    },
+    category: { en: "Commercial", ru: "Рекламный проект" },
+    countries: { en: "Qatar", ru: "Катар" },
+    year: 2022,
+    services: {
+      en: "Local production coordination and organizational support in Bukhara.",
+      ru: "Локальная координация и организационное сопровождение съёмок в Бухаре."
+    }
+  },
+  {
+    id: 16,
+    cover: locationMedia.rooftops.cover,
+    gallery: [
+      locationMedia.rooftops.cover,
+      locationMedia.rooftops.gallery[0],
+      locationMedia.rooftops.gallery[1],
+      locationMedia.caravanserai.cover
+    ],
+    title: { en: "The Return of Koran Usman", ru: "Возвращение Корана Усмана" },
+    category: { en: "Documentary Film", ru: "Документальный фильм" },
+    director: "M. Alizoda",
+    countries: { en: "United Kingdom", ru: "Великобритания" },
+    broadcasters: { en: "BBC / Sevimli TV", ru: "BBC / Sevimli TV" },
+    services: {
+      en: "Local production coordination and organizational support in Bukhara.",
+      ru: "Локальная координация и организационное сопровождение съёмок в Бухаре."
+    }
+  },
+  {
+    id: 17,
+    cover: locationMedia.poiKalyan.gallery[1],
+    gallery: [
+      locationMedia.poiKalyan.gallery[1],
+      locationMedia.poiKalyan.cover,
+      locationMedia.poiKalyan.gallery[0],
+      locationMedia.lyabiHauz.cover
+    ],
+    title: { en: "Feruz's Dreams", ru: "Мечты Феруза" },
+    category: { en: "Documentary Film", ru: "Документальный фильм" },
+    director: "M. Alizoda",
+    countries: { en: "Uzbekistan", ru: "Узбекистан" },
+    services: {
+      en: "Local production coordination and organizational support in Bukhara.",
+      ru: "Локальная координация и организационное сопровождение съёмок в Бухаре."
+    }
+  },
+  {
+    id: 18,
+    cover: locationMedia.caravanserai.cover,
+    gallery: [
+      locationMedia.caravanserai.cover,
+      locationMedia.caravanserai.gallery[0],
+      locationMedia.caravanserai.gallery[1],
+      locationMedia.caravanserai.gallery[2]
+    ],
+    title: {
+      en: "Bukhara: A Bridge Between Past and Future",
+      ru: "Бухара — мост между прошлым и будущим"
+    },
+    category: { en: "Documentary Film", ru: "Документальный фильм" },
+    director: "M. Alizoda",
+    countries: { en: "Uzbekistan", ru: "Узбекистан" },
+    services: {
+      en: "Local production coordination and organizational support in Bukhara.",
+      ru: "Локальная координация и организационное сопровождение съёмок в Бухаре."
+    }
   }
 ];
 

@@ -106,20 +106,49 @@ const PortfolioDetailModal = ({ project, onClose }) => {
             </div>
 
             <div className="space-y-3 text-sm md:text-base border-t border-site-border pt-6">
-              <p>
-                <span className="text-content-secondary">{t.director}: </span>
-                <span className="text-content-primary">{project.director}</span>
-              </p>
-              <p>
-                <span className="text-content-secondary">{t.countries}: </span>
-                <span className="text-content-primary">
-                  {project.countries[language] || project.countries.en}
-                </span>
-              </p>
-              <p>
-                <span className="text-content-secondary">{t.year}: </span>
-                <span className="text-content-primary">{project.year}</span>
-              </p>
+              {project.director && (
+                <p>
+                  <span className="text-content-secondary">{t.director}: </span>
+                  <span className="text-content-primary">{project.director}</span>
+                </p>
+              )}
+              {(project.countries?.[language] || project.countries?.en) && (
+                <p>
+                  <span className="text-content-secondary">
+                    {project.countriesLabel?.[language] ||
+                      project.countriesLabel?.en ||
+                      (project.countries[language] || project.countries.en)?.includes(",")
+                        ? t.countries
+                        : t.country}
+                    :{" "}
+                  </span>
+                  <span className="text-content-primary">
+                    {project.countries[language] || project.countries.en}
+                  </span>
+                </p>
+              )}
+              {(project.location?.[language] || project.location?.en) && (
+                <p>
+                  <span className="text-content-secondary">{t.location}: </span>
+                  <span className="text-content-primary">
+                    {project.location[language] || project.location.en}
+                  </span>
+                </p>
+              )}
+              {(project.broadcasters?.[language] || project.broadcasters?.en) && (
+                <p>
+                  <span className="text-content-secondary">{t.broadcasters}: </span>
+                  <span className="text-content-primary">
+                    {project.broadcasters[language] || project.broadcasters.en}
+                  </span>
+                </p>
+              )}
+              {project.year && (
+                <p>
+                  <span className="text-content-secondary">{t.year}: </span>
+                  <span className="text-content-primary">{project.year}</span>
+                </p>
+              )}
             </div>
 
             <div className="space-y-3 border-t border-site-border pt-6">

@@ -1,8 +1,6 @@
-import { ChevronRight } from "lucide-react";
 import personImage from "../../assets/person.jpg";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../utils/translations";
-import GhostButton from "../GhostButton";
 
 const ProducerSection = () => {
   const { language } = useLanguage();
@@ -31,10 +29,6 @@ const ProducerSection = () => {
             </h2>
             <p className="text-accent font-semibold text-lg">{t.producerRole}</p>
             <p className="body-text">{t.producerBio}</p>
-            <GhostButton to="/portfolio" className="w-full sm:w-auto justify-center">
-              {t.viewPortfolio}
-              <ChevronRight className="w-4 h-4" />
-            </GhostButton>
           </div>
         </div>
       </div>

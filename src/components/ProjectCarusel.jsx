@@ -1,11 +1,9 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useRef, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   portfolioProjects,
-  featuredProjects,
   portfolioResponsive
 } from "../utils/portfolio.js";
 import ProjectCard from "./ProjectCart.jsx";
@@ -13,16 +11,46 @@ import PortfolioDetailModal from "./PortfolioDetailModal.jsx";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 
+const CarouselArrow = ({ direction, onClick, ariaLabel }) => (
+  <button
+    type="button"
+    aria-label={ariaLabel}
+    onClick={onClick}
+    className={`portfolio-carousel__arrow portfolio-carousel__arrow--${direction}`}
+  >
+    {direction === "left" ? (
+      <ChevronLeft className="w-5 h-5" />
+    ) : (
+      <ChevronRight className="w-5 h-5" />
+    )}
+  </button>
+);
+
 const ProjectCarusel = ({ variant = "default" }) => {
   const { language } = useLanguage();
   const t = translations[language].home;
   const [selectedProjectId, setSelectedProjectId] = useState(null);
+  const carouselRef = useRef(null);
 
   const isHome = variant === "home";
-  const projects = isHome ? featuredProjects : portfolioProjects;
+  const projects = portfolioProjects;
 
   const selectedProject = portfolioProjects.find(
     (item) => item.id === selectedProjectId
+  );
+
+  const NextArrow = ({ onClick, disabled }) => (
+    <CarouselArrow
+      direction="right"
+      ariaLabel="Next project"
+      onClick={() => {
+        if (disabled) {
+          carouselRef.current?.goToSlide(0);
+          return;
+        }
+        onClick?.();
+      }}
+    />
   );
 
   const cards = projects.map((item) => (
@@ -47,33 +75,27 @@ const ProjectCarusel = ({ variant = "default" }) => {
         }`}
       >
         <div className="site-container">
-          {isHome ? (
-            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 sm:gap-6 mb-10 sm:mb-12 md:mb-16">
-              <div className="space-y-3 sm:space-y-4">
-                <p className="section-label">{t.featuredLabel}</p>
-                <h2 className="section-heading">{t.featuredTitle}</h2>
-              </div>
-              <Link
-                to="/portfolio"
-                className="inline-flex items-center gap-1 text-accent font-semibold uppercase tracking-wider text-sm transition-colors duration-300 hover:text-accent-hover shrink-0 min-h-[44px]"
-              >
-                {t.viewAllProjects}
-                <ChevronRight className="w-4 h-4" />
-              </Link>
-            </div>
-          ) : (
-            <h2 className="section-heading mb-8">{t.featuredTitle}</h2>
-          )}
+          <div className="space-y-3 sm:space-y-4 mb-10 sm:mb-12 md:mb-16">
+            <p className="section-label">{t.featuredLabel}</p>
+            <h2 className="section-heading">{t.featuredTitle}</h2>
+          </div>
 
           <div className="overflow-hidden">
             <Carousel
+              ref={carouselRef}
               autoPlay={isHome}
               autoPlaySpeed={5000}
               responsive={portfolioResponsive}
               showDots={isHome}
               renderDotsOutside={isHome}
-              infinite={isHome}
-              arrows={!isHome}
+              infinite={false}
+              rewind={isHome}
+              rewindWithAnimation
+              arrows
+              customLeftArrow={
+                <CarouselArrow direction="left" ariaLabel="Previous project" />
+              }
+              customRightArrow={<NextArrow />}
               draggable
               swipeable
               keyBoardControl
