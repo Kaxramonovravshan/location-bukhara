@@ -4,6 +4,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import Img from "../assets/logo.png";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
+import { getStaticImageAlt } from "../utils/imageAlt";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +33,7 @@ const Navbar = () => {
       <div className="site-container">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink-0 min-w-0">
-            <img className="h-10 sm:h-12 lg:h-14 w-auto shrink-0" src={Img} alt="BuxoroFilm" />
+            <img className="h-10 sm:h-12 lg:h-14 w-auto shrink-0" src={Img} alt={getStaticImageAlt("logo", language)} />
             <div className="leading-tight min-w-0">
               <p className="text-accent font-semibold text-[10px] sm:text-sm tracking-wider truncate">
                 {t.navbar.brand}

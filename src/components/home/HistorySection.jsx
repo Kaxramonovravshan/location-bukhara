@@ -1,6 +1,7 @@
 import historyImage from "../../assets/masjid1.jpg";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../utils/translations";
+import { getStaticImageAlt } from "../../utils/imageAlt";
 
 const HistorySection = () => {
   const { language } = useLanguage();
@@ -25,7 +26,7 @@ const HistorySection = () => {
           <div className="relative overflow-hidden rounded-card border border-site-border aspect-[4/3] lg:aspect-auto lg:min-h-[420px]">
             <img
               src={historyImage}
-              alt={t.historyTitle}
+              alt={getStaticImageAlt("history", language)}
               className="w-full h-full object-cover grayscale opacity-80"
               loading="lazy"
             />

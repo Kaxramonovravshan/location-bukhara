@@ -1,66 +1,66 @@
-import { SITE_NAME, SITE_URL } from "../config/site";
+import { SITE_URL } from "../config/site";
 
 const pageSeo = {
   "/": {
     en: {
-      title: `${SITE_NAME} | Film Production in Bukhara, Uzbekistan`,
+      title: "BuxoroFilm Studio | Film Production in Bukhara, Uzbekistan",
       description:
-        "BuxoroFilm connects international productions with Bukhara's iconic locations, expert crews, permits, scouting and full on-ground production support.",
+        "Professional film production services in Bukhara, Uzbekistan. Movies, documentaries, commercials and location management.",
       keywords:
-        "Bukhara film studio, film production Uzbekistan, location scouting Bukhara, BuxoroFilm, film permits Uzbekistan, production services Bukhara"
+        "Bukhara film studio, film production Uzbekistan, documentaries Bukhara, commercials Uzbekistan, location management Bukhara, BuxoroFilm"
     },
     ru: {
-      title: `${SITE_NAME} | Кинопроизводство в Бухаре, Узбекистан`,
+      title: "BuxoroFilm Studio | Кинопроизводство в Бухаре, Узбекистан",
       description:
-        "BuxoroFilm соединяет международные производства с иконичными локациями Бухары, экспертными командами, разрешениями, скаутингом и полной производственной поддержкой на месте.",
+        "Профессиональные услуги кинопроизводства в Бухаре, Узбекистан. Художественные фильмы, документальное кино, реклама и локационный менеджмент.",
       keywords:
-        "киностудия Бухара, кинопроизводство Узбекистан, скаутинг локаций Бухара, BuxoroFilm, разрешения на съёмки, продакшн Бухара"
+        "киностудия Бухара, кинопроизводство Узбекистан, документальное кино Бухара, реклама Узбекистан, локационный менеджмент, BuxoroFilm"
     }
   },
   "/locations": {
     en: {
-      title: `Film Locations in Bukhara | ${SITE_NAME}`,
+      title: "Film Locations in Bukhara | BuxoroFilm Studio",
       description:
-        "Explore 600+ catalogued filming locations in Bukhara — historic streets, deserts, madrasahs and rooftops with fast permits and local scouting support.",
+        "Discover historical film locations in Bukhara including Ark Fortress, Lyabi Hauz, Poi Kalyan and many more.",
       keywords:
-        "Bukhara film locations, location scouting Uzbekistan, filming locations Bukhara, desert locations, historic architecture film"
+        "Bukhara film locations, Ark Fortress filming, Lyabi Hauz location, Poi Kalyan Bukhara, historical film locations Uzbekistan"
     },
     ru: {
-      title: `Локации для съёмок в Бухаре | ${SITE_NAME}`,
+      title: "Локации для съёмок в Бухаре | BuxoroFilm Studio",
       description:
-        "Более 600 локаций для съёмок в Бухаре — исторические улицы, пустыни, медресе и крыши с быстрым оформлением разрешений и местным скаутингом.",
+        "Откройте исторические локации для съёмок в Бухаре, включая крепость Арк, Ляби-Хауз, Poi-Kalyan и многие другие.",
       keywords:
-        "локации Бухара, скаутинг Узбекистан, места для съёмок Бухара, пустынные локации, историческая архитектура кино"
+        "локации Бухара, съёмки у крепости Арк, Ляби-Хауз, Poi-Kalyan, исторические локации Узбекистан"
     }
   },
   "/service": {
     en: {
-      title: `Film Production Services | ${SITE_NAME}`,
+      title: "Film Production Services | BuxoroFilm",
       description:
-        "Full production support in Bukhara: decoration, equipment supply, location management, permits, logistics, crew and on-ground coordination.",
+        "Full film production support in Bukhara — decoration, equipment supply, location management, permits, logistics and on-ground coordination.",
       keywords:
-        "film production services Bukhara, set construction Uzbekistan, location management, film equipment Bukhara, production support"
+        "film production services Bukhara, set construction Uzbekistan, location management, film equipment, production support BuxoroFilm"
     },
     ru: {
-      title: `Услуги кинопроизводства | ${SITE_NAME}`,
+      title: "Услуги кинопроизводства | BuxoroFilm",
       description:
-        "Полная производственная поддержка в Бухаре: декорации, оборудование, управление локациями, разрешения, логистика, команда и координация на месте.",
+        "Полная поддержка кинопроизводства в Бухаре — декорации, оборудование, управление локациями, разрешения, логистика и координация на месте.",
       keywords:
-        "услуги кинопроизводства Бухара, строительство декораций, локационный менеджмент, кинооборудование, продакшн поддержка"
+        "услуги кинопроизводства Бухара, строительство декораций, локационный менеджмент, кинооборудование, продакшн поддержка BuxoroFilm"
     }
   },
   "/contact": {
     en: {
-      title: `Contact ${SITE_NAME} | Film Production in Bukhara`,
+      title: "Contact BuxoroFilm Studio | Film Production in Bukhara",
       description:
-        "Contact BuxoroFilm for location scouting, permits, production support and international filming in Bukhara, Uzbekistan.",
+        "Get in touch with BuxoroFilm for film production, location scouting, permits and production support in Bukhara, Uzbekistan.",
       keywords:
         "contact BuxoroFilm, film production inquiry Bukhara, location scouting contact, film studio Uzbekistan"
     },
     ru: {
-      title: `Контакты ${SITE_NAME} | Кинопроизводство в Бухаре`,
+      title: "Контакты BuxoroFilm Studio | Кинопроизводство в Бухаре",
       description:
-        "Свяжитесь с BuxoroFilm для скаутинга локаций, разрешений, производственной поддержки и международных съёмок в Бухаре, Узбекистан.",
+        "Свяжитесь с BuxoroFilm для кинопроизводства, скаутинга локаций, разрешений и производственной поддержки в Бухаре, Узбекистан.",
       keywords:
         "контакты BuxoroFilm, заявка на съёмки Бухара, скаутинг локаций, киностудия Узбекистан"
     }

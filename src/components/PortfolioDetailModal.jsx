@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 import { getProjectServices } from "../utils/portfolio";
+import { getPortfolioImageAlt } from "../utils/imageAlt";
 
 const PortfolioDetailModal = ({ project, onClose }) => {
   const { language } = useLanguage();
   const t = translations[language].portfolio;
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
+  const projectTitle = project.title[language] || project.title.en;
   const gallery = project.gallery?.length ? project.gallery : [project.cover];
   const activeImage = gallery[activeImageIndex] || project.cover;
   const servicesText = getProjectServices(project, language);
@@ -67,7 +69,7 @@ const PortfolioDetailModal = ({ project, onClose }) => {
             <div className="aspect-[4/3] sm:aspect-[16/10] min-h-[220px] sm:min-h-[320px] md:min-h-[420px] lg:min-h-[480px] overflow-hidden rounded-card bg-site border border-site-border">
               <img
                 src={activeImage}
-                alt={project.title[language] || project.title.en}
+                alt={getPortfolioImageAlt(projectTitle, language, activeImageIndex + 1)}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -86,7 +88,7 @@ const PortfolioDetailModal = ({ project, onClose }) => {
                 >
                   <img
                     src={src}
-                    alt={`${project.title[language] || project.title.en} ${index + 1}`}
+                    alt={getPortfolioImageAlt(projectTitle, language, index + 1)}
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />

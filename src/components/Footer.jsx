@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 import LogoImg from "../assets/logo.png";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
+import { getStaticImageAlt } from "../utils/imageAlt";
 
 const Footer = () => {
   const { language } = useLanguage();
@@ -13,7 +14,7 @@ const Footer = () => {
       <div className="site-container section-padding pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           <div className="space-y-6">
-            <img className="h-12 w-auto" src={LogoImg} alt="BuxoroFilm" />
+            <img className="h-12 w-auto" src={LogoImg} alt={getStaticImageAlt("logo", language)} />
             <p className="body-text text-sm">{t.footer.about}</p>
           </div>
 

@@ -1,6 +1,7 @@
 import personImage from "../../assets/person.jpg";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../utils/translations";
+import { getStaticImageAlt } from "../../utils/imageAlt";
 
 const ProducerSection = () => {
   const { language } = useLanguage();
@@ -14,7 +15,7 @@ const ProducerSection = () => {
             <div className="overflow-hidden aspect-[4/5] max-h-[640px] lg:max-h-none lg:aspect-[3/4]">
               <img
                 src={personImage}
-                alt={t.producerName}
+                alt={getStaticImageAlt("producer", language)}
                 className="w-full h-full object-cover object-top"
                 loading="lazy"
               />

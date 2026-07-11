@@ -1,5 +1,6 @@
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
+import { getStaticImageAlt } from "../utils/imageAlt";
 import personImage from "../assets/person.jpg";
 
 const BlackSection = () => {
@@ -24,7 +25,7 @@ const BlackSection = () => {
           <div className="flex flex-col items-center lg:items-end">
             <img
               src={personImage}
-              alt="Ali Choriyev"
+              alt={getStaticImageAlt("producer", language)}
               className="w-full max-w-md h-auto object-cover"
             />
             <p className="text-white text-lg md:text-xl mt-4">Ali Choriyev</p>

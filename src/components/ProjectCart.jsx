@@ -1,5 +1,6 @@
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
+import { getPortfolioImageAlt } from "../utils/imageAlt";
 
 const ProjectCard = ({
   name,
@@ -23,7 +24,7 @@ const ProjectCard = ({
       <div className="relative flex-shrink-0 w-full aspect-[3/4] sm:aspect-[3/4] overflow-hidden bg-site-card">
         <img
           className="product--image w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 group-active:scale-100"
-          alt={name}
+          alt={getPortfolioImageAlt(name, language)}
           src={url}
           loading="lazy"
         />

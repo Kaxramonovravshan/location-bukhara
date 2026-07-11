@@ -5,6 +5,7 @@ import GhostButton from "../components/GhostButton";
 import Seo from "../components/Seo";
 import { getPageSeo } from "../seo/pageSeo";
 import { ProjectProductData } from "../utils/data";
+import { getLocationImageAlt } from "../utils/imageAlt";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 
@@ -166,7 +167,11 @@ const Location = () => {
                         >
                           <img
                             src={src}
-                            alt={`${location.name?.[language] || location.name} ${index + 1}`}
+                            alt={getLocationImageAlt(
+                              location.name?.[language] || location.name,
+                              language,
+                              index + 1
+                            )}
                             className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                             loading="lazy"
                           />
@@ -221,7 +226,11 @@ const Location = () => {
                 >
                   <img
                     src={src}
-                    alt={`${selectedLocation.name?.[language] || selectedLocation.name} ${index + 1}`}
+                    alt={getLocationImageAlt(
+                      selectedLocation.name?.[language] || selectedLocation.name,
+                      language,
+                      index + 1
+                    )}
                     className="h-full w-full object-cover transition duration-300 group-hover:scale-110"
                     loading="lazy"
                   />
@@ -272,7 +281,11 @@ const Location = () => {
           <div className="relative z-20 max-w-[95vw] max-h-[90vh] flex items-center justify-center">
             <img
               src={galleryImages[selectedImageIndex]}
-              alt={`${selectedLocation.name?.[language] || selectedLocation.name} ${selectedImageIndex + 1}`}
+              alt={getLocationImageAlt(
+                selectedLocation.name?.[language] || selectedLocation.name,
+                language,
+                selectedImageIndex + 1
+              )}
               className="max-w-full max-h-[90vh] object-contain rounded-lg"
             />
           </div>

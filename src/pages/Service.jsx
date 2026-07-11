@@ -5,6 +5,7 @@ import { getPageSeo } from "../seo/pageSeo";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 import { serviceMedia } from "../utils/media.js";
+import { getServiceImageAlt } from "../utils/imageAlt";
 
 const Service = () => {
   const { language } = useLanguage();
@@ -109,7 +110,7 @@ const Service = () => {
               <div className="w-full md:w-64 h-44 sm:h-48 md:h-40 overflow-hidden rounded-card border border-site-border flex-shrink-0">
                 <img
                   src={service.image}
-                  alt={service.title}
+                  alt={getServiceImageAlt(service.title, language)}
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -160,7 +161,7 @@ const Service = () => {
                 >
                   <img
                     src={src}
-                    alt={`${selectedService.title} ${imgIndex + 1}`}
+                    alt={getServiceImageAlt(selectedService.title, language, imgIndex + 1)}
                     className="h-full w-full object-cover transition duration-300 group-hover:scale-110"
                     loading="lazy"
                   />
@@ -211,7 +212,11 @@ const Service = () => {
           <div className="relative z-20 max-w-[95vw] max-h-[90vh] flex items-center justify-center">
             <img
               src={galleryImages[selectedImageIndex]}
-              alt={`${selectedService.title} ${selectedImageIndex + 1}`}
+              alt={getServiceImageAlt(
+                selectedService.title,
+                language,
+                selectedImageIndex + 1
+              )}
               className="max-w-full max-h-[90vh] object-contain rounded-lg"
             />
           </div>
