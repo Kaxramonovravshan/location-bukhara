@@ -1,7 +1,35 @@
-import historyImage from "../../assets/masjid1.jpg";
+import historyImage from "../../assets/history/IMG_9924.PNG";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../utils/translations";
 import { getStaticImageAlt } from "../../utils/imageAlt";
+
+const HIGHLIGHT_TERMS = [
+  "BuxoroFilm Studio",
+  "Buxoro Film Studio",
+  "Bukhara Film Studio",
+  "Buxkino",
+  "«Бухкино»",
+  "Бухкино"
+];
+
+const highlightBrandNames = (text) => {
+  const pattern = new RegExp(
+    `(${HIGHLIGHT_TERMS.map((term) =>
+      term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+    ).join("|")})`,
+    "g"
+  );
+
+  return text.split(pattern).map((part, index) =>
+    HIGHLIGHT_TERMS.includes(part) ? (
+      <span key={index} className="text-accent font-semibold">
+        {part}
+      </span>
+    ) : (
+      part
+    )
+  );
+};
 
 const HistorySection = () => {
   const { language } = useLanguage();
@@ -17,20 +45,19 @@ const HistorySection = () => {
             <div className="space-y-4">
               {t.historyText.map((paragraph, index) => (
                 <p key={index} className="body-text">
-                  {paragraph}
+                  {highlightBrandNames(paragraph)}
                 </p>
               ))}
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-card border border-site-border aspect-[4/3] lg:aspect-auto lg:min-h-[420px]">
+          <div className="relative overflow-hidden aspect-[4/3] lg:aspect-auto lg:min-h-[420px]">
             <img
               src={historyImage}
               alt={getStaticImageAlt("history", language)}
-              className="w-full h-full object-cover grayscale opacity-80"
+              className="w-full h-full object-cover"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-site-card/40 to-transparent" />
           </div>
         </div>
       </div>

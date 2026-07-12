@@ -1,15 +1,15 @@
 import {
-  MapPin,
-  Clapperboard,
   Users,
-  Truck,
-  BedDouble,
-  Sun
+  MapPin,
+  ClipboardList,
+  Paintbrush,
+  UsersRound,
+  Handshake
 } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../utils/translations";
 
-const icons = [MapPin, Clapperboard, Users, Truck, BedDouble, Sun];
+const icons = [Users, MapPin, ClipboardList, Paintbrush, UsersRound, Handshake];
 
 const WhyFilmSection = () => {
   const { language } = useLanguage();

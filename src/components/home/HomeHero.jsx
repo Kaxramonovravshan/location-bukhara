@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import { Play, ChevronRight } from "lucide-react";
+import { useRef, useState } from "react";
+import { Volume2, VolumeX, ChevronRight } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../utils/translations";
 import { useHeroVideo } from "../../hooks/useHeroVideo";
@@ -10,12 +10,19 @@ const HomeHero = () => {
   const t = translations[language].home;
   const videoRef = useRef(null);
   const videoSrc = useHeroVideo();
+  const [isMuted, setIsMuted] = useState(true);
 
-  const handlePlayReel = () => {
+  const handleToggleSound = () => {
     const video = videoRef.current;
     if (!video) return;
-    video.scrollIntoView({ behavior: "smooth", block: "center" });
-    video.play().catch(() => {});
+
+    const nextMuted = !isMuted;
+    video.muted = nextMuted;
+    if (!nextMuted) {
+      video.volume = 1;
+      video.play().catch(() => {});
+    }
+    setIsMuted(nextMuted);
   };
 
   return (
@@ -44,13 +51,15 @@ const HomeHero = () => {
 
           <button
             type="button"
-            onClick={handlePlayReel}
-            className="mt-6 sm:mt-8 inline-flex items-center gap-3 text-accent font-semibold uppercase tracking-wider text-sm transition-colors duration-300 hover:text-accent-hover group min-h-[44px]"
+            onClick={handleToggleSound}
+            className="mt-6 sm:mt-8 w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-accent text-accent flex items-center justify-center transition-all duration-300 hover:bg-accent hover:text-site"
+            aria-label={isMuted ? "Unmute video" : "Mute video"}
           >
-            <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-accent flex items-center justify-center transition-all duration-300 group-hover:bg-accent group-hover:text-site shrink-0">
-              <Play className="w-5 h-5 ml-0.5" fill="currentColor" />
-            </span>
-            {t.playReel}
+            {isMuted ? (
+              <VolumeX className="w-5 h-5" />
+            ) : (
+              <Volume2 className="w-5 h-5" />
+            )}
           </button>
         </div>
       </section>

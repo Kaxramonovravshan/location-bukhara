@@ -21,28 +21,54 @@ export const translations = {
       featuredLabel: "Featured Projects",
       featuredTitle: "Projects We've Proudly Supported",
       viewAllProjects: "View All Projects",
-      whyLabel: "Why Film in Buxorofilm",
+      whyLabel: "Why Choose Buxorofilm Studio",
       whyTitle: "Everything You Need. Right Here.",
-      producerLabel: "Our Producer",
+      producerLabel: "Executive Producer",
       producerName: "Ali Choriyev",
-      producerRole: "Founder & Executive Producer",
-      producerBio:
-        "With more than 35 years of experience in international film production, Ali Choriyev has contributed to over 40 feature films, television series and documentaries. As Executive Producer and Production Coordinator, he has collaborated with productions from Uzbekistan, Russia, India, France, Germany, Austria, Kazakhstan, Iran and many other countries, helping bring international stories to life through local expertise and production excellence.",
+      producerRole: "Founder • Executive Producer",
+      producerBio: [
+        "With more than 35 years of experience in international film production, Ali Choriyev has contributed to over 40 feature films, television series and documentaries.",
+        "As Executive Producer and Production Coordinator, he has collaborated with productions from Uzbekistan, Russia, India, France, Germany, Austria, Kazakhstan, Iran and many other countries, helping bring international stories to life through local expertise and production excellence."
+      ],
       viewPortfolio: "View Full Portfolio",
-      historyLabel: "History",
+      historyLabel: "Our History",
       historyTitle: "A Legacy Reborn",
       historyText: [
-        "Cinema has been part of Bukhara's cultural identity for more than a century. In the 1920s, one of the region's first film studios, Buxkino, began producing films that introduced Bukhara to the world.",
-        "Although the studio eventually ceased operations, its legacy never disappeared. Today, Bukhara Film Studio continues that tradition — preserving the city's cinematic heritage while supporting a new generation of international film productions.",
+        "Cinema has been part of Bukhara's cultural identity for more than a century. In the 1924s, one of the region's first film studios, Buxkino, began producing films that introduced Bukhara to the world.",
+        "Although the studio eventually ceased operations, its legacy never disappeared. Today, BuxoroFilm Studio continues that tradition — preserving the city's cinematic heritage while supporting a new generation of international film productions.",
         "We believe Bukhara is more than a filming location. It is a place where history becomes cinema."
       ],
       whyFeatures: [
-        { title: "Iconic Locations", description: "600+ catalogued sites from desert dunes to ancient madrasahs." },
-        { title: "Film-Friendly City", description: "Permits, logistics and local support tailored for productions." },
-        { title: "Experienced Crew", description: "Bilingual fixers, location managers and skilled local teams." },
-        { title: "Full Production Support", description: "End-to-end support from scouting to wrap across every department." },
-        { title: "Comfort & Hospitality", description: "Curated hotels and crew housing across the old city." },
-        { title: "Year-Round Sunshine", description: "300+ days of sunshine and cinematic desert climate year-round." }
+        {
+          title: "Local Production Expertise",
+          description:
+            "Professional production support with extensive knowledge of Bukhara and the surrounding region."
+        },
+        {
+          title: "Location Scouting",
+          description:
+            "Script-driven location scouting tailored to the creative and production needs of each project."
+        },
+        {
+          title: "Permits & Logistics",
+          description:
+            "Complete assistance with filming permits, transportation, accommodation and local logistics."
+        },
+        {
+          title: "Art Department Support",
+          description:
+            "Set construction, set extensions, props and on-location art department coordination."
+        },
+        {
+          title: "Casting & Extras",
+          description:
+            "Casting support, extras coordination and access to local talent across the region."
+        },
+        {
+          title: "Reliable Local Partner",
+          description:
+            "A trusted production partner providing full on-ground coordination from pre-production to wrap."
+        }
       ]
     },
     portfolio: {
@@ -304,26 +330,52 @@ export const translations = {
       viewAllProjects: "Все проекты",
       whyLabel: "Почему Buxorofilm",
       whyTitle: "Всё необходимое — здесь.",
-      producerLabel: "Наш продюсер",
+      producerLabel: "Главный продюсер",
       producerName: "Али Чориев",
-      producerRole: "Основатель и исполнительный продюсер",
-      producerBio:
-        "Более 35 лет Али Чориев работает в сфере международного кинопроизводства. За это время он принял участие в создании более 40 художественных фильмов, телевизионных сериалов и документальных проектов. В качестве исполнительного продюсера и координатора производства он сотрудничал с кинокомпаниями Узбекистана, России, Индии, Франции, Германии, Австрии, Казахстана, Ирана и многих других стран, обеспечивая высокий уровень организации съемочного процесса и международного производственного сервиса.",
+      producerRole: "Основатель • Главный продюсер",
+      producerBio: [
+        "Более 35 лет Али Чориев работает в сфере международного кинопроизводства. За это время он принял участие в создании более 40 художественных фильмов, телевизионных сериалов и документальных проектов.",
+        "В качестве исполнительного продюсера и координатора производства он сотрудничал с кинокомпаниями Узбекистана, России, Индии, Франции, Германии, Австрии, Казахстана, Ирана и многих других стран, обеспечивая высокий уровень организации съёмочного процесса и международного производственного сервиса."
+      ],
       viewPortfolio: "Полное портфолио",
-      historyLabel: "История",
+      historyLabel: "Наша история",
       historyTitle: "Возрождая кинематографическое наследие",
       historyText: [
-        "Кинематографическая история Бухары началась более ста лет назад. В 1920-х годах здесь была основана одна из первых киностудий региона — «Бухкино», которая познакомила зрителей с культурой и историей Бухары через кино.",
+        "Кинематографическая история Бухары началась более ста лет назад. В 1924-х годах здесь была основана одна из первых киностудий региона — «Бухкино», которая познакомила зрителей с культурой и историей Бухары через кино.",
         "Со временем студия прекратила свою деятельность, однако её наследие сохранилось. Сегодня Bukhara Film Studio продолжает этот путь, возрождая традиции кинопроизводства и открывая Бухару для международных кино- и телевизионных проектов.",
         "Для нас Бухара — это не просто локация. Это место, где история становится кино."
       ],
       whyFeatures: [
-        { title: "Иконичные локации", description: "600+ объектов — от пустынных дюн до древних медресе." },
-        { title: "Город для кино", description: "Разрешения, логистика и местная поддержка для съёмок." },
-        { title: "Опытная команда", description: "Двуязычные фиксеры, лок-менеджеры и местные специалисты." },
-        { title: "Полная поддержка", description: "Поддержка от скаутинга до wrap по всем направлениям." },
-        { title: "Комфорт и гостеприимство", description: "Отели и жильё для команды в старом городе." },
-        { title: "Круглогодичное солнце", description: "300+ солнечных дней и кинематографический климат." }
+        {
+          title: "Экспертиза локального продакшна",
+          description:
+            "Профессиональная организация съёмок и глубокое знание Бухары и региона."
+        },
+        {
+          title: "Подбор локаций",
+          description:
+            "Поиск локаций по требованиям сценария и задачам производства."
+        },
+        {
+          title: "Разрешения и логистика",
+          description:
+            "Получение разрешений, организация транспорта, размещения и всей локальной логистики."
+        },
+        {
+          title: "Поддержка художественного цеха",
+          description:
+            "Строительство декораций, достройка сетов, реквизит и сопровождение художественного отдела."
+        },
+        {
+          title: "Актёры и массовка",
+          description:
+            "Подбор актёров, организация массовки и работа с местными исполнителями."
+        },
+        {
+          title: "Надёжный локальный партнёр",
+          description:
+            "Полная координация съёмочного процесса — от подготовки до завершения проекта."
+        }
       ]
     },
     portfolio: {
