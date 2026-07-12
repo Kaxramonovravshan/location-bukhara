@@ -1,5 +1,3 @@
-import { locationMedia } from "./media.js";
-
 export const defaultProjectServices = {
   en: "Location permits, scripted location scouting, set construction, props supply, accommodation and transportation, cast and extras coordination, production crew support (assistants, set decorators, props assistants), and full on-ground production coordination by our local team.",
   ru: "Разрешения на локации, сценарный скаутинг, строительство декораций, поставка реквизита, размещение и транспорт, координация актёров и массовки, поддержка съёмочной группы (ассистенты, декораторы, помощники по реквизиту) и полная координация производства на месте нашей локальной командой."
@@ -32,12 +30,13 @@ export const portfolioProjects = [
   {
     id: 1,
     featured: true,
-    cover: locationMedia.lyabiHauz.cover,
+    poster: "project-1.webp",
+    video: "project-1.mp4",
     gallery: [
-      locationMedia.lyabiHauz.cover,
-      locationMedia.lyabiHauz.gallery[0],
-      locationMedia.lyabiHauz.gallery[1],
-      locationMedia.caravanserai.gallery[0]
+      "project-1.webp",
+      "project-1-2.webp",
+      "project-1-3.webp",
+      "project-1-4.webp"
     ],
     title: { en: "Motherland Awaits", ru: "Родина ждёт" },
     category: { en: "TV Series", ru: "Телесериал" },
@@ -52,12 +51,13 @@ export const portfolioProjects = [
   {
     id: 2,
     featured: true,
-    cover: locationMedia.poiKalyan.cover,
+    poster: "project-2.webp",
+    video: "project-2.mp4",
     gallery: [
-      locationMedia.poiKalyan.cover,
-      locationMedia.poiKalyan.gallery[0],
-      locationMedia.poiKalyan.gallery[1],
-      locationMedia.poiKalyan.gallery[2]
+      "project-2.webp",
+      "project-2-2.webp",
+      "project-2-3.webp",
+      "project-2-4.webp"
     ],
     title: { en: "Eterna", ru: "Этерна" },
     category: {
@@ -75,12 +75,13 @@ export const portfolioProjects = [
   {
     id: 3,
     featured: true,
-    cover: locationMedia.ark.cover,
+    poster: "project-3.webp",
+    video: "project-3.mp4",
     gallery: [
-      locationMedia.ark.cover,
-      locationMedia.ark.gallery[0],
-      locationMedia.ark.gallery[1],
-      locationMedia.rooftops.gallery[0]
+      "project-3.webp",
+      "project-3-2.webp",
+      "project-3-3.webp",
+      "project-3-4.webp"
     ],
     title: { en: "Akeli", ru: "Akeli" },
     category: {
@@ -98,12 +99,13 @@ export const portfolioProjects = [
   {
     id: 4,
     featured: true,
-    cover: locationMedia.kyzylkum.cover,
+    poster: "project-4.webp",
+    video: "project-4.mp4",
     gallery: [
-      locationMedia.kyzylkum.cover,
-      locationMedia.rooftops.gallery[2],
-      locationMedia.ark.gallery[0],
-      locationMedia.ark.gallery[1]
+      "project-4.webp",
+      "project-4-2.webp",
+      "project-4-3.webp",
+      "project-4-4.webp"
     ],
     title: { en: "Uncle", ru: "Дядя" },
     category: { en: "Feature Film", ru: "Полнометражный фильм" },
@@ -119,12 +121,13 @@ export const portfolioProjects = [
   {
     id: 5,
     featured: true,
-    cover: locationMedia.rooftops.cover,
+    poster: "project-5.webp",
+    video: "project-5.mp4",
     gallery: [
-      locationMedia.rooftops.cover,
-      locationMedia.rooftops.gallery[0],
-      locationMedia.rooftops.gallery[1],
-      locationMedia.rooftops.gallery[2]
+      "project-5.webp",
+      "project-5-2.webp",
+      "project-5-3.webp",
+      "project-5-4.webp"
     ],
     title: { en: "Alisher Navoi", ru: "Алишер Навои" },
     category: { en: "Documentary Film", ru: "Документальный фильм" },
@@ -139,12 +142,13 @@ export const portfolioProjects = [
   {
     id: 6,
     featured: true,
-    cover: locationMedia.caravanserai.cover,
+    poster: "project-6.webp",
+    video: "project-6.mp4",
     gallery: [
-      locationMedia.caravanserai.cover,
-      locationMedia.caravanserai.gallery[0],
-      locationMedia.caravanserai.gallery[1],
-      locationMedia.caravanserai.gallery[2]
+      "project-6.webp",
+      "project-6-2.webp",
+      "project-6-3.webp",
+      "project-6-4.webp"
     ],
     title: { en: "Ibrat", ru: "Ибрат" },
     category: { en: "Feature Film", ru: "Художественный фильм" },
@@ -157,12 +161,13 @@ export const portfolioProjects = [
   },
   {
     id: 7,
-    cover: locationMedia.poiKalyan.gallery[0],
+    poster: "project-7.webp",
+    video: "project-7.mp4",
     gallery: [
-      locationMedia.poiKalyan.gallery[0],
-      locationMedia.poiKalyan.gallery[1],
-      locationMedia.poiKalyan.cover,
-      locationMedia.poiKalyan.gallery[2]
+      "project-7.webp",
+      "project-7-2.webp",
+      "project-7-3.webp",
+      "project-7-4.webp"
     ],
     title: { en: "Hayrat", ru: "Хайрат" },
     category: { en: "Feature Film", ru: "Художественный фильм" },
@@ -175,12 +180,13 @@ export const portfolioProjects = [
   },
   {
     id: 8,
-    cover: locationMedia.ark.gallery[0],
+    poster: "project-8.webp",
+    video: "project-8.mp4",
     gallery: [
-      locationMedia.ark.gallery[0],
-      locationMedia.ark.gallery[1],
-      locationMedia.ark.cover,
-      locationMedia.rooftops.gallery[0]
+      "project-8.webp",
+      "project-8-2.webp",
+      "project-8-3.webp",
+      "project-8-4.webp"
     ],
     title: { en: "Mukumi", ru: "Мукумий" },
     category: { en: "Feature Film", ru: "Художественный фильм" },
@@ -193,12 +199,13 @@ export const portfolioProjects = [
   },
   {
     id: 9,
-    cover: locationMedia.lyabiHauz.gallery[0],
+    poster: "project-9.webp",
+    video: "project-9.mp4",
     gallery: [
-      locationMedia.lyabiHauz.gallery[0],
-      locationMedia.lyabiHauz.gallery[1],
-      locationMedia.lyabiHauz.cover,
-      locationMedia.caravanserai.gallery[0]
+      "project-9.webp",
+      "project-9-2.webp",
+      "project-9-3.webp",
+      "project-9-4.webp"
     ],
     title: { en: "Jami and Navoi", ru: "Джами и Навои" },
     category: { en: "Feature Film", ru: "Художественный фильм" },
@@ -211,12 +218,13 @@ export const portfolioProjects = [
   },
   {
     id: 10,
-    cover: locationMedia.caravanserai.gallery[1],
+    poster: "project-10.webp",
+    video: "project-10.mp4",
     gallery: [
-      locationMedia.caravanserai.gallery[1],
-      locationMedia.caravanserai.gallery[2],
-      locationMedia.caravanserai.cover,
-      locationMedia.caravanserai.gallery[0]
+      "project-10.webp",
+      "project-10-2.webp",
+      "project-10-3.webp",
+      "project-10-4.webp"
     ],
     title: { en: "Sun on the Tongue", ru: "Солнце на вкус" },
     category: { en: "Feature Film", ru: "Художественный фильм" },
@@ -229,12 +237,13 @@ export const portfolioProjects = [
   },
   {
     id: 11,
-    cover: locationMedia.rooftops.gallery[0],
+    poster: "project-11.webp",
+    video: "project-11.mp4",
     gallery: [
-      locationMedia.rooftops.gallery[0],
-      locationMedia.rooftops.gallery[1],
-      locationMedia.rooftops.cover,
-      locationMedia.rooftops.gallery[2]
+      "project-11.webp",
+      "project-11-2.webp",
+      "project-11-3.webp",
+      "project-11-4.webp"
     ],
     title: { en: "Survival Game", ru: "Игра на выживание" },
     category: { en: "Feature Film", ru: "Художественный фильм" },
@@ -247,12 +256,13 @@ export const portfolioProjects = [
   },
   {
     id: 12,
-    cover: locationMedia.poiKalyan.gallery[2],
+    poster: "project-12.webp",
+    video: "project-12.mp4",
     gallery: [
-      locationMedia.poiKalyan.gallery[2],
-      locationMedia.poiKalyan.gallery[1],
-      locationMedia.poiKalyan.cover,
-      locationMedia.ark.cover
+      "project-12.webp",
+      "project-12-2.webp",
+      "project-12-3.webp",
+      "project-12-4.webp"
     ],
     title: {
       en: "Avicenna: Between East and West",
@@ -268,12 +278,13 @@ export const portfolioProjects = [
   },
   {
     id: 13,
-    cover: locationMedia.lyabiHauz.gallery[1],
+    poster: "project-13.webp",
+    video: "project-13.mp4",
     gallery: [
-      locationMedia.lyabiHauz.gallery[1],
-      locationMedia.lyabiHauz.cover,
-      locationMedia.lyabiHauz.gallery[0],
-      locationMedia.caravanserai.gallery[1]
+      "project-13.webp",
+      "project-13-2.webp",
+      "project-13-3.webp",
+      "project-13-4.webp"
     ],
     title: { en: "Love Story", ru: "История любви" },
     category: { en: "Feature Film", ru: "Художественный фильм" },
@@ -286,12 +297,13 @@ export const portfolioProjects = [
   },
   {
     id: 14,
-    cover: locationMedia.kyzylkum.gallery[0],
+    poster: "project-14.webp",
+    video: "project-14.mp4",
     gallery: [
-      locationMedia.kyzylkum.gallery[0],
-      locationMedia.kyzylkum.gallery[1],
-      locationMedia.kyzylkum.cover,
-      locationMedia.ark.gallery[1]
+      "project-14.webp",
+      "project-14-2.webp",
+      "project-14-3.webp",
+      "project-14-4.webp"
     ],
     title: {
       en: "The Adventures of Marco Polo in Uzbekistan",
@@ -307,12 +319,13 @@ export const portfolioProjects = [
   },
   {
     id: 15,
-    cover: locationMedia.kyzylkum.cover,
+    poster: "project-15.webp",
+    video: "project-15.mp4",
     gallery: [
-      locationMedia.kyzylkum.cover,
-      locationMedia.rooftops.gallery[2],
-      locationMedia.poiKalyan.cover,
-      locationMedia.ark.cover
+      "project-15.webp",
+      "project-15-2.webp",
+      "project-15-3.webp",
+      "project-15-4.webp"
     ],
     title: {
       en: "FIFA World Cup 2022 Commercial",
@@ -328,12 +341,13 @@ export const portfolioProjects = [
   },
   {
     id: 16,
-    cover: locationMedia.rooftops.cover,
+    poster: "project-16.webp",
+    video: "project-16.mp4",
     gallery: [
-      locationMedia.rooftops.cover,
-      locationMedia.rooftops.gallery[0],
-      locationMedia.rooftops.gallery[1],
-      locationMedia.caravanserai.cover
+      "project-16.webp",
+      "project-16-2.webp",
+      "project-16-3.webp",
+      "project-16-4.webp"
     ],
     title: { en: "The Return of Koran Usman", ru: "Возвращение Корана Усмана" },
     category: { en: "Documentary Film", ru: "Документальный фильм" },
@@ -347,12 +361,13 @@ export const portfolioProjects = [
   },
   {
     id: 17,
-    cover: locationMedia.poiKalyan.gallery[1],
+    poster: "project-17.webp",
+    video: "project-17.mp4",
     gallery: [
-      locationMedia.poiKalyan.gallery[1],
-      locationMedia.poiKalyan.cover,
-      locationMedia.poiKalyan.gallery[0],
-      locationMedia.lyabiHauz.cover
+      "project-17.webp",
+      "project-17-2.webp",
+      "project-17-3.webp",
+      "project-17-4.webp"
     ],
     title: { en: "Feruz's Dreams", ru: "Мечты Феруза" },
     category: { en: "Documentary Film", ru: "Документальный фильм" },
@@ -365,12 +380,13 @@ export const portfolioProjects = [
   },
   {
     id: 18,
-    cover: locationMedia.caravanserai.cover,
+    poster: "project-18.webp",
+    video: "project-18.mp4",
     gallery: [
-      locationMedia.caravanserai.cover,
-      locationMedia.caravanserai.gallery[0],
-      locationMedia.caravanserai.gallery[1],
-      locationMedia.caravanserai.gallery[2]
+      "project-18.webp",
+      "project-18-2.webp",
+      "project-18-3.webp",
+      "project-18-4.webp"
     ],
     title: {
       en: "Bukhara: A Bridge Between Past and Future",

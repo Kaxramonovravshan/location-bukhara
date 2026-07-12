@@ -1,11 +1,12 @@
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
+import { getPosterUrl } from "../utils/portfolioMedia";
 import { getPortfolioImageAlt } from "../utils/imageAlt";
 
 const ProjectCard = ({
   name,
   category,
-  url,
+  poster,
   director,
   countries,
   year,
@@ -21,12 +22,13 @@ const ProjectCard = ({
       onClick={onClick}
       className="card h-full flex flex-col text-left w-full cursor-pointer group touch-manipulation"
     >
-      <div className="relative flex-shrink-0 w-full aspect-[3/4] sm:aspect-[3/4] overflow-hidden bg-site-card">
+      <div className="relative flex-shrink-0 w-full aspect-[3/4] overflow-hidden bg-site-card">
         <img
           className="product--image w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 group-active:scale-100"
           alt={getPortfolioImageAlt(name, language)}
-          src={url}
+          src={getPosterUrl(poster)}
           loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-site/40 via-transparent to-transparent pointer-events-none" />
       </div>

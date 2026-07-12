@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="site-container section-padding pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           <div className="space-y-6">
-            <img className="h-12 w-auto" src={LogoImg} alt={getStaticImageAlt("logo", language)} />
+            <img className="h-16 sm:h-20 lg:h-24 w-auto" src={LogoImg} alt={getStaticImageAlt("logo", language)} />
             <p className="body-text text-sm">{t.footer.about}</p>
           </div>
 

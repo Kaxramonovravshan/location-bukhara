@@ -1,0 +1,4 @@
+# Place portfolio videos here.
+# Filenames must match `video` in src/utils/portfolio.js
+# Example: project-1.mp4, project-2.mp4, ...
+# Videos load only after the user clicks Play (preload="none").

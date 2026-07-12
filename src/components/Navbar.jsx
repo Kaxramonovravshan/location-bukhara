@@ -32,13 +32,13 @@ const Navbar = () => {
     <nav className="sticky top-0 z-30 bg-site/95 backdrop-blur-md border-b border-site-border">
       <div className="site-container">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink-0 min-w-0">
-            <img className="h-10 sm:h-12 lg:h-14 w-auto shrink-0" src={Img} alt={getStaticImageAlt("logo", language)} />
-            <div className="leading-tight min-w-0">
+          <Link to="/" className="flex items-center gap-0.5 sm:gap-1 shrink-0 min-w-0">
+            <img className="h-11 sm:h-12 lg:h-14 w-auto shrink-0" src={Img} alt={getStaticImageAlt("logo", language)} />
+            <div className="leading-tight min-w-0 -ml-0.5">
               <p className="text-accent font-semibold text-[10px] sm:text-sm tracking-wider truncate">
                 {t.navbar.brand}
               </p>
-              <p className="text-content-secondary text-[8px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] truncate">
+              <p className="text-content-secondary text-[8px] sm:text-[10px] uppercase tracking-[0.12em] sm:tracking-[0.2em] truncate">
                 {t.navbar.brandSub}
               </p>
             </div>

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -11,11 +11,12 @@ import PortfolioDetailModal from "./PortfolioDetailModal.jsx";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 
-const CarouselArrow = ({ direction, onClick, ariaLabel }) => (
+const CarouselArrow = ({ direction, onClick, ariaLabel, disabled }) => (
   <button
     type="button"
     aria-label={ariaLabel}
     onClick={onClick}
+    disabled={disabled}
     className={`portfolio-carousel__arrow portfolio-carousel__arrow--${direction}`}
   >
     {direction === "left" ? (
@@ -30,7 +31,6 @@ const ProjectCarusel = ({ variant = "default" }) => {
   const { language } = useLanguage();
   const t = translations[language].home;
   const [selectedProjectId, setSelectedProjectId] = useState(null);
-  const carouselRef = useRef(null);
 
   const isHome = variant === "home";
   const projects = portfolioProjects;
@@ -39,26 +39,12 @@ const ProjectCarusel = ({ variant = "default" }) => {
     (item) => item.id === selectedProjectId
   );
 
-  const NextArrow = ({ onClick, disabled }) => (
-    <CarouselArrow
-      direction="right"
-      ariaLabel="Next project"
-      onClick={() => {
-        if (disabled) {
-          carouselRef.current?.goToSlide(0);
-          return;
-        }
-        onClick?.();
-      }}
-    />
-  );
-
   const cards = projects.map((item) => (
     <ProjectCard
       key={item.id}
       name={item.title[language] || item.title.en}
       category={item.category[language] || item.category.en}
-      url={item.cover}
+      poster={item.poster}
       director={item.director}
       countries={item.countries[language] || item.countries.en}
       year={item.year}
@@ -80,25 +66,24 @@ const ProjectCarusel = ({ variant = "default" }) => {
             <h2 className="section-heading">{t.featuredTitle}</h2>
           </div>
 
-          <div className="overflow-hidden">
+          <div className="portfolio-carousel-wrap">
             <Carousel
-              ref={carouselRef}
-              autoPlay={isHome}
-              autoPlaySpeed={5000}
+              autoPlay={false}
               responsive={portfolioResponsive}
-              showDots={isHome}
-              renderDotsOutside={isHome}
+              showDots
+              renderDotsOutside
               infinite={false}
-              rewind={isHome}
-              rewindWithAnimation
               arrows
               customLeftArrow={
                 <CarouselArrow direction="left" ariaLabel="Previous project" />
               }
-              customRightArrow={<NextArrow />}
+              customRightArrow={
+                <CarouselArrow direction="right" ariaLabel="Next project" />
+              }
               draggable
               swipeable
               keyBoardControl
+              partialVisible={false}
               containerClass="portfolio-carousel"
               itemClass="portfolio-carousel__item"
               dotListClass="portfolio-carousel-dots"
