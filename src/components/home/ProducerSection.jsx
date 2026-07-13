@@ -33,7 +33,7 @@ const ProducerSection = () => {
               <div className="mt-3 h-px w-16 bg-accent" />
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-bold uppercase tracking-tight text-content-primary leading-[1.05]">
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[4.75rem] font-bold uppercase tracking-tight text-content-primary leading-[1.12]">
               {t.producerName}
             </h2>
 

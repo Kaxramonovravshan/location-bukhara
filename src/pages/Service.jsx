@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import PageHero from "../components/PageHero";
 import Seo from "../components/Seo";
+import GhostButton from "../components/GhostButton";
 import { getPageSeo } from "../seo/pageSeo";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
@@ -124,13 +125,13 @@ const Service = () => {
               </div>
 
               <div className="md:flex-shrink-0">
-                <button
+                <GhostButton
                   type="button"
                   onClick={() => handleOpenGallery(index)}
-                  className="w-full sm:w-auto min-h-[44px] rounded-xl border border-accent px-6 py-3 text-sm font-semibold uppercase tracking-wider text-accent transition hover:bg-accent hover:text-site touch-manipulation"
+                  className="w-full sm:w-auto min-h-[44px] touch-manipulation"
                 >
                   {t.service.viewButton}
-                </button>
+                </GhostButton>
               </div>
             </div>
           ))}

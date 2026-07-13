@@ -44,6 +44,10 @@ export const staticImageAlt = {
   producer: {
     en: "Ali Choriyev — executive producer at BuxoroFilm Studio in Bukhara",
     ru: "Али Чориев — исполнительный продюсер BuxoroFilm Studio в Бухаре"
+  },
+  locationHero: {
+    en: "Panoramic view of historic Bukhara at sunset — film locations in Uzbekistan",
+    ru: "Панорама исторической Бухары на закате — локации для съёмок в Узбекистане"
   }
 };
 

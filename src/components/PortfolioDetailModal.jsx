@@ -225,7 +225,7 @@ const PortfolioDetailModal = ({ project, onClose }) => {
               <p className="text-sm font-semibold uppercase tracking-wider text-accent">
                 {t.services}:
               </p>
-              <p className="body-text text-sm md:text-base leading-relaxed">
+              <p className="body-text text-sm md:text-base">
                 {servicesText}
               </p>
             </div>

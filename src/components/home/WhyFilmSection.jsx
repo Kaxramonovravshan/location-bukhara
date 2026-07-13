@@ -20,7 +20,7 @@ const WhyFilmSection = () => {
       <div className="site-container">
         <div className="space-y-4 mb-16 md:mb-20">
           <p className="section-label">{t.whyLabel}</p>
-          <h2 className="section-heading max-w-3xl">{t.whyTitle}</h2>
+          <h2 className="section-heading max-w-[42rem]">{t.whyTitle}</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-10 lg:gap-8">
@@ -34,7 +34,7 @@ const WhyFilmSection = () => {
                 <h3 className="text-accent text-xs font-semibold uppercase tracking-[0.2em]">
                   {feature.title}
                 </h3>
-                <p className="body-text text-sm leading-relaxed">
+                <p className="body-text text-sm">
                   {feature.description}
                 </p>
               </div>

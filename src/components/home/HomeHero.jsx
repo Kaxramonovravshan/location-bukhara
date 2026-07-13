@@ -43,7 +43,7 @@ const HomeHero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-site/90 via-site/55 to-site/25" />
 
         <div className="relative site-container min-h-[min(85vh,720px)] sm:min-h-[85vh] flex flex-col justify-center py-20 sm:py-24">
-          <h1 className="max-w-4xl text-[clamp(1.75rem,7vw,4.5rem)] font-extrabold uppercase leading-[1.05] tracking-tight text-content-primary">
+          <h1 className="max-w-5xl text-[clamp(2rem,8vw,5.75rem)] font-extrabold uppercase leading-[1.12] tracking-tight text-content-primary">
             {t.heroTitle}
             <br />
             {t.heroTitle2}
@@ -67,7 +67,7 @@ const HomeHero = () => {
       <section className="border-t border-site-border">
         <div className="site-container section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-start">
-            <p className="body-text max-w-xl">{t.description}</p>
+            <p className="body-text">{t.description}</p>
             <div className="flex lg:justify-end">
               <GhostButton to="/locations" className="w-full sm:w-auto justify-center">
                 {t.discoverLink}

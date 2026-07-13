@@ -1,13 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
 import PageHero from "../components/PageHero";
 import GhostButton from "../components/GhostButton";
+import WhyFilmSection from "../components/home/WhyFilmSection";
 import Seo from "../components/Seo";
 import { getPageSeo } from "../seo/pageSeo";
 import { ProjectProductData } from "../utils/data";
-import { getLocationImageAlt } from "../utils/imageAlt";
+import { getLocationImageAlt, getStaticImageAlt } from "../utils/imageAlt";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
+import locationHeroImage from "../assets/locationSectionImg.png";
 
 const Location = () => {
   const { language } = useLanguage();
@@ -109,11 +111,27 @@ const Location = () => {
         title={t.hero.titleLine1}
         titleLine2={t.hero.titleLine2}
         description={t.hero.description}
-      />
+        backgroundImage={locationHeroImage}
+        imageAlt={getStaticImageAlt("locationHero", language)}
+      >
+        <GhostButton
+          href="#locations-catalog"
+          className="w-full sm:w-auto"
+          onClick={(e) => {
+            e.preventDefault();
+            document
+              .getElementById("locations-catalog")
+              ?.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+        >
+          {t.hero.cta}
+          <ChevronRight className="w-4 h-4" />
+        </GhostButton>
+      </PageHero>
 
       <section className="site-container section-padding">
         <div className="space-y-8 sm:space-y-10">
-          <div className="space-y-4 max-w-3xl">
+          <div className="space-y-4 max-w-[42rem]">
             <p className="section-label">{t.intro.badge}</p>
             <h2 className="section-heading">{t.intro.title}</h2>
           </div>
@@ -131,7 +149,12 @@ const Location = () => {
         </div>
       </section>
 
-      <section className="border-t border-site-border bg-site-card/30 section-padding">
+      <WhyFilmSection />
+
+      <section
+        id="locations-catalog"
+        className="border-t border-site-border bg-site-card/30 section-padding scroll-mt-24"
+      >
         <div className="site-container">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 sm:mb-12">
             <div className="space-y-3">
@@ -184,13 +207,13 @@ const Location = () => {
                     <h3 className="text-lg sm:text-xl font-semibold text-content-primary">
                       {location.name?.[language] || location.name}
                     </h3>
-                    <button
+                    <GhostButton
                       type="button"
                       onClick={() => handleSelectLocation(location.id, true)}
-                      className="w-full sm:w-auto min-h-[44px] rounded-xl border border-accent px-6 py-3 text-sm font-semibold uppercase tracking-wider text-accent transition hover:bg-accent hover:text-site touch-manipulation"
+                      className="w-full sm:w-auto min-h-[44px] touch-manipulation"
                     >
                       {t.catalog.viewGallery}
-                    </button>
+                    </GhostButton>
                   </div>
                 </article>
               );

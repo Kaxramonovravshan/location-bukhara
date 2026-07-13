@@ -1,27 +1,49 @@
 import { Link } from "react-router-dom";
 
-const GhostButton = ({ to, href, children, className = "", onClick, type = "button" }) => {
-  const classes = `inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-accent text-accent font-semibold uppercase tracking-wider text-sm transition-all duration-300 hover:bg-accent hover:text-site ${className}`;
+const GhostButton = ({
+  to,
+  href,
+  children,
+  className = "",
+  onClick,
+  type = "button",
+  disabled = false
+}) => {
+  const classes = `btn-premium ${className}`.trim();
+
+  const inner = <span className="btn-premium__inner">{children}</span>;
 
   if (to) {
     return (
-      <Link to={to} className={classes}>
-        {children}
+      <Link
+        to={to}
+        className={classes}
+        onClick={onClick}
+        aria-disabled={disabled || undefined}
+      >
+        {inner}
       </Link>
     );
   }
 
   if (href) {
     return (
-      <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
-        {children}
+      <a
+        href={href}
+        className={classes}
+        onClick={onClick}
+        target={href.startsWith("#") ? undefined : "_blank"}
+        rel={href.startsWith("#") ? undefined : "noopener noreferrer"}
+        aria-disabled={disabled || undefined}
+      >
+        {inner}
       </a>
     );
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>
-      {children}
+    <button type={type} onClick={onClick} className={classes} disabled={disabled}>
+      {inner}
     </button>
   );
 };

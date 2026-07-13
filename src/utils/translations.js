@@ -236,11 +236,12 @@ export const translations = {
     },
     location: {
       hero: {
-        badge: "Location Scouting · Bukhara Region",
-        titleLine1: "Find the shot.",
-        titleLine2: "Unlock Bukhara.",
+        badge: "Film Locations • Bukhara, Uzbekistan",
+        titleLine1: "Find Your Story",
+        titleLine2: "In Bukhara",
         description:
-          "From desert epics to intimate festival scenes, our database of ready-to-shoot locations helps you move from script to screen faster."
+          "From UNESCO landmarks and Silk Road architecture to deserts, fortresses and untouched landscapes, Bukhara offers locations ready for productions of every scale.",
+        cta: "Explore Locations"
       },
       intro: {
         badge: "WHY BUKHARA",
@@ -551,11 +552,12 @@ export const translations = {
     },
     location: {
       hero: {
-        badge: "Поиск локаций · Бухарский регион",
-        titleLine1: "Найдите кадр.",
-        titleLine2: "Откройте Бухару.",
+        badge: "Локации для съёмок • Бухара, Узбекистан",
+        titleLine1: "Найдите свою историю",
+        titleLine2: "В Бухаре",
         description:
-          "От пустынных эпосов до камерных праздников — наш каталог готовых к съемке локаций помогает быстрее перейти от сценария к экрану."
+          "От памятников Всемирного наследия ЮНЕСКО и архитектуры Великого шелкового пути до пустынь, древних крепостей и нетронутых природных ландшафтов — Бухара предлагает уникальные съемочные локации для кинопроектов любого масштаба.",
+        cta: "Исследовать локации"
       },
       intro: {
         badge: "ПОЧЕМУ БУХАРА",

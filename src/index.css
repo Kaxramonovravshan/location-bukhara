@@ -41,11 +41,12 @@
   }
 
   .section-heading {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-content-primary leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-content-primary leading-[1.15];
   }
 
   .body-text {
-    @apply text-content-secondary font-normal text-base md:text-lg leading-relaxed;
+    @apply text-content-secondary font-normal text-base md:text-lg max-w-[42rem];
+    line-height: 1.75;
   }
 
   .card-surface {
@@ -62,6 +63,41 @@
 
   .tag-pill {
     @apply inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent border border-accent rounded-full bg-site/80 backdrop-blur-sm;
+  }
+
+  .btn-premium {
+    @apply relative inline-flex items-center justify-center p-px rounded-xl font-semibold uppercase tracking-wider text-sm text-accent no-underline;
+    background: linear-gradient(135deg, #8b7355 0%, #c9a46a 35%, #f0d9a8 50%, #c9a46a 65%, #8b7355 100%);
+    background-size: 200% 200%;
+    box-shadow: 0 0 18px rgba(201, 164, 106, 0.18), 0 0 4px rgba(201, 164, 106, 0.1);
+    transition: transform 300ms ease, box-shadow 300ms ease, background-position 500ms ease;
+  }
+
+  .btn-premium__inner {
+    @apply inline-flex w-full items-center justify-center gap-2 px-6 py-3 rounded-[11px] bg-site;
+    transition: background 300ms ease, color 300ms ease, box-shadow 300ms ease;
+  }
+
+  .btn-premium:hover {
+    background-position: 100% 0;
+    transform: translateY(-2px);
+    box-shadow: 0 0 28px rgba(201, 164, 106, 0.4), 0 0 8px rgba(240, 217, 168, 0.25);
+  }
+
+  .btn-premium:hover .btn-premium__inner {
+    @apply bg-accent text-site;
+    box-shadow: inset 0 0 20px rgba(240, 217, 168, 0.25);
+  }
+
+  .btn-premium:active {
+    transform: translateY(0);
+  }
+
+  .btn-premium:disabled,
+  .btn-premium[aria-disabled="true"] {
+    @apply opacity-60 cursor-not-allowed pointer-events-none;
+    transform: none;
+    box-shadow: 0 0 12px rgba(201, 164, 106, 0.12);
   }
 }
 

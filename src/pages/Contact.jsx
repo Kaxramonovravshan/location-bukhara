@@ -1,6 +1,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Seo from "../components/Seo";
+import GhostButton from "../components/GhostButton";
 import { getPageSeo } from "../seo/pageSeo";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
@@ -153,17 +154,13 @@ const Contact = () => {
             </div>
 
             <div className="space-y-4 pt-2">
-              <button
+              <GhostButton
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full sm:w-auto min-h-[48px] px-8 py-3 rounded-xl border border-accent text-accent font-semibold uppercase tracking-wider text-sm transition-all duration-300 ${
-                  isSubmitting
-                    ? "opacity-60 cursor-not-allowed"
-                    : "hover:bg-accent hover:text-site"
-                }`}
+                className="w-full sm:w-auto min-h-[48px]"
               >
                 {isSubmitting ? t.contact.sending : t.contact.submitButton}
-              </button>
+              </GhostButton>
               {status.message && (
                 <p
                   className={`text-sm ${

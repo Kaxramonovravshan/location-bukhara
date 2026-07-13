@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Img from "../assets/logo.png";
@@ -9,9 +9,20 @@ import { getStaticImageAlt } from "../utils/imageAlt";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { language, changeLanguage } = useLanguage();
   const t = translations[language];
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 12);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { path: "/", label: t.navbar.home },
@@ -29,7 +40,13 @@ const Navbar = () => {
     isActive(path) ? "nav-link nav-link-active" : "nav-link";
 
   return (
-    <nav className="sticky top-0 z-30 bg-site/95 backdrop-blur-md border-b border-site-border">
+    <nav
+      className={`sticky top-0 z-30 transition-all duration-300 ${
+        isScrolled
+          ? "bg-black/55 backdrop-blur-md border-b border-white/10"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
       <div className="site-container">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link to="/" className="flex items-center gap-0.5 sm:gap-1 shrink-0 min-w-0">
@@ -103,7 +120,13 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="xl:hidden border-t border-site-border bg-site max-h-[calc(100vh-4rem)] overflow-y-auto">
+        <div
+          className={`xl:hidden border-t max-h-[calc(100vh-4rem)] overflow-y-auto ${
+            isScrolled
+              ? "border-white/10 bg-black/70 backdrop-blur-md"
+              : "border-site-border bg-site/95 backdrop-blur-md"
+          }`}
+        >
           <div className="site-container py-4 space-y-1">
             {navItems.map((item) => (
               <Link
