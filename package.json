@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "generate:favicons": "node scripts/generate-favicons.mjs",
+    "generate:location-media": "node scripts/generate-location-media.mjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

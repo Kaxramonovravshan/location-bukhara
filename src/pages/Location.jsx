@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Play } from "lucide-react";
 import PageHero from "../components/PageHero";
 import GhostButton from "../components/GhostButton";
 import WhyFilmSection from "../components/home/WhyFilmSection";
 import Seo from "../components/Seo";
 import { getPageSeo } from "../seo/pageSeo";
 import { ProjectProductData } from "../utils/data";
+import { isVideoSrc } from "../utils/locationMedia";
 import { getLocationImageAlt, getStaticImageAlt } from "../utils/imageAlt";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
@@ -168,11 +169,14 @@ const Location = () => {
 
           <div className="divide-y divide-site-border border-t border-site-border">
             {ProjectProductData.map((location) => {
-              const gallery =
-                location.gallery && location.gallery.length > 0
-                  ? location.gallery
-                  : [location.imageurl];
-              const previewImages = gallery.slice(0, 4);
+              const previewImages = (
+                location.images?.length > 0
+                  ? location.images
+                  : (location.gallery || []).filter((src) => !isVideoSrc(src))
+              ).slice(0, 4);
+              const hasImages = previewImages.length > 0;
+              const hasMedia =
+                (location.gallery?.length || 0) > 0 || Boolean(location.imageurl);
 
               return (
                 <article
@@ -180,40 +184,50 @@ const Location = () => {
                   className="flex flex-col gap-5 sm:gap-6 py-6 sm:py-8 md:flex-row md:items-center md:gap-10"
                 >
                   <div className="w-full md:w-[55%] lg:w-[50%]">
-                    <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-5">
-                      {previewImages.map((src, index) => (
-                        <button
-                          type="button"
-                          key={`${location.id}-thumb-${index}`}
-                          onClick={() => handleSelectLocation(location.id, true)}
-                          className="group h-24 sm:h-28 overflow-hidden rounded-card border border-site-border bg-site-card transition hover:border-accent md:h-32 touch-manipulation"
-                        >
-                          <img
-                            src={src}
-                            alt={getLocationImageAlt(
-                              location.name?.[language] || location.name,
-                              language,
-                              index + 1
-                            )}
-                            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                            loading="lazy"
-                          />
-                        </button>
-                      ))}
-                    </div>
+                    {hasImages ? (
+                      <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-5">
+                        {previewImages.map((src, index) => (
+                          <button
+                            type="button"
+                            key={`${location.id}-thumb-${index}`}
+                            onClick={() => handleSelectLocation(location.id, true)}
+                            className="group h-24 sm:h-28 overflow-hidden rounded-card border border-site-border bg-site-card transition hover:border-accent md:h-32 touch-manipulation"
+                          >
+                            <img
+                              src={src}
+                              alt={getLocationImageAlt(
+                                location.name?.[language] || location.name,
+                                language,
+                                index + 1
+                              )}
+                              className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                              loading="lazy"
+                            />
+                          </button>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="h-24 sm:h-28 md:h-32 rounded-card border border-dashed border-site-border bg-site-card/60 flex items-center justify-center">
+                        <p className="text-content-secondary text-xs sm:text-sm uppercase tracking-wider">
+                          {language === "ru" ? "Фото скоро" : "Photos coming soon"}
+                        </p>
+                      </div>
+                    )}
                   </div>
 
                   <div className="flex-1 flex flex-col items-start md:items-end gap-4">
-                    <h3 className="text-lg sm:text-xl font-semibold text-content-primary">
+                    <h3 className="text-lg sm:text-xl font-semibold text-content-primary text-left md:text-right">
                       {location.name?.[language] || location.name}
                     </h3>
-                    <GhostButton
-                      type="button"
-                      onClick={() => handleSelectLocation(location.id, true)}
-                      className="w-full sm:w-auto min-h-[44px] touch-manipulation"
-                    >
-                      {t.catalog.viewGallery}
-                    </GhostButton>
+                    {hasMedia && (
+                      <GhostButton
+                        type="button"
+                        onClick={() => handleSelectLocation(location.id, true)}
+                        className="w-full sm:w-auto min-h-[44px] touch-manipulation"
+                      >
+                        {t.catalog.viewGallery}
+                      </GhostButton>
+                    )}
                   </div>
                 </article>
               );
@@ -240,25 +254,45 @@ const Location = () => {
               </svg>
             </button>
             <div className="site-container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3">
-              {galleryImages.map((src, index) => (
-                <button
-                  type="button"
-                  key={`${selectedLocation.id}-${index}`}
-                  onClick={() => handleImageClick(index)}
-                  className="aspect-square overflow-hidden rounded-card bg-site-card border border-site-border group touch-manipulation"
-                >
-                  <img
-                    src={src}
-                    alt={getLocationImageAlt(
-                      selectedLocation.name?.[language] || selectedLocation.name,
-                      language,
-                      index + 1
+              {galleryImages.map((src, index) => {
+                const video = isVideoSrc(src);
+                return (
+                  <button
+                    type="button"
+                    key={`${selectedLocation.id}-${index}`}
+                    onClick={() => handleImageClick(index)}
+                    className="relative aspect-square overflow-hidden rounded-card bg-site-card border border-site-border group touch-manipulation"
+                  >
+                    {video ? (
+                      <>
+                        <video
+                          src={src}
+                          muted
+                          playsInline
+                          preload="metadata"
+                          className="h-full w-full object-cover"
+                        />
+                        <span className="absolute inset-0 flex items-center justify-center bg-black/35">
+                          <span className="w-10 h-10 rounded-full border border-accent text-accent flex items-center justify-center bg-site/70">
+                            <Play className="w-4 h-4 fill-current" />
+                          </span>
+                        </span>
+                      </>
+                    ) : (
+                      <img
+                        src={src}
+                        alt={getLocationImageAlt(
+                          selectedLocation.name?.[language] || selectedLocation.name,
+                          language,
+                          index + 1
+                        )}
+                        className="h-full w-full object-cover transition duration-300 group-hover:scale-110"
+                        loading="lazy"
+                      />
                     )}
-                    className="h-full w-full object-cover transition duration-300 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                </button>
-              ))}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -302,15 +336,26 @@ const Location = () => {
             </button>
           )}
           <div className="relative z-20 max-w-[95vw] max-h-[90vh] flex items-center justify-center">
-            <img
-              src={galleryImages[selectedImageIndex]}
-              alt={getLocationImageAlt(
-                selectedLocation.name?.[language] || selectedLocation.name,
-                language,
-                selectedImageIndex + 1
-              )}
-              className="max-w-full max-h-[90vh] object-contain rounded-lg"
-            />
+            {isVideoSrc(galleryImages[selectedImageIndex]) ? (
+              <video
+                key={galleryImages[selectedImageIndex]}
+                src={galleryImages[selectedImageIndex]}
+                controls
+                autoPlay
+                playsInline
+                className="max-w-full max-h-[90vh] rounded-lg bg-black"
+              />
+            ) : (
+              <img
+                src={galleryImages[selectedImageIndex]}
+                alt={getLocationImageAlt(
+                  selectedLocation.name?.[language] || selectedLocation.name,
+                  language,
+                  selectedImageIndex + 1
+                )}
+                className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              />
+            )}
           </div>
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 text-white text-sm bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm">
             {selectedImageIndex + 1} / {galleryImages.length}

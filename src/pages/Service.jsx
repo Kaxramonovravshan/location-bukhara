@@ -6,7 +6,8 @@ import { getPageSeo } from "../seo/pageSeo";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 import { serviceMedia } from "../utils/media.js";
-import { getServiceImageAlt } from "../utils/imageAlt";
+import { getServiceImageAlt, getStaticImageAlt } from "../utils/imageAlt";
+import locationHeroImage from "../assets/locationSectionImg.png";
 
 const Service = () => {
   const { language } = useLanguage();
@@ -99,7 +100,12 @@ const Service = () => {
       <Seo {...seo} language={language} />
 
       <div className="bg-site">
-      <PageHero badge={locationT.services.badge} title={locationT.services.title} />
+      <PageHero
+        badge={locationT.services.badge}
+        title={locationT.services.title}
+        backgroundImage={locationHeroImage}
+        imageAlt={getStaticImageAlt("locationHero", language)}
+      />
 
       <section className="site-container section-padding">
         <div className="space-y-8 sm:space-y-10">

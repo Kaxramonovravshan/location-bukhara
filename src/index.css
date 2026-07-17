@@ -4,11 +4,13 @@
 
 @layer base {
   html {
-    @apply font-sans scroll-smooth;
+    @apply font-sans scroll-smooth overflow-x-hidden;
+    max-width: 100%;
   }
 
   body {
     @apply font-normal antialiased bg-site text-content-primary overflow-x-hidden;
+    max-width: 100%;
   }
 
   h1 {
@@ -41,7 +43,7 @@
   }
 
   .section-heading {
-    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-content-primary leading-[1.15];
+    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-content-primary leading-[1.15] break-words max-w-full;
   }
 
   .body-text {
@@ -128,12 +130,15 @@
 .portfolio-carousel-wrap {
   position: relative;
   padding: 0 3rem;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .portfolio-carousel {
   position: relative;
   width: 100%;
-  overflow: visible;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .portfolio-carousel .react-multi-carousel-list {
@@ -193,7 +198,7 @@
 
 @media (max-width: 639px) {
   .portfolio-carousel-wrap {
-    padding: 0 2.5rem;
+    padding: 0;
   }
 
   .portfolio-carousel__arrow {
@@ -202,11 +207,11 @@
   }
 
   .portfolio-carousel__arrow--left {
-    left: -2.35rem;
+    left: 0.35rem;
   }
 
   .portfolio-carousel__arrow--right {
-    right: -2.35rem;
+    right: 0.35rem;
   }
 }
 

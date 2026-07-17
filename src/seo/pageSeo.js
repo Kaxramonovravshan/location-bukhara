@@ -21,16 +21,16 @@ const pageSeo = {
     en: {
       title: "Film Locations in Bukhara | BuxoroFilm Studio",
       description:
-        "Discover historical film locations in Bukhara including Ark Fortress, Lyabi Hauz, Poi Kalyan and many more.",
+        "Film locations in Bukhara — steppes, dunes, palaces, madrasahs, old city, trading domes and more for productions of every scale.",
       keywords:
-        "Bukhara film locations, Ark Fortress filming, Lyabi Hauz location, Poi Kalyan Bukhara, historical film locations Uzbekistan"
+        "Bukhara film locations, steppe landscapes, sand dunes, Emir palace, madrasahs, old city Bukhara, trading domes Uzbekistan"
     },
     ru: {
       title: "Локации для съёмок в Бухаре | BuxoroFilm Studio",
       description:
-        "Откройте исторические локации для съёмок в Бухаре, включая крепость Арк, Ляби-Хауз, Poi-Kalyan и многие другие.",
+        "Съёмочные локации в Бухаре — степи, барханы, дворцы, медресе, старый город, торговые купола и другие площадки для проектов любого масштаба.",
       keywords:
-        "локации Бухара, съёмки у крепости Арк, Ляби-Хауз, Poi-Kalyan, исторические локации Узбекистан"
+        "локации Бухара, степные ландшафты, песчаные барханы, дворец эмира, медресе, старый город, торговые купола Узбекистан"
     }
   },
   "/service": {

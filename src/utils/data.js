@@ -1,112 +1,40 @@
-import { locationMedia } from "./media.js";
+import { locationMediaBySlug } from "./locationMedia.js";
+
+const makeLocation = (id, slug, en, ru) => {
+  const media = locationMediaBySlug[slug] || { cover: "", gallery: [], images: [] };
+  return {
+    id,
+    slug,
+    imageurl: media.cover || "",
+    gallery: media.gallery || [],
+    images: media.images || [],
+    videos: media.videos || [],
+    name: { en, ru }
+  };
+};
 
 export const ProjectProductData = [
-  {
-    id: 1,
-    imageurl: locationMedia.poiKalyan.cover,
-    gallery: locationMedia.poiKalyan.gallery,
-    name: {
-      en: "Poi-Kalyan Ensemble",
-      ru: "Ансамбль Пои-Калян"
-    },
-    locationTag: {
-      en: "Historic Old Town",
-      ru: "Исторический центр"
-    },
-    price: "",
-    description: {
-      en: "The Kalyan Minaret, mosque and Mir-i-Arab Madrasah form Bukhara's most recognisable skyline — a UNESCO-listed ensemble ideal for establishing shots and period drama.",
-      ru: "Минарет Калян, мечеть и медресе Мир-i-Араб — узнаваемый силуэт Бухары из списка ЮНЕСКО, идеальный для общих планов и исторических драм."
-    }
-  },
-  {
-    id: 2,
-    imageurl: locationMedia.ark.cover,
-    gallery: locationMedia.ark.gallery,
-    name: {
-      en: "The Ark Fortress",
-      ru: "Крепость Арк"
-    },
-    locationTag: {
-      en: "Citadel Quarter",
-      ru: "Квартал цитадели"
-    },
-    price: "",
-    description: {
-      en: "The ancient residence of Bukhara's emirs — massive earthen walls, throne halls and inner courtyards ready for epic and historical productions.",
-      ru: "Древняя резиденция бухарских эмиров — массивные глиняные стены, тронные залы и внутренние дворы для эпических и исторических съёмок."
-    }
-  },
-  {
-    id: 3,
-    imageurl: locationMedia.lyabiHauz.cover,
-    gallery: locationMedia.lyabiHauz.gallery,
-    name: {
-      en: "Lyabi-Hauz District",
-      ru: "Район Ляби-Хауз"
-    },
-    locationTag: {
-      en: "Canal & Bazaar",
-      ru: "Каналы и базары"
-    },
-    price: "",
-    description: {
-      en: "A 17th-century pond surrounded by madrasahs and chaikhanas — living culture, shaded terraces and authentic street life on camera.",
-      ru: "Пруд XVII века в окружении медресе и чайхан — живая культура, тенистые террасы и аутентичная уличная жизнь в кадре."
-    }
-  },
-  {
-    id: 4,
-    imageurl: locationMedia.kyzylkum.cover,
-    gallery: locationMedia.kyzylkum.gallery,
-    name: {
-      en: "Kyzylkum Desert",
-      ru: "Пустыня Кызылкум"
-    },
-    locationTag: {
-      en: "Outskirts of Bukhara",
-      ru: "Окрестности Бухары"
-    },
-    price: "",
-    description: {
-      en: "Red-sand dunes and open horizons within reach of the city — perfect for desert epics, commercials and music videos.",
-      ru: "Красные барханы и открытые горизонты в доступе от города — идеально для пустынных эпосов, рекламы и клипов."
-    }
-  },
-  {
-    id: 5,
-    imageurl: locationMedia.rooftops.cover,
-    gallery: locationMedia.rooftops.gallery,
-    name: {
-      en: "Bukhara Rooftops",
-      ru: "Крыши Бухары"
-    },
-    locationTag: {
-      en: "City Skyline",
-      ru: "Панорама города"
-    },
-    price: "",
-    description: {
-      en: "Golden-hour panoramas over domes and minarets — 360° city views ideal for drone work and stylised storytelling.",
-      ru: "Панорамы на купола и минареты в золотой час — круговые виды города для дронов и стилизованного сторителлинга."
-    }
-  },
-  {
-    id: 6,
-    imageurl: locationMedia.caravanserai.cover,
-    gallery: locationMedia.caravanserai.gallery,
-    name: {
-      en: "Trading Domes & Bazaars",
-      ru: "Торговые купола и базары"
-    },
-    locationTag: {
-      en: "Silk Road Heritage",
-      ru: "Наследие Великого шёлкового пути"
-    },
-    price: "",
-    description: {
-      en: "Toki-Sarrafon, Toki-Telpak Furushon and covered bazaar alleys — vaulted interiors and merchant life along the Silk Road.",
-      ru: "Токи-Сarraffon, Токи-Тelpak Furushon и крытые базарные переулки — сводчатые интерьеры и торговая жизнь Шёлкового пути."
-    }
-  }
+  makeLocation(1, "steppe-landscapes", "Steppe Landscapes", "Степные ландшафты"),
+  makeLocation(2, "sand-dunes", "Sand Dunes", "Песчаные барханы"),
+  makeLocation(3, "varakhsha", "Varakhsha Archaeological Site", "Варахша"),
+  makeLocation(4, "forest-landscapes", "Forest Landscapes", "Лесные локации"),
+  makeLocation(5, "mountain-landscapes", "Mountain Landscapes", "Горные ландшафты"),
+  makeLocation(6, "reservoir", "Reservoir", "Водохранилище"),
+  makeLocation(7, "lake", "Lake", "Озеро"),
+  makeLocation(8, "sardoba", "Sardoba Water Reservoir", "Сардоба"),
+  makeLocation(9, "madrasahs", "Madrasahs", "Медресе"),
+  makeLocation(10, "desert-tourist-village", "Desert Tourist Village", "Туристический город среди степи"),
+  makeLocation(11, "old-city", "Old City", "Старый город"),
+  makeLocation(12, "historic-square", "Historic Square", "Историческая площадь"),
+  makeLocation(13, "emirs-winter-palace", "Emir’s Winter Palace", "Зимний дворец эмира"),
+  makeLocation(14, "emirs-summer-palace", "Emir’s Summer Palace", "Летний дворец эмира"),
+  makeLocation(15, "historic-city-walls", "Historic City Walls", "Городские стены"),
+  makeLocation(16, "abandoned-swimming-pool", "Abandoned Swimming Pool", "Пустой бассейн"),
+  makeLocation(17, "emirs-madrasah", "Emir’s Madrasah", "Медресе Эмира"),
+  makeLocation(18, "historic-hammam", "Historic Hammam", "Исторический хаммам"),
+  makeLocation(19, "minaret-grand-mosque", "Minaret & Grand Mosque", "Минарет и Большая мечеть"),
+  makeLocation(20, "first-trading-dome", "First Trading Dome", "Первый торговый купол"),
+  makeLocation(21, "second-third-trading-domes", "Second & Third Trading Domes", "Второй и третий торговые купола"),
+  makeLocation(22, "historic-architectural-complex", "Historic Architectural Complex", "Исторический комплекс"),
+  makeLocation(23, "medieval-zindan", "Medieval Fortress Prison (Zindan)", "Средневековый зиндан")
 ];

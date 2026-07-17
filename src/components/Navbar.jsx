@@ -24,6 +24,11 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setIsOpen(false);
+    setLangOpen(false);
+  }, [location.pathname]);
+
   const navItems = [
     { path: "/", label: t.navbar.home },
     { path: "/locations", label: t.navbar.locations },
@@ -41,8 +46,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`sticky top-0 z-30 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
+        isScrolled || isOpen
           ? "bg-black/55 backdrop-blur-md border-b border-white/10"
           : "bg-transparent border-b border-transparent"
       }`}
@@ -50,7 +55,11 @@ const Navbar = () => {
       <div className="site-container">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link to="/" className="flex items-center gap-0.5 sm:gap-1 shrink-0 min-w-0">
-            <img className="h-11 sm:h-12 lg:h-14 w-auto shrink-0" src={Img} alt={getStaticImageAlt("logo", language)} />
+            <img
+              className="h-11 sm:h-12 lg:h-14 w-auto shrink-0"
+              src={Img}
+              alt={getStaticImageAlt("logo", language)}
+            />
             <div className="leading-tight min-w-0 -ml-0.5">
               <p className="text-accent font-semibold text-[10px] sm:text-sm tracking-wider truncate">
                 {t.navbar.brand}
@@ -120,13 +129,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div
-          className={`xl:hidden border-t max-h-[calc(100vh-4rem)] overflow-y-auto ${
-            isScrolled
-              ? "border-white/10 bg-black/70 backdrop-blur-md"
-              : "border-site-border bg-site/95 backdrop-blur-md"
-          }`}
-        >
+        <div className="xl:hidden border-t border-white/10 max-h-[calc(100vh-4rem)] overflow-y-auto bg-black/80 backdrop-blur-md">
           <div className="site-container py-4 space-y-1">
             {navItems.map((item) => (
               <Link

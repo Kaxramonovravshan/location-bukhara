@@ -27,7 +27,7 @@ const HomeHero = () => {
 
   return (
     <>
-      <section className="relative w-full min-h-[min(85vh,720px)] sm:min-h-[85vh] overflow-hidden">
+      <section className="relative w-full min-h-[min(85vh,720px)] sm:min-h-[85vh] overflow-hidden -mt-16 sm:-mt-20">
         <video
           ref={videoRef}
           key={videoSrc}
@@ -42,11 +42,15 @@ const HomeHero = () => {
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-site/90 via-site/55 to-site/25" />
 
-        <div className="relative site-container min-h-[min(85vh,720px)] sm:min-h-[85vh] flex flex-col justify-center py-20 sm:py-24">
-          <h1 className="max-w-5xl text-[clamp(2rem,8vw,5.75rem)] font-extrabold uppercase leading-[1.12] tracking-tight text-content-primary">
+        <div className="relative site-container min-h-[min(85vh,720px)] sm:min-h-[85vh] flex flex-col justify-center py-20 sm:py-24 pt-28 sm:pt-32">
+          <h1 className="max-w-full text-[clamp(1.75rem,7vw,5.75rem)] font-extrabold uppercase leading-[1.12] tracking-tight text-content-primary break-words">
             {t.heroTitle}
-            <br />
-            {t.heroTitle2}
+            {t.heroTitle2 ? (
+              <>
+                <br />
+                {t.heroTitle2}
+              </>
+            ) : null}
           </h1>
 
           <button

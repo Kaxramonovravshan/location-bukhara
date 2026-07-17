@@ -14,7 +14,7 @@ const PageHero = ({
 
   return (
     <div
-      className={`relative w-full overflow-hidden ${
+      className={`relative w-full overflow-hidden -mt-16 sm:-mt-20 ${
         hasImage
           ? "min-h-[min(92vh,820px)] sm:min-h-[90vh]"
           : "h-[min(70vh,520px)] sm:h-[min(75vh,600px)] lg:h-[700px]"
@@ -48,8 +48,8 @@ const PageHero = ({
       />
 
       <div
-        className={`relative site-container flex items-center py-20 sm:py-24 ${
-          hasImage ? "min-h-[min(92vh,820px)] sm:min-h-[90vh]" : "h-full py-16 sm:py-20"
+        className={`relative site-container flex items-center py-20 sm:py-24 pt-28 sm:pt-32 ${
+          hasImage ? "min-h-[min(92vh,820px)] sm:min-h-[90vh]" : "h-full"
         }`}
       >
         <div className="max-w-5xl space-y-5 sm:space-y-6">

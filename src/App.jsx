@@ -18,14 +18,16 @@ const App = () => {
       <JsonLd />
       <Analytics />
       <RouteAnalytics />
-      <div className="relative bg-site min-h-screen">
+      <div className="relative bg-site min-h-screen overflow-x-hidden max-w-[100vw]">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/locations" element={<Location />} />
-          <Route path="/service" element={<Service />} />
-        </Routes>
+        <main className="pt-16 sm:pt-20">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/locations" element={<Location />} />
+            <Route path="/service" element={<Service />} />
+          </Routes>
+        </main>
         <Footer />
       </div>
     </LanguageProvider>
