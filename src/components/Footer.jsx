@@ -33,7 +33,12 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-content-secondary text-sm">
                 <Mail className="w-5 h-5 text-accent shrink-0" />
-                {t.footer.email}
+                <a
+                  href={`mailto:${t.footer.email}`}
+                  className="transition-colors duration-300 hover:text-accent"
+                >
+                  {t.footer.email}
+                </a>
               </li>
             </ul>
           </div>

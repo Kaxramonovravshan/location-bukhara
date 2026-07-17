@@ -200,7 +200,7 @@ export const translations = {
       contactTitle: "Contact Us",
       address: "Bukhara, Uzbekistan",
       phone: "+998 90 123 45 67",
-      email: "info@buxorofilm.uz",
+      email: "buxorofilm@gmail.com",
       copyright: "© 2024 BuxoroFilm Studio. All rights reserved.",
       logo: {
         english: "FILM BUKHARA"
@@ -516,7 +516,7 @@ export const translations = {
       contactTitle: "Контакты",
       address: "Бухара, Узбекистан",
       phone: "+998 90 123 45 67",
-      email: "info@buxorofilm.uz",
+      email: "buxorofilm@gmail.com",
       copyright: "© 2024 BuxoroFilm Studio. Все права защищены.",
       logo: {
         arabic: "فيلم بُخارى",

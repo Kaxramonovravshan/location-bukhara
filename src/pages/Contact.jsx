@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import Seo from "../components/Seo";
 import GhostButton from "../components/GhostButton";
 import { getPageSeo } from "../seo/pageSeo";
+import { SITE_EMAIL } from "../config/site";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 
@@ -53,7 +54,10 @@ const Contact = () => {
         templateId,
         {
           name: formData.fullName,
+          from_name: formData.fullName,
           email: formData.email,
+          reply_to: formData.email,
+          to_email: SITE_EMAIL,
           phone: formData.phone,
           message: formData.message
         },

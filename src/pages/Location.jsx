@@ -130,7 +130,7 @@ const Location = () => {
         </GhostButton>
       </PageHero>
 
-      <section className="site-container section-padding">
+      {/* <section className="site-container section-padding">
         <div className="space-y-8 sm:space-y-10">
           <div className="space-y-4 max-w-[42rem]">
             <p className="section-label">{t.intro.badge}</p>
@@ -148,7 +148,7 @@ const Location = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <WhyFilmSection />
 

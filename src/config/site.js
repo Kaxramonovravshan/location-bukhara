@@ -12,7 +12,7 @@ export const GSC_VERIFICATION =
 
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
-export const SITE_EMAIL = "info@buxorofilm.uz";
+export const SITE_EMAIL = "buxorofilm@gmail.com";
 export const SITE_PHONE = "+998 90 123 45 67";
 export const SITE_ADDRESS = {
   en: "Bukhara, Uzbekistan",
