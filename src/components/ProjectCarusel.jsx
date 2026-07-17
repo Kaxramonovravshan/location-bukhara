@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { lazy, Suspense, useCallback, useMemo, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -7,9 +7,10 @@ import {
   portfolioResponsive
 } from "../utils/portfolio.js";
 import ProjectCard from "./ProjectCart.jsx";
-import PortfolioDetailModal from "./PortfolioDetailModal.jsx";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
+
+const PortfolioDetailModal = lazy(() => import("./PortfolioDetailModal.jsx"));
 
 const CarouselArrow = ({ direction, onClick, ariaLabel, disabled }) => (
   <button
@@ -33,24 +34,31 @@ const ProjectCarusel = ({ variant = "default" }) => {
   const [selectedProjectId, setSelectedProjectId] = useState(null);
 
   const isHome = variant === "home";
-  const projects = portfolioProjects;
 
-  const selectedProject = portfolioProjects.find(
-    (item) => item.id === selectedProjectId
+  const selectedProject = useMemo(
+    () => portfolioProjects.find((item) => item.id === selectedProjectId),
+    [selectedProjectId]
   );
 
-  const cards = projects.map((item) => (
-    <ProjectCard
-      key={item.id}
-      name={item.title[language] || item.title.en}
-      category={item.category[language] || item.category.en}
-      poster={item.poster}
-      director={item.director}
-      countries={item.countries[language] || item.countries.en}
-      year={item.year}
-      onClick={() => setSelectedProjectId(item.id)}
-    />
-  ));
+  const handleCloseModal = useCallback(() => setSelectedProjectId(null), []);
+
+  const cards = useMemo(
+    () =>
+      portfolioProjects.map((item) => (
+        <ProjectCard
+          key={item.id}
+          projectId={item.id}
+          name={item.title[language] || item.title.en}
+          category={item.category[language] || item.category.en}
+          poster={item.poster}
+          director={item.director}
+          countries={item.countries[language] || item.countries.en}
+          year={item.year}
+          onSelect={setSelectedProjectId}
+        />
+      )),
+    [language]
+  );
 
   return (
     <>
@@ -95,10 +103,12 @@ const ProjectCarusel = ({ variant = "default" }) => {
       </section>
 
       {selectedProject && (
-        <PortfolioDetailModal
-          project={selectedProject}
-          onClose={() => setSelectedProjectId(null)}
-        />
+        <Suspense fallback={null}>
+          <PortfolioDetailModal
+            project={selectedProject}
+            onClose={handleCloseModal}
+          />
+        </Suspense>
       )}
     </>
   );

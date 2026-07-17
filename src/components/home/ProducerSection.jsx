@@ -1,4 +1,4 @@
-import producerImage from "../../assets/aliChroiyev.PNG";
+import producerImage from "../../assets/aliChroiyev.webp";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../utils/translations";
 import { getStaticImageAlt } from "../../utils/imageAlt";
@@ -21,6 +21,7 @@ const ProducerSection = () => {
                 alt={getStaticImageAlt("producer", language)}
                 className="w-full h-full object-cover object-[center_18%]"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

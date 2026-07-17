@@ -113,6 +113,7 @@ const PortfolioDetailModal = ({ project, onClose }) => {
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
                   isPlaying ? "opacity-0 pointer-events-none" : "opacity-100"
                 }`}
+                decoding="async"
               />
 
               {!isPlaying && videoSrc && (

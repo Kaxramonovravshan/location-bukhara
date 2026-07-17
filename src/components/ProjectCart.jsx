@@ -1,16 +1,18 @@
+import { memo } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 import { getPosterUrl } from "../utils/portfolioMedia";
 import { getPortfolioImageAlt } from "../utils/imageAlt";
 
 const ProjectCard = ({
+  projectId,
   name,
   category,
   poster,
   director,
   countries,
   year,
-  onClick,
+  onSelect,
   compact = false
 }) => {
   const { language } = useLanguage();
@@ -19,7 +21,7 @@ const ProjectCard = ({
   return (
     <button
       type="button"
-      onClick={onClick}
+      onClick={() => onSelect(projectId)}
       className="card h-full flex flex-col text-left w-full cursor-pointer group touch-manipulation"
     >
       <div className="relative flex-shrink-0 w-full aspect-[3/4] overflow-hidden bg-site-card">
@@ -73,4 +75,4 @@ const ProjectCard = ({
   );
 };
 
-export default ProjectCard;
+export default memo(ProjectCard);

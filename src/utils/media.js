@@ -1,9 +1,9 @@
-import service01 from "../assets/services/01.jpg";
-import service02 from "../assets/services/02.jpg";
-import service03 from "../assets/services/03.jpg";
-import service04 from "../assets/services/04.jpg";
-import service05 from "../assets/services/05.jpg";
-import service06 from "../assets/services/06.jpg";
+import service01 from "../assets/services/01.webp";
+import service02 from "../assets/services/02.webp";
+import service03 from "../assets/services/03.webp";
+import service04 from "../assets/services/04.webp";
+import service05 from "../assets/services/05.webp";
+import service06 from "../assets/services/06.webp";
 
 export const serviceMedia = [
   {

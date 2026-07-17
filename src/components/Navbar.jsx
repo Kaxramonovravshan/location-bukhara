@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
-import Img from "../assets/logo.png";
+import Img from "../assets/logo.webp";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 import { getStaticImageAlt } from "../utils/imageAlt";
@@ -59,6 +59,9 @@ const Navbar = () => {
               className="h-11 sm:h-12 lg:h-14 w-auto shrink-0"
               src={Img}
               alt={getStaticImageAlt("logo", language)}
+              width={56}
+              height={50}
+              decoding="async"
             />
             <div className="leading-tight min-w-0 -ml-0.5">
               <p className="text-accent font-semibold text-[10px] sm:text-sm tracking-wider truncate">

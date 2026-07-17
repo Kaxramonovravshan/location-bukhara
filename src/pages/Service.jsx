@@ -7,7 +7,8 @@ import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 import { serviceMedia } from "../utils/media.js";
 import { getServiceImageAlt, getStaticImageAlt } from "../utils/imageAlt";
-import locationHeroImage from "../assets/locationSectionImg.png";
+import locationHeroImage from "../assets/locationSectionImg.webp";
+import locationHeroImageSm from "../assets/locationSectionImg-sm.webp";
 
 const Service = () => {
   const { language } = useLanguage();
@@ -104,6 +105,10 @@ const Service = () => {
         badge={locationT.services.badge}
         title={locationT.services.title}
         backgroundImage={locationHeroImage}
+        backgroundSrcSet={`${locationHeroImageSm} 960w, ${locationHeroImage} 1920w`}
+        backgroundSizes="100vw"
+        backgroundWidth={1920}
+        backgroundHeight={1080}
         imageAlt={getStaticImageAlt("locationHero", language)}
       />
 
@@ -120,6 +125,7 @@ const Service = () => {
                   alt={getServiceImageAlt(service.title, language)}
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -171,6 +177,7 @@ const Service = () => {
                     alt={getServiceImageAlt(selectedService.title, language, imgIndex + 1)}
                     className="h-full w-full object-cover transition duration-300 group-hover:scale-110"
                     loading="lazy"
+                    decoding="async"
                   />
                 </button>
               ))}
@@ -225,6 +232,7 @@ const Service = () => {
                 selectedImageIndex + 1
               )}
               className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              decoding="async"
             />
           </div>
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 text-white text-sm bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm">

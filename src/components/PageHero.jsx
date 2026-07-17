@@ -6,6 +6,10 @@ const PageHero = ({
   titleLine2,
   description,
   backgroundImage,
+  backgroundSrcSet,
+  backgroundSizes = "100vw",
+  backgroundWidth,
+  backgroundHeight,
   imageAlt = "",
   children
 }) => {
@@ -23,7 +27,13 @@ const PageHero = ({
       {hasImage ? (
         <img
           src={backgroundImage}
+          srcSet={backgroundSrcSet}
+          sizes={backgroundSrcSet ? backgroundSizes : undefined}
+          width={backgroundWidth}
+          height={backgroundHeight}
           alt={imageAlt}
+          loading="eager"
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
       ) : (

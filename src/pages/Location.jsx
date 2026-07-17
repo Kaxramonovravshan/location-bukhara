@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronRight, Play } from "lucide-react";
 import PageHero from "../components/PageHero";
 import GhostButton from "../components/GhostButton";
@@ -10,7 +10,8 @@ import { isVideoSrc } from "../utils/locationMedia";
 import { getLocationImageAlt, getStaticImageAlt } from "../utils/imageAlt";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
-import locationHeroImage from "../assets/locationSectionImg.png";
+import locationHeroImage from "../assets/locationSectionImg.webp";
+import locationHeroImageSm from "../assets/locationSectionImg-sm.webp";
 
 const Location = () => {
   const { language } = useLanguage();
@@ -21,6 +22,8 @@ const Location = () => {
   );
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [visibleMediaCount, setVisibleMediaCount] = useState(24);
+  const loadMoreRef = useRef(null);
 
   const selectedLocation = useMemo(
     () => ProjectProductData.find((item) => item.id === selectedLocationId),
@@ -34,8 +37,11 @@ const Location = () => {
         ? [selectedLocation.imageurl]
         : [];
 
+  const visibleGalleryImages = galleryImages.slice(0, visibleMediaCount);
+
   const handleSelectLocation = (id, shouldOpenModal = false) => {
     setSelectedLocationId(id);
+    setVisibleMediaCount(24);
     if (shouldOpenModal) {
       setIsGalleryOpen(true);
     }
@@ -102,6 +108,35 @@ const Location = () => {
     };
   }, [isGalleryOpen, selectedImageIndex, galleryImages.length]);
 
+  useEffect(() => {
+    if (
+      !isGalleryOpen ||
+      visibleMediaCount >= galleryImages.length ||
+      !loadMoreRef.current
+    ) {
+      return undefined;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      setVisibleMediaCount(galleryImages.length);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisibleMediaCount((count) =>
+            Math.min(count + 24, galleryImages.length)
+          );
+        }
+      },
+      { rootMargin: "300px" }
+    );
+
+    observer.observe(loadMoreRef.current);
+    return () => observer.disconnect();
+  }, [isGalleryOpen, visibleMediaCount, galleryImages.length]);
+
   return (
     <>
       <Seo {...seo} language={language} />
@@ -113,6 +148,10 @@ const Location = () => {
         titleLine2={t.hero.titleLine2}
         description={t.hero.description}
         backgroundImage={locationHeroImage}
+        backgroundSrcSet={`${locationHeroImageSm} 960w, ${locationHeroImage} 1920w`}
+        backgroundSizes="100vw"
+        backgroundWidth={1920}
+        backgroundHeight={1080}
         imageAlt={getStaticImageAlt("locationHero", language)}
       >
         <GhostButton
@@ -181,7 +220,7 @@ const Location = () => {
               return (
                 <article
                   key={location.id}
-                  className="flex flex-col gap-5 sm:gap-6 py-6 sm:py-8 md:flex-row md:items-center md:gap-10"
+                  className="location-catalog-item flex flex-col gap-5 sm:gap-6 py-6 sm:py-8 md:flex-row md:items-center md:gap-10"
                 >
                   <div className="w-full md:w-[55%] lg:w-[50%]">
                     {hasImages ? (
@@ -202,6 +241,7 @@ const Location = () => {
                               )}
                               className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                               loading="lazy"
+                              decoding="async"
                             />
                           </button>
                         ))}
@@ -254,7 +294,7 @@ const Location = () => {
               </svg>
             </button>
             <div className="site-container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3">
-              {galleryImages.map((src, index) => {
+              {visibleGalleryImages.map((src, index) => {
                 const video = isVideoSrc(src);
                 return (
                   <button
@@ -265,11 +305,11 @@ const Location = () => {
                   >
                     {video ? (
                       <>
-                        <video
-                          src={src}
-                          muted
-                          playsInline
-                          preload="metadata"
+                        <img
+                          src={selectedLocation.imageurl}
+                          alt=""
+                          loading="lazy"
+                          decoding="async"
                           className="h-full w-full object-cover"
                         />
                         <span className="absolute inset-0 flex items-center justify-center bg-black/35">
@@ -288,11 +328,15 @@ const Location = () => {
                         )}
                         className="h-full w-full object-cover transition duration-300 group-hover:scale-110"
                         loading="lazy"
+                        decoding="async"
                       />
                     )}
                   </button>
                 );
               })}
+              {visibleMediaCount < galleryImages.length && (
+                <div ref={loadMoreRef} className="h-px col-span-full" aria-hidden="true" />
+              )}
             </div>
           </div>
         </div>
@@ -343,6 +387,7 @@ const Location = () => {
                 controls
                 autoPlay
                 playsInline
+                preload="none"
                 className="max-w-full max-h-[90vh] rounded-lg bg-black"
               />
             ) : (
@@ -354,6 +399,7 @@ const Location = () => {
                   selectedImageIndex + 1
                 )}
                 className="max-w-full max-h-[90vh] object-contain rounded-lg"
+                decoding="async"
               />
             )}
           </div>

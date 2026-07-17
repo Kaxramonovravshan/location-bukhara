@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
-import LogoImg from "../assets/logo.png";
+import LogoImg from "../assets/logo.webp";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 import { getStaticImageAlt } from "../utils/imageAlt";
@@ -14,7 +14,13 @@ const Footer = () => {
       <div className="site-container section-padding pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           <div className="space-y-6">
-            <img className="h-16 sm:h-20 lg:h-24 w-auto" src={LogoImg} alt={getStaticImageAlt("logo", language)} />
+            <img
+              className="h-16 sm:h-20 lg:h-24 w-auto"
+              src={LogoImg}
+              alt={getStaticImageAlt("logo", language)}
+              loading="lazy"
+              decoding="async"
+            />
             <p className="body-text text-sm">{t.footer.about}</p>
           </div>
 

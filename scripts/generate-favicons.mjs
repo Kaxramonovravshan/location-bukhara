@@ -1,7 +1,7 @@
 import sharp from "sharp";
 import { mkdir } from "fs/promises";
 
-const logoPath = "src/assets/logo.png";
+const logoPath = "src/assets/logo.webp";
 const publicDir = "public";
 
 const sizes = [

@@ -1,4 +1,4 @@
-import historyImage from "../../assets/history/IMG_9924.PNG";
+import historyImage from "../../assets/history/IMG_9924.webp";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../utils/translations";
 import { getStaticImageAlt } from "../../utils/imageAlt";
@@ -57,6 +57,7 @@ const HistorySection = () => {
               alt={getStaticImageAlt("history", language)}
               className="w-full h-full object-cover"
               loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
