@@ -27,11 +27,11 @@ const HomeHero = () => {
 
   return (
     <>
-      <section className="relative w-full min-h-[min(85vh,720px)] sm:min-h-[85vh] overflow-hidden -mt-16 sm:-mt-20">
+      <section className="relative w-full h-[100svh] min-h-[560px] overflow-hidden -mt-16 sm:-mt-20">
         <video
           ref={videoRef}
           key={videoSrc}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           autoPlay
           loop
           muted
@@ -42,7 +42,7 @@ const HomeHero = () => {
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-site/90 via-site/55 to-site/25" />
 
-        <div className="relative site-container min-h-[min(85vh,720px)] sm:min-h-[85vh] flex flex-col justify-center py-20 sm:py-24 pt-28 sm:pt-32">
+        <div className="relative site-container h-full flex flex-col justify-center pt-16 sm:pt-20 pb-16 sm:pb-20">
           <h1 className="max-w-full text-[clamp(1.75rem,7vw,5.75rem)] font-extrabold uppercase leading-[1.12] tracking-tight text-content-primary break-words">
             {t.heroTitle}
             {t.heroTitle2 ? (

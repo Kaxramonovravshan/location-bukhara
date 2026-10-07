@@ -6,9 +6,11 @@ import { getPageSeo } from "../seo/pageSeo";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 import { serviceMedia } from "../utils/media.js";
+import { isServiceVideoSrc } from "../utils/serviceMedia.js";
 import { getServiceImageAlt, getStaticImageAlt } from "../utils/imageAlt";
 import locationHeroImage from "../assets/locationSectionImg.webp";
 import locationHeroImageSm from "../assets/locationSectionImg-sm.webp";
+import { Play } from "lucide-react";
 
 const Service = () => {
   const { language } = useLanguage();
@@ -119,14 +121,16 @@ const Service = () => {
               key={index}
               className="flex flex-col gap-5 sm:gap-6 md:flex-row md:items-center border-b border-site-border pb-8 sm:pb-10 last:border-b-0"
             >
-              <div className="w-full md:w-64 h-44 sm:h-48 md:h-40 overflow-hidden rounded-card border border-site-border flex-shrink-0">
-                <img
-                  src={service.image}
-                  alt={getServiceImageAlt(service.title, language)}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
+              <div className="w-full md:w-64 h-44 sm:h-48 md:h-40 overflow-hidden rounded-card border border-site-border flex-shrink-0 bg-site-card">
+                {service.image ? (
+                  <img
+                    src={service.image}
+                    alt={getServiceImageAlt(service.title, language)}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : null}
               </div>
 
               <div className="flex-1 flex flex-col gap-2 sm:gap-3">
@@ -140,7 +144,8 @@ const Service = () => {
                 <GhostButton
                   type="button"
                   onClick={() => handleOpenGallery(index)}
-                  className="w-full sm:w-auto min-h-[44px] touch-manipulation"
+                  disabled={!service.gallery?.length}
+                  className="w-full sm:w-auto min-h-[44px] touch-manipulation disabled:opacity-40 disabled:pointer-events-none"
                 >
                   {t.service.viewButton}
                 </GhostButton>
@@ -165,22 +170,42 @@ const Service = () => {
               </svg>
             </button>
             <div className="site-container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3">
-              {galleryImages.map((src, imgIndex) => (
-                <button
-                  type="button"
-                  key={`${selectedServiceIndex}-${imgIndex}`}
-                  onClick={() => handleImageClick(imgIndex)}
-                  className="aspect-square overflow-hidden rounded-card bg-site-card border border-site-border group touch-manipulation"
-                >
-                  <img
-                    src={src}
-                    alt={getServiceImageAlt(selectedService.title, language, imgIndex + 1)}
-                    className="h-full w-full object-cover transition duration-300 group-hover:scale-110"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </button>
-              ))}
+              {galleryImages.map((src, imgIndex) => {
+                const video = isServiceVideoSrc(src);
+                return (
+                  <button
+                    type="button"
+                    key={`${selectedServiceIndex}-${imgIndex}`}
+                    onClick={() => handleImageClick(imgIndex)}
+                    className="relative aspect-square overflow-hidden rounded-card bg-site-card border border-site-border group touch-manipulation"
+                  >
+                    {video ? (
+                      <>
+                        <video
+                          src={src}
+                          muted
+                          playsInline
+                          preload="metadata"
+                          className="h-full w-full object-cover pointer-events-none"
+                        />
+                        <span className="absolute inset-0 flex items-center justify-center bg-black/35">
+                          <span className="w-10 h-10 rounded-full border border-white/80 flex items-center justify-center text-white">
+                            <Play className="w-4 h-4 ml-0.5" fill="currentColor" />
+                          </span>
+                        </span>
+                      </>
+                    ) : (
+                      <img
+                        src={src}
+                        alt={getServiceImageAlt(selectedService.title, language, imgIndex + 1)}
+                        className="h-full w-full object-cover transition duration-300 group-hover:scale-110"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -224,16 +249,27 @@ const Service = () => {
             </button>
           )}
           <div className="relative z-20 max-w-[95vw] max-h-[90vh] flex items-center justify-center">
-            <img
-              src={galleryImages[selectedImageIndex]}
-              alt={getServiceImageAlt(
-                selectedService.title,
-                language,
-                selectedImageIndex + 1
-              )}
-              className="max-w-full max-h-[90vh] object-contain rounded-lg"
-              decoding="async"
-            />
+            {isServiceVideoSrc(galleryImages[selectedImageIndex]) ? (
+              <video
+                key={galleryImages[selectedImageIndex]}
+                src={galleryImages[selectedImageIndex]}
+                controls
+                autoPlay
+                playsInline
+                className="max-w-full max-h-[90vh] rounded-lg"
+              />
+            ) : (
+              <img
+                src={galleryImages[selectedImageIndex]}
+                alt={getServiceImageAlt(
+                  selectedService.title,
+                  language,
+                  selectedImageIndex + 1
+                )}
+                className="max-w-full max-h-[90vh] object-contain rounded-lg"
+                decoding="async"
+              />
+            )}
           </div>
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 text-white text-sm bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm">
             {selectedImageIndex + 1} / {galleryImages.length}
