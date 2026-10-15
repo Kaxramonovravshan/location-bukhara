@@ -14,7 +14,7 @@ const Service = lazy(() => import("./pages/Service"));
 
 const PageFallback = () => (
   <div
-    className="min-h-[60vh] bg-site"
+    className="min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)] bg-site"
     role="status"
     aria-label="Loading page"
   />

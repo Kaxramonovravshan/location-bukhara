@@ -19,6 +19,8 @@ const Footer = () => {
               className="h-16 sm:h-20 lg:h-24 w-auto"
               src={LogoImg}
               alt={getStaticImageAlt("logo", language)}
+              width="256"
+              height="228"
               loading="lazy"
               decoding="async"
             />
