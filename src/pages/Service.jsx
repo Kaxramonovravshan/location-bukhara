@@ -112,10 +112,10 @@ const Service = () => {
         badge={locationT.services.badge}
         title={locationT.services.title}
         backgroundImage={locationHeroImage}
-        backgroundSrcSet={`${locationHeroImageSm} 960w, ${locationHeroImage} 1920w`}
+        backgroundSrcSet={`${locationHeroImageSm} 929w, ${locationHeroImage} 1645w`}
         backgroundSizes="100vw"
-        backgroundWidth={1920}
-        backgroundHeight={1080}
+        backgroundWidth={1645}
+        backgroundHeight={956}
         imageAlt={getStaticImageAlt("locationHero", language)}
       />
 

@@ -9,6 +9,7 @@
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "generate:location-media": "node scripts/generate-location-media.mjs",
     "generate:service-media": "node scripts/generate-service-media.mjs",
+    "generate:location-card-variants": "node scripts/generate-location-card-variants.mjs",
     "generate:r2-manifest": "node scripts/generate-r2-image-manifest.mjs",
     "upload:r2-images": "node scripts/upload-r2-images.mjs",
     "test:r2-uploader": "node --test scripts/test-r2-uploader.mjs",
