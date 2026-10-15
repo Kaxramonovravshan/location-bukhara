@@ -1,5 +1,5 @@
 import HomeHero from "../components/home/HomeHero";
-import ProjectCarusel from "../components/ProjectCarusel";
+import DeferredProjectCarusel from "../components/DeferredProjectCarusel";
 import ProducerSection from "../components/home/ProducerSection";
 import HistorySection from "../components/home/HistorySection";
 import Seo from "../components/Seo";
@@ -16,7 +16,7 @@ const Home = () => {
 
       <div className="bg-site">
         <HomeHero />
-        <ProjectCarusel variant="home" />
+        <DeferredProjectCarusel />
         <ProducerSection />
         <HistorySection />
       </div>
