@@ -1,7 +1,8 @@
+import { getR2PosterUrl } from "./mediaUrl.js";
+
 export const getPosterUrl = (poster) => {
   if (!poster) return "";
-  if (poster.startsWith("http") || poster.startsWith("/")) return poster;
-  return `/posters/${poster}`;
+  return getR2PosterUrl(poster);
 };
 
 export const getVideoUrl = (video) => {

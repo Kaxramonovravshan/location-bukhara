@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
-import LogoImg from "../assets/logo.webp";
+import { getR2SharedImageUrl } from "../utils/mediaUrl.js";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 import { getStaticImageAlt } from "../utils/imageAlt";
 
 const Footer = () => {
+  const LogoImg = getR2SharedImageUrl("logo.webp");
   const { language } = useLanguage();
   const t = translations[language];
 

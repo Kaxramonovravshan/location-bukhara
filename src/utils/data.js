@@ -1,13 +1,17 @@
 import { locationMediaBySlug } from "./locationMedia.js";
+import { getR2ImageUrl } from "./mediaUrl.js";
+
+const mapLocationImages = (items = []) =>
+  items.map((src) => /\.(mp4|webm|mov)(\?|$)/i.test(src) ? src : getR2ImageUrl(src));
 
 const makeLocation = (id, slug, en, ru) => {
   const media = locationMediaBySlug[slug] || { cover: "", gallery: [], images: [] };
   return {
     id,
     slug,
-    imageurl: media.cover || "",
-    gallery: media.gallery || [],
-    images: media.images || [],
+    imageurl: media.cover ? getR2ImageUrl(media.cover) : "",
+    gallery: mapLocationImages(media.gallery),
+    images: mapLocationImages(media.images),
     videos: media.videos || [],
     name: { en, ru }
   };

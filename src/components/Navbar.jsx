@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
-import Img from "../assets/logo.webp";
+import { getR2SharedImageUrl } from "../utils/mediaUrl.js";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 import { getStaticImageAlt } from "../utils/imageAlt";
 
 const Navbar = () => {
+  const Img = getR2SharedImageUrl("logo.webp");
   const [isOpen, setIsOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);

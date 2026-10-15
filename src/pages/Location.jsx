@@ -10,13 +10,14 @@ import { isVideoSrc } from "../utils/locationMedia";
 import { getLocationImageAlt, getStaticImageAlt } from "../utils/imageAlt";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
-import locationHeroImage from "../assets/locationSectionImg.webp";
-import locationHeroImageSm from "../assets/locationSectionImg-sm.webp";
+import { getR2SharedImageUrl } from "../utils/mediaUrl.js";
 
 const Location = () => {
   const { language } = useLanguage();
   const seo = getPageSeo("/locations", language);
   const t = translations[language].location;
+  const locationHeroImage = getR2SharedImageUrl("locationSectionImg.webp");
+  const locationHeroImageSm = getR2SharedImageUrl("locationSectionImg-sm.webp");
   const [selectedLocationId, setSelectedLocationId] = useState(
     ProjectProductData[0]?.id
   );

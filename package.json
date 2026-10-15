@@ -9,18 +9,23 @@
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "generate:location-media": "node scripts/generate-location-media.mjs",
     "generate:service-media": "node scripts/generate-service-media.mjs",
+    "generate:r2-manifest": "node scripts/generate-r2-image-manifest.mjs",
+    "upload:r2-images": "node scripts/upload-r2-images.mjs",
+    "test:r2-uploader": "node --test scripts/test-r2-uploader.mjs",
     "optimize:location-images": "node scripts/optimize-location-images.mjs && node scripts/generate-location-media.mjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1152.0",
     "@emailjs/browser": "^4.4.1",
     "lucide-react": "^1.24.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^3.0.0",
     "react-multi-carousel": "^2.8.4",
-    "react-router-dom": "^6.21.1"
+    "react-router-dom": "^6.21.1",
+    "write-file-atomic": "^8.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

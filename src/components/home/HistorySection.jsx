@@ -1,4 +1,4 @@
-import historyImage from "../../assets/history/IMG_9924.webp";
+import { getR2SharedImageUrl } from "../../utils/mediaUrl.js";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../utils/translations";
 import { getStaticImageAlt } from "../../utils/imageAlt";
@@ -32,6 +32,7 @@ const highlightBrandNames = (text) => {
 };
 
 const HistorySection = () => {
+  const historyImage = getR2SharedImageUrl("history/IMG_9924.webp");
   const { language } = useLanguage();
   const t = translations[language].home;
 

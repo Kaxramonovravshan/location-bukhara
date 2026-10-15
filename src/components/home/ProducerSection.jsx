@@ -1,9 +1,10 @@
-import producerImage from "../../assets/aliChroiyev.webp";
+import { getR2SharedImageUrl } from "../../utils/mediaUrl.js";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../utils/translations";
 import { getStaticImageAlt } from "../../utils/imageAlt";
 
 const ProducerSection = () => {
+  const producerImage = getR2SharedImageUrl("aliChroiyev.webp");
   const { language } = useLanguage();
   const t = translations[language].home;
   const bioParagraphs = Array.isArray(t.producerBio)

@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { getR2SharedImageUrl } from "../utils/mediaUrl.js";
 import {
   DEFAULT_OG_IMAGE,
   SITE_ADDRESS,
@@ -24,7 +25,7 @@ const JsonLd = () => {
     "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/icon-512.png`,
+    logo: getR2SharedImageUrl("icon-512.png"),
     image: DEFAULT_OG_IMAGE,
     email: SITE_EMAIL,
     telephone: SITE_PHONE,

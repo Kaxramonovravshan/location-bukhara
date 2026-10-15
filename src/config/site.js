@@ -1,3 +1,5 @@
+import { getR2SharedImageUrl } from "../utils/mediaUrl.js";
+
 export const SITE_URL =
   import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://buxorofilm.com";
 
@@ -10,7 +12,7 @@ export const GA_MEASUREMENT_ID =
 export const GSC_VERIFICATION =
   import.meta.env.VITE_GSC_VERIFICATION || "";
 
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
+export const DEFAULT_OG_IMAGE = getR2SharedImageUrl("og-image.png");
 
 export const SITE_EMAIL = "buxorofilm@gmail.com";
 export const SITE_PHONE = "+998 90 123 45 67";
@@ -25,3 +27,4 @@ export const SITE_SOCIAL = {
   youtube: "https://www.youtube.com/",
   linkedin: "https://www.linkedin.com/"
 };
+

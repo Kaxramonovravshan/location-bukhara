@@ -8,8 +8,7 @@ import { translations } from "../utils/translations";
 import { serviceMedia } from "../utils/media.js";
 import { isServiceVideoSrc } from "../utils/serviceMedia.js";
 import { getServiceImageAlt, getStaticImageAlt } from "../utils/imageAlt";
-import locationHeroImage from "../assets/locationSectionImg.webp";
-import locationHeroImageSm from "../assets/locationSectionImg-sm.webp";
+import { getR2ImageUrl, getR2SharedImageUrl } from "../utils/mediaUrl.js";
 import { Play } from "lucide-react";
 
 const Service = () => {
@@ -17,11 +16,17 @@ const Service = () => {
   const seo = getPageSeo("/service", language);
   const t = translations[language];
   const locationT = translations[language].location;
+  const locationHeroImage = getR2SharedImageUrl("locationSectionImg.webp");
+  const locationHeroImageSm = getR2SharedImageUrl("locationSectionImg-sm.webp");
   const services = useMemo(
     () =>
       t.service.services.map((service, index) => ({
         ...service,
-        ...serviceMedia[index]
+        ...serviceMedia[index],
+        image: getR2ImageUrl(serviceMedia[index]?.image),
+        gallery: (serviceMedia[index]?.gallery || []).map((src) =>
+          isServiceVideoSrc(src) ? src : getR2ImageUrl(src)
+        )
       })),
     [t.service.services]
   );
