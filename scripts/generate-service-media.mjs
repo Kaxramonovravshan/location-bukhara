@@ -12,7 +12,9 @@ export const SERVICE_SLUGS = [
   "decoration",
   "equipment-supply",
   "location-management",
-  "production-support"
+  "production-support",
+  "accommodation",
+  "live-props"
 ];
 
 function sortFiles(a, b) {
@@ -43,8 +45,20 @@ for (const slug of SERVICE_SLUGS) {
   const videoUrls = videos.map((f) => `/services/${slug}/${f}`);
 
   mediaBySlug[slug] = {
+    ...(slug === "location-management" ? { enabled: false } : {}),
     image: imageUrls[0] || "",
-    gallery: [...imageUrls, ...videoUrls]
+    gallery: [...imageUrls, ...videoUrls],
+    ...(slug === "accommodation"
+      ? Object.fromEntries(["hotels", "hostels"].map((collection) => {
+          const collectionDir = path.join(dir, collection);
+          const collectionFiles = fs.existsSync(collectionDir)
+            ? fs.readdirSync(collectionDir)
+                .filter((f) => /\.(jpe?g|png|webp|gif)$/i.test(f))
+                .sort(sortFiles)
+            : [];
+          return [collection, collectionFiles.map((f) => `/services/${slug}/${collection}/${f}`)];
+        }))
+      : {})
   };
 }
 

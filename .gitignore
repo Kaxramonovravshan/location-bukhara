@@ -17,6 +17,12 @@ dist-ssr
 .env.*
 !.env.example
 
+# Local-only staging area for images waiting for R2 review/upload
+new-images/**
+!new-images/**/
+!new-images/**/.gitkeep
+!new-images/README.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

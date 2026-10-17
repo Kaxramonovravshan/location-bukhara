@@ -9,6 +9,7 @@ import {
 import ProjectCard from "./ProjectCart.jsx";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
+import { isPortfolioImageAvailable } from "../utils/portfolioMedia";
 
 const PortfolioDetailModal = lazy(() => import("./PortfolioDetailModal.jsx"));
 
@@ -34,17 +35,21 @@ const ProjectCarusel = ({ variant = "default" }) => {
   const [selectedProjectId, setSelectedProjectId] = useState(null);
 
   const isHome = variant === "home";
+  const renderableProjects = useMemo(
+    () => portfolioProjects.filter((item) => isPortfolioImageAvailable(item.poster)),
+    []
+  );
 
   const selectedProject = useMemo(
-    () => portfolioProjects.find((item) => item.id === selectedProjectId),
-    [selectedProjectId]
+    () => renderableProjects.find((item) => item.id === selectedProjectId),
+    [renderableProjects, selectedProjectId]
   );
 
   const handleCloseModal = useCallback(() => setSelectedProjectId(null), []);
 
   const cards = useMemo(
     () =>
-      portfolioProjects.map((item) => (
+      renderableProjects.map((item) => (
         <ProjectCard
           key={item.id}
           projectId={item.id}
@@ -57,7 +62,7 @@ const ProjectCarusel = ({ variant = "default" }) => {
           onSelect={setSelectedProjectId}
         />
       )),
-    [language]
+    [language, renderableProjects]
   );
 
   return (

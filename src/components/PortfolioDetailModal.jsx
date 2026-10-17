@@ -3,7 +3,7 @@ import { Play } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../utils/translations";
 import { getProjectServices } from "../utils/portfolio";
-import { getPosterUrl, getVideoUrl } from "../utils/portfolioMedia";
+import { getPortfolioGallery, getVideoUrl } from "../utils/portfolioMedia";
 import { getPortfolioImageAlt } from "../utils/imageAlt";
 
 const PortfolioDetailModal = ({ project, onClose }) => {
@@ -14,11 +14,8 @@ const PortfolioDetailModal = ({ project, onClose }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const projectTitle = project.title[language] || project.title.en;
-  const gallery = (project.gallery?.length
-    ? project.gallery
-    : [project.poster]
-  ).map(getPosterUrl);
-  const activeImage = gallery[activeImageIndex] || getPosterUrl(project.poster);
+  const gallery = getPortfolioGallery(project);
+  const activeImage = gallery[activeImageIndex] || gallery[0] || "";
   const videoSrc = getVideoUrl(project.video);
   const servicesText = getProjectServices(project, language);
 

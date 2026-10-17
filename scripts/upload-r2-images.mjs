@@ -7,9 +7,15 @@ import { NodeHttpHandler } from "@smithy/node-http-handler";
 import writeFileAtomic from "write-file-atomic";
 
 export const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-export const manifestPath = path.join(projectRoot, "docs", "r2-image-manifest.json");
-export const statusPath = path.join(projectRoot, "docs", "r2-image-manifest.status.json");
 const args = new Set(process.argv.slice(2));
+const manifestInline = process.argv.find((arg) => arg.startsWith("--manifest="));
+const manifestIndex = process.argv.indexOf("--manifest");
+export const manifestSelector = manifestInline ? manifestInline.slice("--manifest=".length) : manifestIndex >= 0 ? process.argv[manifestIndex + 1] : "";
+if (manifestIndex >= 0 && (!manifestSelector || manifestIndex !== process.argv.lastIndexOf("--manifest"))) throw new Error("--manifest requires exactly one selector value.");
+export const manifestPath = path.resolve(projectRoot, manifestSelector || path.join("docs", "r2-image-manifest.json"));
+export const statusPath = manifestSelector
+  ? path.join(path.dirname(manifestPath), `${path.basename(manifestPath, path.extname(manifestPath))}.status.json`)
+  : path.join(projectRoot, "docs", "r2-image-manifest.status.json");
 export const dryRun = args.has("--dry-run");
 export const force = args.has("--force");
 export const confirmedOverwrite = args.has("--confirm-overwrite");
@@ -154,7 +160,7 @@ async function main() {
       : manifest.images;
   if (onlySelector && selected.length !== 1) throw new Error(`--only must match exactly one manifestId, sourcePath, or r2Key; matches=${selected.length}.`);
   if (locationSelector && selected.length === 0) throw new Error(`--location matched no location image records: ${locationSelector}`);
-  const items = selected.filter((item) => !["complete", "skipped"].includes(statusFor(statuses, item)));
+  const items = selected.filter((item) => item.eligibleForUpload !== false && !["complete", "skipped"].includes(statusFor(statuses, item)));
   if (onlySelector && items.length === 0) {
     console.log(`Selected image is already ${statusFor(statuses, selected[0])}; no upload performed.`);
     return;

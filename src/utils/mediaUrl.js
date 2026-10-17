@@ -15,7 +15,15 @@ const sharedImageKeys = {
   "locationSectionImg-sm.webp": "shared/site-assets/locationSectionImg-sm.webp",
   "locations/hero-bukhara.png": "shared/location-hero/hero-bukhara.png",
   "posters/project-1.webp": "shared/portfolio-posters/project-1.webp",
-  "posters/project-2.webp": "shared/portfolio-posters/project-2.webp"
+  "posters/project-2.webp": "shared/portfolio-posters/project-2.webp",
+  "posters/project-3.webp": "shared/portfolio-posters/project-3.jpg",
+  "posters/project-4.webp": "shared/portfolio-posters/project-4.jpg",
+  "posters/project-6.webp": "shared/portfolio-posters/project-6.jpg",
+  "posters/project-7.webp": "shared/portfolio-posters/project-7.jpg",
+  "posters/project-8.webp": "shared/portfolio-posters/project-8.jpg",
+  "posters/project-10.webp": "shared/portfolio-posters/project-10.webp",
+  "posters/project-12.webp": "shared/portfolio-posters/project-12.jpg",
+  "posters/project-16.webp": "shared/portfolio-posters/project-16.jpg"
 };
 
 const toPublicUrl = (key) => {

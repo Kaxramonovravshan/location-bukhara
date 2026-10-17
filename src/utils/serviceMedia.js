@@ -3,7 +3,9 @@ export const serviceSlugs = [
   "decoration",
   "equipment-supply",
   "location-management",
-  "production-support"
+  "production-support",
+  "accommodation",
+  "live-props"
 ];
 
 export const serviceMediaBySlug = {
@@ -110,10 +112,21 @@ export const serviceMediaBySlug = {
     ]
   },
   "equipment-supply": {
-    "image": "",
-    "gallery": []
+    "image": "/services/production-support/photo_1_2026-10-17_13-09-33.jpg",
+    "gallery": [
+      "/services/production-support/photo_1_2026-10-17_13-09-33.jpg",
+      "/services/production-support/photo_2_2026-10-17_13-09-33.jpg",
+      "/services/production-support/photo_3_2026-10-17_13-09-33.jpg",
+      "/services/production-support/photo_4_2026-10-17_13-09-33.jpg",
+      "/services/production-support/photo_5_2026-10-17_13-09-33.jpg",
+      "/services/production-support/photo_6_2026-10-17_13-09-33.jpg",
+      "/services/production-support/photo_7_2026-10-17_13-09-33.jpg",
+      "/services/production-support/photo_8_2026-10-17_13-09-33.jpg",
+      "/services/production-support/photo_9_2026-10-17_13-09-33.jpg"
+    ]
   },
   "location-management": {
+    "enabled": false,
     "image": "",
     "gallery": []
   },
@@ -150,6 +163,66 @@ export const serviceMediaBySlug = {
       "/services/production-support/photo_24_2026-07-18_19-33-25.jpg",
       "/services/production-support/photo_25_2026-07-18_19-33-25.jpg",
       "/services/production-support/video_2026-07-18_19-33-25.mp4"
+    ]
+  },
+  "accommodation": {
+    "image": "/services/accommodation/hotels/photo_1_2026-10-17_12-58-09.jpg",
+    "gallery": [],
+    "hotels": [
+      "/services/accommodation/hotels/photo_10_2026-10-17_12-58-10.jpg",
+      "/services/accommodation/hotels/photo_11_2026-10-17_12-58-10.jpg",
+      "/services/accommodation/hotels/photo_13_2026-10-17_12-58-10.jpg",
+      "/services/accommodation/hotels/photo_14_2026-10-17_12-58-10.jpg",
+      "/services/accommodation/hotels/photo_15_2026-10-17_12-58-10.jpg",
+      "/services/accommodation/hotels/photo_16_2026-10-17_12-58-10.jpg",
+      "/services/accommodation/hotels/photo_17_2026-10-17_12-58-10.jpg",
+      "/services/accommodation/hotels/photo_1_2026-10-17_12-58-09.jpg",
+      "/services/accommodation/hotels/photo_2_2026-10-17_12-58-09.jpg",
+      "/services/accommodation/hotels/photo_3_2026-10-17_12-58-09.jpg",
+      "/services/accommodation/hotels/photo_4_2026-10-17_12-58-09.jpg",
+      "/services/accommodation/hotels/photo_5_2026-10-17_12-58-09.jpg",
+      "/services/accommodation/hotels/photo_6_2026-10-17_12-58-09.jpg",
+      "/services/accommodation/hotels/photo_7_2026-10-17_12-58-10.jpg",
+      "/services/accommodation/hotels/photo_8_2026-10-17_12-58-10.jpg",
+      "/services/accommodation/hotels/photo_9_2026-10-17_12-58-10.jpg"
+    ],
+    "hostels": [
+      "/services/accommodation/hostels/photo_10_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_11_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_12_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_13_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_14_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_15_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_16_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_17_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_18_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_19_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_1_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_2_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_3_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_4_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_5_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_6_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_7_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_8_2026-10-16_15-56-52.jpg",
+      "/services/accommodation/hostels/photo_9_2026-10-16_15-56-52.jpg"
+    ]
+  },
+  "live-props": {
+    "image": "/services/live-props/photo_1_2026-10-17_12-58-59.jpg",
+    "gallery": [
+      "/services/live-props/photo_10_2026-10-17_12-59-00.jpg",
+      "/services/live-props/photo_11_2026-10-17_12-59-00.jpg",
+      "/services/live-props/photo_12_2026-10-17_12-59-00.jpg",
+      "/services/live-props/photo_13_2026-10-17_12-59-00.jpg",
+      "/services/live-props/photo_1_2026-10-17_12-58-59.jpg",
+      "/services/live-props/photo_2_2026-10-17_12-58-59.jpg",
+      "/services/live-props/photo_3_2026-10-17_12-59-00.jpg",
+      "/services/live-props/photo_4_2026-10-17_12-59-00.jpg",
+      "/services/live-props/photo_5_2026-10-17_12-59-00.jpg",
+      "/services/live-props/photo_6_2026-10-17_12-59-00.jpg",
+      "/services/live-props/photo_7_2026-10-17_12-59-00.jpg",
+      "/services/live-props/photo_8_2026-10-17_12-59-00.jpg"
     ]
   }
 };

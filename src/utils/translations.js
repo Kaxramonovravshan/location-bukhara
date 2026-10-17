@@ -88,6 +88,8 @@ export const translations = {
       decoration: "Decoration",
       showMoreInfo: "show more info",
       viewButton: "View",
+      hotels: "Hotels",
+      hostels: "Hostels",
       services: [
         {
           title: "Decoration",
@@ -108,6 +110,16 @@ export const translations = {
           title: "Production Support",
           description:
             "Fixers, transport, catering, accommodation and crew logistics for international productions filming in Uzbekistan."
+        },
+        {
+          title: "Accommodation (Hotels & Hostels)",
+          description:
+            "Accommodation coordination for film crews, actors and production teams, with practical options arranged around locations and shooting schedules."
+        },
+        {
+          title: "Live Props",
+          description:
+            "Carefully coordinated live elements for film productions, arranged with experienced handlers and attention to the shooting schedule."
         }
       ]
     },
@@ -402,6 +414,8 @@ export const translations = {
       decoration: "Декорация",
       showMoreInfo: "показать больше информации",
       viewButton: "Смотреть",
+      hotels: "Отели",
+      hostels: "Хостелы",
       services: [
         {
           title: "Декорация",
@@ -422,6 +436,16 @@ export const translations = {
           title: "Производственная поддержка",
           description:
             "Фиксеры, транспорт, кейтеринг, размещение и логистика для международных съёмочных групп в Узбекистане."
+        },
+        {
+          title: "Размещение (отели и хостелы)",
+          description:
+            "Координация размещения для съёмочных групп, актёров и продакшн-команд с практичными вариантами рядом с локациями и с учётом графика съёмок."
+        },
+        {
+          title: "Живой реквизит",
+          description:
+            "Координация живых элементов для съёмок с опытными сопровождающими и с учётом требований площадки и графика производства."
         }
       ]
     },

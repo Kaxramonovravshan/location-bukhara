@@ -26,25 +26,30 @@ const Service = () => {
         image: getR2ImageUrl(serviceMedia[index]?.image),
         gallery: (serviceMedia[index]?.gallery || []).map((src) =>
           isServiceVideoSrc(src) ? src : getR2ImageUrl(src)
-        )
-      })),
+        ),
+        hotels: (serviceMedia[index]?.hotels || []).map((src) => getR2ImageUrl(src)),
+        hostels: (serviceMedia[index]?.hostels || []).map((src) => getR2ImageUrl(src))
+      })).filter((service) => service.enabled !== false),
     [t.service.services]
   );
   const [selectedServiceIndex, setSelectedServiceIndex] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [selectedGallery, setSelectedGallery] = useState(null);
 
   const selectedService =
     selectedServiceIndex !== null ? services[selectedServiceIndex] : null;
 
-  const galleryImages = selectedService?.gallery || [];
+  const galleryImages = selectedGallery || selectedService?.gallery || [];
 
-  const handleOpenGallery = (index) => {
+  const handleOpenGallery = (index, gallery = null) => {
     setSelectedServiceIndex(index);
+    setSelectedGallery(gallery);
   };
 
   const handleCloseGallery = () => {
     setSelectedServiceIndex(null);
     setSelectedImageIndex(null);
+    setSelectedGallery(null);
   };
 
   const handleImageClick = (index) => {
@@ -146,14 +151,35 @@ const Service = () => {
               </div>
 
               <div className="md:flex-shrink-0">
-                <GhostButton
-                  type="button"
-                  onClick={() => handleOpenGallery(index)}
-                  disabled={!service.gallery?.length}
-                  className="w-full sm:w-auto min-h-[44px] touch-manipulation disabled:opacity-40 disabled:pointer-events-none"
-                >
-                  {t.service.viewButton}
-                </GhostButton>
+                {service.slug === "accommodation" ? (
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <GhostButton
+                      type="button"
+                      onClick={() => handleOpenGallery(index, service.hotels)}
+                      disabled={!service.hotels?.length}
+                      className="w-full sm:w-auto min-h-[44px] touch-manipulation disabled:opacity-40 disabled:pointer-events-none"
+                    >
+                      {t.service.hotels}
+                    </GhostButton>
+                    <GhostButton
+                      type="button"
+                      onClick={() => handleOpenGallery(index, service.hostels)}
+                      disabled={!service.hostels?.length}
+                      className="w-full sm:w-auto min-h-[44px] touch-manipulation disabled:opacity-40 disabled:pointer-events-none"
+                    >
+                      {t.service.hostels}
+                    </GhostButton>
+                  </div>
+                ) : (
+                  <GhostButton
+                    type="button"
+                    onClick={() => handleOpenGallery(index)}
+                    disabled={!service.gallery?.length}
+                    className="w-full sm:w-auto min-h-[44px] touch-manipulation disabled:opacity-40 disabled:pointer-events-none"
+                  >
+                    {t.service.viewButton}
+                  </GhostButton>
+                )}
               </div>
             </div>
           ))}

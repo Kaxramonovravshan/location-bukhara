@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "items": {
+    "locations/forest-landscapes/photo_10_2026-10-16_15-38-20.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:39.163Z"
+    },
+    "locations/forest-landscapes/photo_1_2026-10-16_15-38-20.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:39.274Z"
+    },
+    "locations/forest-landscapes/photo_1_2026-10-16_15-40-41.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:39.298Z"
+    },
+    "locations/forest-landscapes/photo_2_2026-10-16_15-38-20.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:39.191Z"
+    },
+    "locations/forest-landscapes/photo_2_2026-10-16_15-40-41.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:40.072Z"
+    },
+    "locations/forest-landscapes/photo_3_2026-10-16_15-38-20.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:40.373Z"
+    },
+    "locations/forest-landscapes/photo_4_2026-10-16_15-38-20.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:40.335Z"
+    },
+    "locations/forest-landscapes/photo_5_2026-10-16_15-38-20.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:40.262Z"
+    },
+    "locations/forest-landscapes/photo_6_2026-10-16_15-38-20.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:41.102Z"
+    },
+    "locations/forest-landscapes/photo_7_2026-10-16_15-38-20.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:41.260Z"
+    },
+    "locations/forest-landscapes/photo_8_2026-10-16_15-38-20.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:41.374Z"
+    },
+    "locations/forest-landscapes/photo_9_2026-10-16_15-38-20.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:41.443Z"
+    },
+    "locations/reservoir/photo_1_2026-10-16_15-45-19.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:41.822Z"
+    },
+    "locations/reservoir/photo_2_2026-10-16_15-45-19.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:42.221Z"
+    },
+    "locations/reservoir/photo_3_2026-10-16_15-45-19.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:42.300Z"
+    },
+    "locations/reservoir/photo_4_2026-10-16_15-45-19.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:42.574Z"
+    },
+    "locations/reservoir/photo_5_2026-10-16_15-45-19.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:42.889Z"
+    },
+    "locations/reservoir/photo_6_2026-10-16_15-45-19.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:43.189Z"
+    },
+    "locations/reservoir/photo_7_2026-10-16_15-45-19.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:43.198Z"
+    },
+    "shared/portfolio-posters/project-10.webp": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:43.438Z"
+    },
+    "shared/portfolio-posters/project-12.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:44.046Z"
+    },
+    "shared/portfolio-posters/project-16.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:44.268Z"
+    },
+    "shared/portfolio-posters/project-3.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:44.224Z"
+    },
+    "shared/portfolio-posters/project-4.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:44.305Z"
+    },
+    "shared/portfolio-posters/project-6.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:45.002Z"
+    },
+    "shared/portfolio-posters/project-7.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:45.096Z"
+    },
+    "shared/portfolio-posters/project-8.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:45.053Z"
+    },
+    "services/accommodation/hostels/photo_10_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:45.257Z"
+    },
+    "services/accommodation/hostels/photo_11_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:45.814Z"
+    },
+    "services/accommodation/hostels/photo_12_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:45.903Z"
+    },
+    "services/accommodation/hostels/photo_13_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:45.923Z"
+    },
+    "services/accommodation/hostels/photo_14_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:46.264Z"
+    },
+    "services/accommodation/hostels/photo_15_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:46.866Z"
+    },
+    "services/accommodation/hostels/photo_16_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:46.749Z"
+    },
+    "services/accommodation/hostels/photo_17_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:46.733Z"
+    },
+    "services/accommodation/hostels/photo_18_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:47.159Z"
+    },
+    "services/accommodation/hostels/photo_19_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:47.524Z"
+    },
+    "services/accommodation/hostels/photo_1_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:47.696Z"
+    },
+    "services/accommodation/hostels/photo_2_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:47.908Z"
+    },
+    "services/accommodation/hostels/photo_3_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:48.017Z"
+    },
+    "services/accommodation/hostels/photo_4_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:48.392Z"
+    },
+    "services/accommodation/hostels/photo_5_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:48.717Z"
+    },
+    "services/accommodation/hostels/photo_6_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:48.769Z"
+    },
+    "services/accommodation/hostels/photo_7_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:48.865Z"
+    },
+    "services/accommodation/hostels/photo_8_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:49.301Z"
+    },
+    "services/accommodation/hostels/photo_9_2026-10-16_15-56-52.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:49.684Z"
+    },
+    "services/accommodation/hotels/photo_10_2026-10-17_12-58-10.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:49.658Z"
+    },
+    "services/accommodation/hotels/photo_11_2026-10-17_12-58-10.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:49.882Z"
+    },
+    "services/accommodation/hotels/photo_13_2026-10-17_12-58-10.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:50.179Z"
+    },
+    "services/accommodation/hotels/photo_14_2026-10-17_12-58-10.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:50.510Z"
+    },
+    "services/accommodation/hotels/photo_15_2026-10-17_12-58-10.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:50.685Z"
+    },
+    "services/accommodation/hotels/photo_16_2026-10-17_12-58-10.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:50.716Z"
+    },
+    "services/accommodation/hotels/photo_17_2026-10-17_12-58-10.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:51.079Z"
+    },
+    "services/accommodation/hotels/photo_1_2026-10-17_12-58-09.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:51.410Z"
+    },
+    "services/accommodation/hotels/photo_2_2026-10-17_12-58-09.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:51.626Z"
+    },
+    "services/accommodation/hotels/photo_3_2026-10-17_12-58-09.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:51.614Z"
+    },
+    "services/accommodation/hotels/photo_4_2026-10-17_12-58-09.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:52.084Z"
+    },
+    "services/accommodation/hotels/photo_5_2026-10-17_12-58-09.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:52.325Z"
+    },
+    "services/accommodation/hotels/photo_6_2026-10-17_12-58-09.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:52.529Z"
+    },
+    "services/accommodation/hotels/photo_7_2026-10-17_12-58-10.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:52.556Z"
+    },
+    "services/accommodation/hotels/photo_8_2026-10-17_12-58-10.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:52.890Z"
+    },
+    "services/accommodation/hotels/photo_9_2026-10-17_12-58-10.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:53.318Z"
+    },
+    "services/live-props/photo_10_2026-10-17_12-59-00.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:53.352Z"
+    },
+    "services/live-props/photo_11_2026-10-17_12-59-00.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:53.414Z"
+    },
+    "services/live-props/photo_12_2026-10-17_12-59-00.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:53.816Z"
+    },
+    "services/live-props/photo_13_2026-10-17_12-59-00.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:54.398Z"
+    },
+    "services/live-props/photo_1_2026-10-17_12-58-59.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:54.166Z"
+    },
+    "services/live-props/photo_2_2026-10-17_12-58-59.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:54.195Z"
+    },
+    "services/live-props/photo_3_2026-10-17_12-59-00.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:54.653Z"
+    },
+    "services/live-props/photo_4_2026-10-17_12-59-00.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:55.333Z"
+    },
+    "services/live-props/photo_5_2026-10-17_12-59-00.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:55.223Z"
+    },
+    "services/live-props/photo_6_2026-10-17_12-59-00.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:55.543Z"
+    },
+    "services/live-props/photo_7_2026-10-17_12-59-00.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:55.674Z"
+    },
+    "services/live-props/photo_8_2026-10-17_12-59-00.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:56.188Z"
+    },
+    "services/production-support/photo_1_2026-10-17_13-09-33.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:56.225Z"
+    },
+    "services/production-support/photo_2_2026-10-17_13-09-33.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:56.226Z"
+    },
+    "services/production-support/photo_3_2026-10-17_13-09-33.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:56.715Z"
+    },
+    "services/production-support/photo_4_2026-10-17_13-09-33.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:57.052Z"
+    },
+    "services/production-support/photo_5_2026-10-17_13-09-33.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:57.105Z"
+    },
+    "services/production-support/photo_6_2026-10-17_13-09-33.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:57.159Z"
+    },
+    "services/production-support/photo_7_2026-10-17_13-09-33.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:57.632Z"
+    },
+    "services/production-support/photo_8_2026-10-17_13-09-33.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:57.908Z"
+    },
+    "services/production-support/photo_9_2026-10-17_13-09-33.jpg": {
+      "status": "complete",
+      "reason": "Uploaded object verified.",
+      "updatedAt": "2026-10-17T08:57:58.094Z"
+    }
+  }
+}

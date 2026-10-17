@@ -346,7 +346,19 @@ export const locationMediaBySlug = {
       "/locations/forest-landscapes/photo_10_2026-07-17_11-28-18.webp",
       "/locations/forest-landscapes/photo_11_2026-07-17_11-28-18.webp",
       "/locations/forest-landscapes/photo_12_2026-07-17_11-28-18.webp",
-      "/locations/forest-landscapes/photo_13_2026-07-17_11-28-18.webp"
+      "/locations/forest-landscapes/photo_13_2026-07-17_11-28-18.webp",
+      "/locations/forest-landscapes/photo_10_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_1_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_1_2026-10-16_15-40-41.jpg",
+      "/locations/forest-landscapes/photo_2_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_2_2026-10-16_15-40-41.jpg",
+      "/locations/forest-landscapes/photo_3_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_4_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_5_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_6_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_7_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_8_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_9_2026-10-16_15-38-20.jpg"
     ],
     "videos": [
       "/locations/forest-landscapes/video_2026-07-17_11-28-18.mp4"
@@ -365,6 +377,18 @@ export const locationMediaBySlug = {
       "/locations/forest-landscapes/photo_11_2026-07-17_11-28-18.webp",
       "/locations/forest-landscapes/photo_12_2026-07-17_11-28-18.webp",
       "/locations/forest-landscapes/photo_13_2026-07-17_11-28-18.webp",
+      "/locations/forest-landscapes/photo_10_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_1_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_1_2026-10-16_15-40-41.jpg",
+      "/locations/forest-landscapes/photo_2_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_2_2026-10-16_15-40-41.jpg",
+      "/locations/forest-landscapes/photo_3_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_4_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_5_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_6_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_7_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_8_2026-10-16_15-38-20.jpg",
+      "/locations/forest-landscapes/photo_9_2026-10-16_15-38-20.jpg",
       "/locations/forest-landscapes/video_2026-07-17_11-28-18.mp4"
     ]
   },
@@ -887,7 +911,14 @@ export const locationMediaBySlug = {
       "/locations/reservoir/photo_11_2026-07-17_11-33-32.webp",
       "/locations/reservoir/photo_12_2026-07-17_11-33-32.webp",
       "/locations/reservoir/photo_13_2026-07-17_11-33-32.webp",
-      "/locations/reservoir/photo_14_2026-07-17_11-33-32.webp"
+      "/locations/reservoir/photo_14_2026-07-17_11-33-32.webp",
+      "/locations/reservoir/photo_1_2026-10-16_15-45-19.jpg",
+      "/locations/reservoir/photo_2_2026-10-16_15-45-19.jpg",
+      "/locations/reservoir/photo_3_2026-10-16_15-45-19.jpg",
+      "/locations/reservoir/photo_4_2026-10-16_15-45-19.jpg",
+      "/locations/reservoir/photo_5_2026-10-16_15-45-19.jpg",
+      "/locations/reservoir/photo_6_2026-10-16_15-45-19.jpg",
+      "/locations/reservoir/photo_7_2026-10-16_15-45-19.jpg"
     ],
     "videos": [],
     "gallery": [
@@ -914,7 +945,14 @@ export const locationMediaBySlug = {
       "/locations/reservoir/photo_11_2026-07-17_11-33-32.webp",
       "/locations/reservoir/photo_12_2026-07-17_11-33-32.webp",
       "/locations/reservoir/photo_13_2026-07-17_11-33-32.webp",
-      "/locations/reservoir/photo_14_2026-07-17_11-33-32.webp"
+      "/locations/reservoir/photo_14_2026-07-17_11-33-32.webp",
+      "/locations/reservoir/photo_1_2026-10-16_15-45-19.jpg",
+      "/locations/reservoir/photo_2_2026-10-16_15-45-19.jpg",
+      "/locations/reservoir/photo_3_2026-10-16_15-45-19.jpg",
+      "/locations/reservoir/photo_4_2026-10-16_15-45-19.jpg",
+      "/locations/reservoir/photo_5_2026-10-16_15-45-19.jpg",
+      "/locations/reservoir/photo_6_2026-10-16_15-45-19.jpg",
+      "/locations/reservoir/photo_7_2026-10-16_15-45-19.jpg"
     ]
   },
   "sand-dunes": {

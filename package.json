@@ -11,6 +11,7 @@
     "generate:service-media": "node scripts/generate-service-media.mjs",
     "generate:location-card-variants": "node scripts/generate-location-card-variants.mjs",
     "generate:r2-manifest": "node scripts/generate-r2-image-manifest.mjs",
+    "prepare:r2-new-images": "node scripts/prepare-r2-new-images.mjs",
     "upload:r2-images": "node scripts/upload-r2-images.mjs",
     "test:r2-uploader": "node --test scripts/test-r2-uploader.mjs",
     "optimize:location-images": "node scripts/optimize-location-images.mjs && node scripts/generate-location-media.mjs",
